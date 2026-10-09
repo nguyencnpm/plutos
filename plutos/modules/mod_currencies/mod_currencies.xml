@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_currencies</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>August 23 2007</creationDate>
+    <copyright>Copyright (C) 2005 - 2017 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0.0</version>
+    <description>MOD_CURRENCIES_XML_DESCRIPTION</description>
+    <files>
+        <filename module="mod_currencies">mod_currencies.php</filename>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+    </files>
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_currencies.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_currencies.sys.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.mod_currencies.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.mod_currencies.sys.ini</language>
+    </languages>
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_SEARCH" />
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field
+                    name="using_mode"
+                    type="radio"
+                    default="title"
+                    level="2"
+                    class="btn-group"
+                    label="MOD_CURRENCIES_USING_MODE_LABEL"
+                    description="MOD_CURRENCIES_USING_MODE_DESC">
+                    <option value="title">MOD_CURRENCIES_USING_MODE_TITLE</option>
+                    <option value="code_3">MOD_CURRENCIES_USING_MODE_CODE_3</option>
+                </field>
+                
+                <field
+                    name="display_label"
+                    type="radio"
+                    label="MOD_CURRENCIES_USING_MODE_DISPLAY_TEXT_LABEL"
+                    description="MOD_CURRENCIES_USING_MODE_DISPLAY_TEXT_LABEL"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="label"
+                    type="label"
+                    label="MOD_CURRENCIES_USING_MODE_LABEL_TEXT_LABEL"
+                    description="MOD_CURRENCIES_USING_MODE_LABEL_TEXT_DESC"
+                    showon="display_label:1"
+                />
+                <field
+                    name="text_before"
+                    type="textarea"
+                    cols="40"
+                    rows="3"
+                    default=""
+                    label="MOD_CURRENCIES_PRE_TEXT"
+                    description="MOD_CURRENCIES_PRE_TEXT_DESC"
+                />
+                <field
+                    name="product_currency"
+                    type="text"
+                    default=""
+                    label="MOD_CURRENCIES_DISPLAY"
+                    description="MOD_CURRENCIES_DISPLAY_DESC"
+                />
+                <field
+                    name="button"
+                    type="radio"
+                    label="MOD_CURRENCIES_USING_MODE_BUTTON_LABEL"
+                    description="MOD_CURRENCIES_USING_MODE_BUTTON_DESC"
+                    default="0"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                />
+
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                    rows="3"
+                />
+
+                <field
+                    name="cache"
+                    type="list"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC"
+                    default="1"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="text"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                    default="900"
+                />
+
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="itemid"
+                >
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+    <updateservers>
+        <!-- Note: No spaces or linebreaks allowed between the server tags -->
+        <server type="extension" name="mod_currencies Update Site"><![CDATA[http://giaiphapcongnghethongtin.vn/releases/hotelsresorts/mod_currencies_update.xml]]></server>
+    </updateservers>
+</extension>

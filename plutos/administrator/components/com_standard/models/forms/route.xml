@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset>
+        <field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+               description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+               readonly="true" />
+        
+        <field name="title" type="text" label="COM_STANDARD_ROUTE_NAME"
+               description="COM_STANDARD_ROUTE_NAME"
+               class="input-xxlarge input-large-text"
+               size="40"
+               required="true" />
+
+        <field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+               hint="JFIELD_ALIAS_PLACEHOLDER"
+               size="40" />
+        
+        <field name="subtitle" type="text" label="COM_STANDARD_ROUTE_SUB_NAME_LABEL"
+               description="COM_STANDARD_ROUTE_SUB_NAME_DESC"
+               class="input-xxlarge input-large-text"
+               size="40" />
+        
+        <field name="from_id"
+               type="Location"
+               label="COM_STANDARD_FROM_LABEL"
+               description="COM_STANDARD_FROM_DESC"
+               default=""
+        />
+        
+        <field name="to_id"
+               type="Location"
+               label="COM_STANDARD_TO_LABEL"
+               description="COM_STANDARD_TO_DESC"
+               default=""
+        />
+        
+        <field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+               hint="JFIELD_ALIAS_PLACEHOLDER"
+        />
+        
+        <field name="code" type="text" 
+               label="COM_STANDARD_ROUTE_CODE"
+               description="COM_STANDARD_ROUTE_CODE" 
+        />
+        
+        <field name="catid"
+               type="categoryedit"
+               label="JCATEGORY"
+               description="JFIELD_CATEGORY_DESC"
+               required="true"
+               default=""
+        >
+        </field>
+        
+        <field 
+            name="departure_day" 
+            type="Days" 
+            class="span12"
+            label="COM_STANDARD_FIELD_DEPARTURE_DAY_LABEL"
+            description="COM_STANDARD_FIELD_DEPARTURE_DAY_DESC"
+            required="true"
+            default=""
+        >
+            <option value="">SELECT_DAYWEEK</option>
+        </field>
+        
+        <field name="number_days" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_FIELD_NUMBER_OF_DAYS_LABEL" 
+               description="COM_STANDARD_FIELD_NUMBER_OF_DAYS_DESC" 
+               required="true"
+               default="" 
+               step="1"  
+               min="1" />
+        
+        <field 
+            name="departure_time" 
+            type="Clockpicker" 
+            class="span12"
+            label="COM_STANDARD_FIELD_DEPARTURE_TIME_LABEL"
+            description="COM_STANDARD_FIELD_DEPARTURE_TIME_DESC"
+            default="00:00"
+        />
+        <field 
+            name="arrival_time" 
+            type="Clockpicker" 
+            class="span12"
+            label="COM_STANDARD_FIELD_ARRIVAL_TIME_LABEL"
+            description="COM_STANDARD_FIELD_ARRIVAL_TIME_DESC"
+            default="00:00"
+        />
+        <field name="routetext" type="editor" label="COM_STANDARD_FIELD_TERMS_AND_CONDITIONS_LABEL" description="COM_STANDARD_FIELD_TERMS_AND_CONDITIONS_DESC"
+               filter="JComponentHelper::filterText" buttons="true" 
+        />
+        
+        <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" 
+               class="chzn-color-state" filter="intval" size="1" default="1"
+        >
+            <option value="1">
+                JPUBLISHED</option>
+            <option value="0">
+                JUNPUBLISHED</option>
+            <option value="2">
+                JARCHIVED</option>
+            <option value="-2">
+                JTRASHED</option>
+        </field>
+
+        <field
+            name="buttonspacer"
+            description="JGLOBAL_ACTION_PERMISSIONS_DESCRIPTION"
+            type="spacer" />
+
+        <field name="created" type="calendar" label="COM_STANDARD_FIELD_CREATED_LABEL"
+               description="COM_STANDARD_FIELD_CREATED_DESC" 
+               translateformat="true"
+               weeknumbers="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="created_by" type="user"
+               label="COM_STANDARD_FIELD_CREATED_BY_LABEL" description="COM_STANDARD_FIELD_CREATED_BY_DESC" />
+
+        <field name="created_by_alias" type="text"
+               label="COM_STANDARD_FIELD_CREATED_BY_ALIAS_LABEL" description="COM_STANDARD_FIELD_CREATED_BY_ALIAS_DESC"
+               size="20" />
+
+        <field name="modified" type="calendar" class="readonly"
+               label="JGLOBAL_FIELD_MODIFIED_LABEL" description="COM_STANDARD_FIELD_MODIFIED_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               readonly="true"
+               filter="user_utc" />
+
+        <field name="modified_by" type="user"
+               label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+               class="readonly"
+               readonly="true"
+               filter="unset"
+        />
+
+        <field name="checked_out" type="hidden" filter="unset" />
+
+        <field name="checked_out_time" type="hidden" filter="unset" />
+        
+        <field name="publish_up" type="calendar"
+               label="COM_STANDARD_FIELD_PUBLISH_UP_LABEL" description="COM_STANDARD_FIELD_PUBLISH_UP_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="publish_down" type="calendar"
+               label="COM_STANDARD_FIELD_PUBLISH_DOWN_LABEL" description="COM_STANDARD_FIELD_PUBLISH_DOWN_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+        
+        <field name="version" type="text" class="readonly"
+               label="COM_STANDARD_FIELD_VERSION_LABEL" size="6" description="COM_STANDARD_FIELD_VERSION_DESC"
+               readonly="true" filter="unset" />
+
+        <field name="ordering" type="text" label="JFIELD_ORDERING_LABEL"
+               description="JFIELD_ORDERING_DESC" size="6"
+               default="0" />
+
+        <field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL"
+               description="JFIELD_ACCESS_DESC" size="1" />
+
+        <field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+               description="COM_STANDARD_FIELD_LANGUAGE_DESC"
+        >
+            <option value="*">JALL</option>
+        </field>
+
+        <field name="rules" type="rules" label="JFIELD_RULES_LABEL"
+               translate_label="false" filter="rules"
+               component="com_standard" section="route" validate="rules"
+        />
+        
+        <field name="xreference" type="text"
+               label="JFIELD_KEY_REFERENCE_LABEL"
+               description="JFIELD_KEY_REFERENCE_DESC"
+               size="20"
+        />
+            
+        
+        <fields name="urls" label="COM_STANDARD_FIELD_URLS_OPTIONS">
+            <field
+                name="urla"
+                type="url"
+                validate="url"
+                filter="url"
+                relative="true"
+                label="COM_STANDARD_FIELD_URLA_LABEL"
+                description="COM_STANDARD_FIELD_URL_DESC" />
+            <field name="urlatext"
+                   type="text"
+                   label="COM_STANDARD_FIELD_URLA_LINK_TEXT_LABEL"
+                   description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+                   size="20"/>
+            <field
+                name="targeta"
+                type="list"
+                label="COM_STANDARD_URL_FIELD_BROWSERNAV_LABEL"
+                description="COM_STANDARD_URL_FIELD_BROWSERNAV_DESC"
+                default=""
+                filter="options"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JBROWSERTARGET_PARENT</option>
+                <option value="1">JBROWSERTARGET_NEW</option>
+                <option value="2">JBROWSERTARGET_POPUP</option>
+                <option value="3">JBROWSERTARGET_MODAL</option>
+            </field>
+            <field
+                name="spacer3"
+                type="spacer"
+                hr="true"
+            />
+            <field
+                name="urlb"
+                type="url"
+                validate="url"
+                filter="url"
+                relative="true"
+                label="COM_STANDARD_FIELD_URLB_LABEL"
+                description="COM_STANDARD_FIELD_URL_DESC"/>
+            <field name="urlbtext"
+                   type="text"
+                   label="COM_STANDARD_FIELD_URLB_LINK_TEXT_LABEL"
+                   description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+                   size="20"/>
+            <field
+                name="targetb"
+                type="list"
+                label="COM_STANDARD_URL_FIELD_BROWSERNAV_LABEL"
+                description="COM_STANDARD_URL_FIELD_BROWSERNAV_DESC"
+                default=""
+                filter="options"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JBROWSERTARGET_PARENT</option>
+                <option value="1">JBROWSERTARGET_NEW</option>
+                <option value="2">JBROWSERTARGET_POPUP</option>
+                <option value="3">JBROWSERTARGET_MODAL</option>
+            </field>
+            <field
+                name="spacer4"
+                type="spacer"
+                hr="true"
+            />
+            <field
+                name="urlc"
+                type="url"
+                validate="url"
+                filter="url"
+                relative="true"
+                label="COM_STANDARD_FIELD_URLC_LABEL"
+                description="COM_STANDARD_FIELD_URL_DESC"/>
+            <field
+                name="urlctext"
+                type="text"
+                label="COM_STANDARD_FIELD_URLC_LINK_TEXT_LABEL"
+                description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+                size="20"/>
+            <field
+                name="targetc"
+                type="list"
+                label="COM_STANDARD_URL_FIELD_BROWSERNAV_LABEL"
+                description="COM_STANDARD_URL_FIELD_BROWSERNAV_DESC"
+                default=""
+                filter="options"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JBROWSERTARGET_PARENT</option>
+                <option value="1">JBROWSERTARGET_NEW</option>
+                <option value="2">JBROWSERTARGET_POPUP</option>
+                <option value="3">JBROWSERTARGET_MODAL</option>
+            </field>
+        </fields>
+    </fieldset>
+    <fields name="metadata" label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+        <fieldset name="jmetadata"
+                  label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+
+            <field name="robots"
+                   type="list"
+                   label="JFIELD_METADATA_ROBOTS_LABEL"
+                   description="JFIELD_METADATA_ROBOTS_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+                <option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+                <option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+                <option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+            </field>
+
+            <field name="author" type="text"
+                   label="JAUTHOR" description="JFIELD_METADATA_AUTHOR_DESC"
+                   size="20" />
+
+            <field name="rights" type="textarea" label="JFIELD_META_RIGHTS_LABEL"
+                   description="JFIELD_META_RIGHTS_DESC" required="false" filter="string"
+                   cols="30" rows="2" />
+            <field name="xreference" type="text"
+                   label="COM_STANDARD_FIELD_XREFERENCE_LABEL"
+                   description="COM_STANDARD_FIELD_XREFERENCE_DESC"
+                   size="20" />
+        </fieldset>
+    </fields>
+    <!-- These fields are used to get labels for the Content History Preview and Compare Views -->
+    <fields>
+        <field name="introtext" label="COM_STANDARD_FIELD_INTROTEXT" />
+        <field name="fulltext" label="COM_STANDARD_FIELD_FULLTEXT" />
+    </fields>
+    
+</form>

@@ -1,0 +1,143 @@
+/*
+    Created on : May 30, 2018, 6:27:39 PM
+    Author     : Binh Nguyen
+*/
+
+.bg-navbar{
+    background-color: $nav-bg-color!important;
+    color: $nav-color;
+    .navbar-nav {
+        text-transform: $nav-text-transform;
+        .nav-item{
+            margin-left: .5rem;
+            margin-right: .5rem;
+        }
+        .active{
+            &> a{
+                color: $nav-hover-color;
+            }
+        } 
+        .nav-link {
+            color: $nav-color;
+            @include hover-focus-active{
+                color: $nav-hover-color;
+            }
+
+            &.disabled {
+                color: $navbar-disabled-color;
+            }
+        }
+    }
+}
+
+.navbar-light{
+    &.navbar-nav{
+        &.nav-link {
+            color: rgb(64, 64, 64);
+        }
+    }
+}
+
+.btco-menu li > a {
+    padding: 10px 15px;
+    color: #000;
+
+}
+
+.btco-menu .active a:focus,
+.btco-menu li a:focus ,
+.navbar > .show > a:focus{
+    background: transparent;
+    outline: 0;
+}
+
+.navbar-toggler{
+    .navbar-toggler-icon{
+        color: $nav-color;
+        background-image: $navbar-toggler-icon-bg;
+    }
+}
+
+.navbar-nav{
+    .dropdown-menu {
+        text-transform: $nav-dropdown-text-transform;
+        background-color: $nav-dropdown-menu-bg-color;
+        color: $nav-color;
+        border: none;
+        .show > .dropdown-toggle::after{
+            transform: rotate(-90deg);
+        }
+        li > a:hover,
+            .active > a,
+            .active > a:hover{
+            background:$nav-dropdown-menu-bg-active-color;
+        }
+        .divider{
+            background: $nav-brand; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            background: -o-linear-gradient(right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            background: -moz-linear-gradient(right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            border: 0 none;
+            height: 1px;
+        }
+    }
+    .dropdown-item{
+        padding: .25rem 1rem;
+        color: $nav-dropdown-color;
+        @include hover-focus-active{
+            color: $nav-hover-color;
+            background: $nav-dropdown-menu-bg-hover-color;
+        }
+        &.active{
+            background: $nav-dropdown-menu-bg-active-color;
+        }
+        &.disabled {
+            color: $navbar-disabled-color;
+        }
+    }
+}
+
+@include media-breakpoint-up(lg) {
+    #navbarDefault, #navbarCollapse{
+        /*padding-top: $navbar-default-padding;*/
+    }
+    .navbar-expand-lg{
+        .navbar-collapse {
+            display: block !important;
+        }
+    }
+}
+
+@include media-breakpoint-down(lg) {
+    .navbar-expand-lg > .container,
+    .navbar-expand-lg> .container-fluid {
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #navbarDefault, #navbarCollapse{
+        background-color: $nav-bg-color-collapse;
+        color:$nav-color-collapse;
+        padding-left: 0;
+        .navbar-nav{
+            .active{
+                &> a{
+                    color: $nav-hover-color;
+                }
+            } 
+            .nav-link{
+                color:$nav-color-collapse;
+                @include hover-focus-active{
+                    color: $nav-hover-color;
+                }
+
+                &.disabled {
+                    color: $navbar-disabled-color;
+                }
+            }
+        } 
+    }
+}

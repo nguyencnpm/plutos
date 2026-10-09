@@ -1,0 +1,99 @@
+/* 
+    Created on : Dec 7, 2018, 3:14:45 PM
+    Author     : BinhNguyen
+*/
+.nav-masthead {
+    .navbar-nav{
+        &>li{
+            &.active{
+                >a{
+                    border-bottom: .15rem solid $nav-masthead-color!important;
+                }
+            }
+            &>.dropdown-menu{
+                margin-top: -0.12rem!important;
+                background-clip:unset;
+            }
+
+            .nav-link {
+                padding: $nav-masthead-link-padding;
+                border-bottom: .15rem solid transparent;
+                &:hover, &:focus{
+                    /* border-bottom-color: $nav-masthead-color; */
+                }
+
+            }
+        }
+    }
+    /*
+    &.nav-utilities{
+        .navbar-nav{
+            &>li{
+                &>.dropdown-menu{
+                    margin-top: -0.15rem!important;
+                }
+            }
+        }
+        
+        .fixed-top &{
+            .navbar-nav{
+                &>li{
+                    &>.dropdown-menu{
+                        margin-top: -0.18rem!important;
+                    }
+                }
+            }
+        }
+        
+    }*/
+    .dropdown-menu{
+        border-top: .15rem solid $nav-masthead-color;
+        border-radius:0rem;
+        .dropdown-submenu{
+            .dropdown-menu{
+
+            }
+        }
+    }
+}
+/*
+.fixed-top{
+    .nav-masthead {
+        .navbar-nav{
+            &>li{
+                .nav-link {
+                    padding: .45rem 0;
+                }
+            }
+        }
+    }
+}
+*/
+@include media-breakpoint-up(md) {
+    .navbar-expand-lg{
+        .navbar-nav{
+            .nav-link{
+                padding-right:0;
+                padding-left: 0;
+                /*                
+                margin-right: .5rem;
+                margin-left: .5rem;
+                */
+            }
+        }
+    }
+}
+/*@media (min-width: 48em) {
+    .nav-masthead {
+         float: right; 
+    }
+}*/
+@include media-breakpoint-down(md) {
+    .nav-masthead {
+        .navbar-nav{
+            .nav-link {
+                padding: .45rem 0!important;
+            }
+        }
+    }
+}

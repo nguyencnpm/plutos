@@ -1,0 +1,31 @@
+/*
+    Created on : Jun 15, 2021, 3:46:27 PM
+    Author     : BinhNguyen
+*/
+
+.menus-agent{
+    &.navbar-items{
+        .nav-item{
+            .vertical-line{
+                color:$nav-agent-color;
+            }
+            .nav-item-link{
+                color:$nav-agent-color;
+                padding: 0 0.5rem;
+                @include hover-focus{
+                    color: $nav-agent-hover-color;
+                }
+            }
+
+            &.switchboard{
+                color:$switchboard-nav-color;
+                .nav-item-link{
+                    color:$switchboard-nav-color;
+                    @include hover-focus{
+                        color: $switchboard-nav-hover-color;
+                    }
+                }
+            }
+        }
+    }
+}

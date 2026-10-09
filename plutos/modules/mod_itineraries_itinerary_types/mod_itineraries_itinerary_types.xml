@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_itineraries_itinerary_types</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>February 2010</creationDate>
+    <copyright>Copyright (C) 2005 - 2019 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0.0</version>
+    <description>MOD_ITINERARIES_ITINERARY_TYPES_XML_DESCRIPTION</description>
+    <files>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename>helper.php</filename>
+        <filename module="mod_itineraries_itinerary_types">mod_itineraries_itinerary_types.php</filename>
+    </files>
+    <!--
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_itineraries_itinerary_types.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_itineraries_itinerary_types.sys.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.mod_itineraries_itinerary_types.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.mod_itineraries_itinerary_types.sys.ini</language>
+    </languages>
+    -->
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_ITINERARIES_ITINERARY_TYPES" />
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_standard/models/fields">
+                <field
+                    name="subheading"
+                    type="textarea"
+                    class="span12"
+                    rows="4"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SUBHEADING_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SUBHEADING_DESC"
+                />
+                
+                <field
+                    name="show_all_itinerarytype"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_ALL_ITINERARY_TYPE_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_ALL_ITINERARY_TYPE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="noroot"
+                >
+                    <option value="root">JYES</option>
+                    <option value="noroot">JNO</option>
+                </field>
+                
+                <field
+                    name="parent"
+                    type="modal_ItineraryType"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_PARENT_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_PARENT_DESC"
+                    extension="com_standard"
+                    filter="integer"
+                    published=""
+                    select="true"
+                    new="true"
+                    edit="true"
+                    clear="true"
+                    showon="show_all_itinerarytype:noroot"
+                />
+                <field
+                    name="image"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_IMAGES_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_IMAGES_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="img_intro_full"
+                    type="list"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_IMAGES_TYPE_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_IMAGES_TYPE_DESC"
+                    default="none"
+                >
+                    <option value="intro">MOD_ITINERARIES_ITINERARY_TYPES_OPTION_INTROIMAGE</option> 
+                    <option value="full">MOD_ITINERARIES_ITINERARY_TYPES_OPTION_FULLIMAGE</option>
+                    <option value="none">JNO</option>
+                </field>
+                <field
+                    name="use_banner_if_available"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_USE_BANNER_IF_AVAILABLE_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_USE_BANNER_IF_AVAILABLE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field
+                    name="item_title"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_TITLE_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_TITLE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                    name="link_titles"
+                    type="list"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_LINKTITLE_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_LINKTITLE_DESC"
+                    default=""
+                    filter="integer"
+                    class="chzn-color"
+                    showon="item_title:1"
+                >
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+                
+                <field
+                    name="item_heading"
+                    type="list"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_TITLE_HEADING_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_TITLE_HEADING_DESC"
+                    default="4"
+                    filter="integer"
+                >
+                    <option value="1">JH1</option>
+                    <option value="2">JH2</option>
+                    <option value="3">JH3</option>
+                    <option value="4">JH4</option>
+                    <option value="5">JH5</option>
+                </field>
+
+                <field
+                    name="item_header_class"
+                    type="textarea" 
+                    rows="2"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_ITEM_HEADER_CLASS"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_ITEM_HEADER_CLASS_DESCRIPTION"
+                    default=""
+                    showon="item_title:1"
+                >
+                </field>
+                
+                <field
+                    name="show_description"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_DESCRIPTION_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_DESCRIPTION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                    name="numitems"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_NUMITEMS_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_NUMITEMS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                    name="show_children"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_CHILDREN_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_CHILDREN_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field
+                    name="layout_button"
+                    type="list"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_LAYOUT_BUTTON"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_LAYOUT_BUTTON_DESCRIPTION"
+                    default="h4"
+                    showon="booknow:1[OR]readmore:1"
+                >
+                    <option value="horizontal">horizontal</option>
+                    <option value="vertical">vertical</option>
+                </field>
+
+                <field
+                    name="count"
+                    type="list"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_COUNT_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_COUNT_DESC"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="0">JALL</option>
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+
+                <field
+                    name="maxlevel"
+                    type="list"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_MAXLEVEL_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_MAXLEVEL_DESC"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="0">JALL</option>
+                    <option value="1">J1</option>
+                    <option value="2">J2</option>
+                    <option value="3">J3</option>
+                    <option value="4">J4</option>
+                    <option value="5">J5</option>
+                    <option value="6">J6</option>
+                    <option value="7">J7</option>
+                    <option value="8">J8</option>
+                    <option value="9">J9</option>
+                    <option value="10">J10</option>
+                </field>
+            </fieldset>
+            
+            <fieldset name="links">
+                <fields name="links">
+                    <field name="link_type" 
+                           type="list" 
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_LINK_TYPE"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_LINK_TYPE_DESC" 
+                           default=""
+                    >
+                        <option value="">MOD_ITINERARIES_ITINERARY_TYPES_DO_NOT_LINK</option>
+                        <option value="menu">MOD_ITINERARIES_ITINERARY_TYPES_MENU</option>
+                        <option value="url">MOD_ITINERARIES_ITINERARY_TYPES_URL</option>
+                        <option value="product">MOD_ITINERARIES_ITINERARY_TYPES_PRODUCT</option>
+                    </field>
+			
+                    <field name="link_menu" 
+                           type="menuitem"
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_MENU"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_MENU"
+                           disable="separator,heading,alias"
+                           showon="link_type:menu"
+                    />
+                    <field name="link_url"
+                           type="text"
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_URL"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_URL"
+                           class="inputbox"
+                           size="30"
+                           showon="link_type:url"
+                    />
+                    <field name="link_product" 
+                           type="modal_product"
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_PRODUCT" 
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_PRODUCT"
+                           select="true"
+                           new="true"
+                           edit="true"
+                           clear="true"
+                           showon="link_type:product"
+                    />
+                
+                    <field name="url_text"
+                           type="text"
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_URL_LINK_TEXT_LABEL"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_URL_LINK_TEXT_DESC"
+                           showon="link_type:current,menu,url,product"
+                    />
+			
+                    <field name="link_target" 
+                           type="list" 
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_LINK_TARGET"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_LINK_TARGET_DESC" 
+                           default=""
+                           showon="link_type:menu,url,product"
+                    >
+                        <option value="">MOD_ITINERARIES_ITINERARY_TYPES_AUTO</option>
+                        <option value="_self">MOD_ITINERARIES_ITINERARY_TYPES_PARENT_WINDOW</option>
+                        <option value="_blank">MOD_ITINERARIES_ITINERARY_TYPES_NEW_WINDOW</option>
+                    </field>
+			
+                    <field name="link_rel" 
+                           type="list" 
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_LINK_REL"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_LINK_REL_DESC" 
+                           default=""
+                           showon="link_type:menu,url,product"
+                    >
+                        <option value="">JNONE</option>
+                        <option value="alternate">alternate</option>
+                        <option value="author">author</option>
+                        <option value="bookmark">bookmark</option>
+                        <option value="help">help</option>
+                        <option value="license">license</option>
+                        <option value="next">next</option>
+                        <option value="nofollow">nofollow</option>
+                        <option value="noreferrer">noreferrer</option>
+                        <option value="prefetch">prefetch</option>
+                        <option value="prev">prev</option>
+                        <option value="search">search</option>
+                        <option value="tag">tag</option>
+                    </field>
+                
+                    <field name="link_position" 
+                           type="list" 
+                           label="MOD_ITINERARIES_ITINERARY_TYPES_LINK_POSITION"
+                           description="MOD_ITINERARIES_ITINERARY_TYPES_LINK_POSITION_DESC" 
+                           default=""
+                           showon="link_type:menu,url,product"
+                    >
+                        <option value="">JNONE</option>
+                        <option value="top">POSITION_TOP</option>
+                        <option value="bottom">POSITION_BOTTOM</option>
+                    </field>
+                </fields>
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                />
+                
+                <field
+                    name="show_icon"
+                    type="radio"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_ICON_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_SHOW_ICON_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field
+                    name="position_icon_top"
+                    type="list"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_POSITION_ICON_TOP_DESC"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_POSITION_ICON_TOP_LABEL"
+                    useglobal="true"
+                    showon="show_icon:1"
+                >
+                    <option value="left-top">GLOBAL_LEFT_TOP</option>
+                    <option value="right-top">GLOBAL_RIGHT_TOP</option>
+                </field>
+                
+                <field
+                    name="position_icon_bottom"
+                    type="list"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_POSITION_ICON_BOTTOM_DESC"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_POSITION_ICON_BOTTOM_LABEL"
+                    useglobal="true"
+                    showon="show_icon:1"
+                >
+                    <option value="left-bottom">GLOBAL_LEFT_BOTTOM</option>
+                    <option value="right-bottom">GLOBAL_RIGHT_BOTTOM</option>
+                </field>
+                
+                <field
+                    name="class_subheading"
+                    type="text"
+                    class="span6"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_CLASS_SUBHEADING_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_CLASS_SUBHEADING_DESC"
+                />
+                
+                <field 
+                    name="subheading_medialayoutelement"
+                    type="LayoutElement"
+                    class="span6"
+                    label="GLOBAL_SUBHEADING_LAYOUT_ELEMENT_LABEL"
+                    description="GLOBAL_SUBHEADING_LAYOUT_ELEMENT_DESC"
+                    default="using-max-width-sm"
+                >
+                    <option value=" ">JGLOBAL_USE_GLOBAL</option>
+                </field>
+                
+                <field 
+                    name="leading_medialayoutelement"
+                    type="LayoutElement"
+                    class="span6"
+                    label="GLOBAL_LEADING_LAYOUT_ELEMENT_LABEL"
+                    description="GLOBAL_LEADING_LAYOUT_ELEMENT_DESC"
+                    default="using-max-width-md"
+                >
+                    <option value=" ">JGLOBAL_USE_GLOBAL</option>
+                </field>
+                
+                <field 
+                    name="intro_medialayoutelement"
+                    type="LayoutElement"
+                    class="span6"
+                    label="GLOBAL_INTRO_LAYOUT_ELEMENT_LABEL"
+                    description="GLOBAL_INTRO_LAYOUT_ELEMENT_DESC"
+                    default=" "
+                >
+                    <option value=" ">JGLOBAL_USE_GLOBAL</option>
+                </field>
+                
+                <field
+                    name="num_leading"
+                    type="number"
+                    description="JGLOBAL_NUM_LEADING_ITINERARY_TYPES_DESC"
+                    label="JGLOBAL_NUM_LEADING_ITINERARY_TYPES_LABEL"
+                    useglobal="true"
+                />
+
+                <field
+                    name="num_intro"
+                    type="number"
+                    description="JGLOBAL_NUM_INTRO_ITINERARY_TYPES_DESC"
+                    label="JGLOBAL_NUM_INTRO_ITINERARY_TYPES_LABEL"
+                    useglobal="true"
+                />
+
+                <field
+                    name="num_columns_leading"
+                    type="number"
+                    description="GLOBAL_NUM_COLUMNS_LEADING_DESC"
+                    label="GLOBAL_NUM_COLUMNS_LEADING_LABEL"
+                    useglobal="true"
+                />
+                <field
+                    name="num_columns_intro"
+                    type="number"
+                    description="GLOBAL_NUM_COLUMNS_INTRO_DESC"
+                    label="GLOBAL_NUM_COLUMNS_INTRO_LABEL"
+                    useglobal="true"
+                />
+
+                <field
+                    name="num_links"
+                    type="number"
+                    description="JGLOBAL_NUM_LINKS_DESC"
+                    label="JGLOBAL_NUM_LINKS_LABEL"
+                    useglobal="true"
+                />
+
+                <field
+                    name="multi_column_order"
+                    type="list"
+                    description="JGLOBAL_MULTI_COLUMN_ORDER_DESC"
+                    label="JGLOBAL_MULTI_COLUMN_ORDER_LABEL"
+                    useglobal="true"
+                >
+                    <option value="0">JGLOBAL_DOWN</option>
+                    <option value="1">JGLOBAL_ACROSS</option>
+                </field>
+
+                <field
+                    name="class_sfx"
+                    type="textarea" rows="3"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_CLASS_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_CLASS_DESC"
+                />
+                
+                <field
+                    name="anchor_css"
+                    type="text"
+                    label="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_ANCHOR_CSS_LABEL"
+                    description="MOD_ITINERARIES_ITINERARY_TYPES_FIELD_ANCHOR_CSS_DESC"
+                />
+                
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                    rows="3"
+                />
+
+                <field
+                    name="owncache"
+                    type="list"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC"
+                    default="1"
+                    filter="integer"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="number"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                    default="900"
+                    filter="integer"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

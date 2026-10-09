@@ -1,0 +1,16 @@
+/* 
+    Created on : Aug 13, 2019, 4:47:10 PM
+    Author     : BinhNguyen
+*/
+@each $color, $value in $using-theme-colors {
+    @include bg-variant(".using-bg-#{$color}", $value);
+}
+@if $enable-gradients {
+    @each $color, $value in $using-theme-colors {
+        @include bg-gradient-variant(".using-bg-gradient-#{$color}", $value);
+    }
+}
+
+.shaded-white{
+    background: $shaded-bg-white;
+}

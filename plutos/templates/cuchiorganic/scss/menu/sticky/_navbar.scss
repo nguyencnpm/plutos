@@ -1,0 +1,26 @@
+/* 
+    Created on : Aug 5, 2018, 8:12:53 AM
+    Author     : Binh Nguyen
+*/
+.fixed-top{
+    .controller-utilities{
+        .logo-element{
+            display:none !important;
+        }
+        .utilities-navbar{
+            display: inherit!important;
+        }
+    }
+}
+/*@include media-breakpoint-up(lg) {
+    .fixed-top{
+        .controller-utilities{
+            .utilities-navbar{
+                display: inherit!important;
+            }
+            .utilities{
+                display:none !important;
+            }
+        }
+    }
+}*/

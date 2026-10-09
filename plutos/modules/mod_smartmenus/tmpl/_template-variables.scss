@@ -1,0 +1,529 @@
+/* 
+    Created on : May 23, 2018, 4:28:28 PM
+    Author     : Binh Nguyen
+*/
+/* ====== font ====== */
+$font-family-site: $font-sfpro-regular;
+$font-family-bold-site:$font-sfpro-bold;
+$font-size-site:1rem;
+$font-size-site-uppercase:.9rem;
+$font-size-site-title:1.125rem;
+$font-size-site-title-uppercase:1rem;
+$font-size-site-subtitle-uppercase:1rem;
+$font-size-site-page-header:2.125rem;
+$font-size-site-page-header-uppercase:1.125rem;
+$font-size-site-item-header:1.125rem;
+$font-size-site-item-header-uppercase:1rem;
+$font-line-height-site:1.5rem;
+$font-weight-site:normal;
+/* ====== /.font ====== */
+$site-bg-color:$feng-shui-background-site;
+$site-text-color:$feng-shui-site-text-color;
+
+$border-color-site: #ebebeb;
+$site-bg-form:#f6f6f6;
+$site-bg-info-contact:#d9edf7;
+
+$text-align-site:inherit;
+$color-currency-price: $feng-shui-danger;
+
+$placeholder-color:$white;
+
+$input-group-text-bg-color:$feng-shui-danger-transparency;
+$input-group-text-border-color:$feng-shui-danger-transparency;
+$input-group-text-color:#ffffff;
+
+$input-border-width: 1px;
+$input-border-color:$feng-shui-yellow-transparency;
+/* ---- shaded ---- */
+$shaded-bg-white: $feng-shui-yellow-light-transparency;
+/* -- custom -- */
+$custom-min-height:400px;
+$custom-color:$white;
+$custom-bg-color:#181818;
+$custom-module-title-color:#181818;
+$is-invalid:#dc3545;
+/* Disabled cursor for form controls and buttons.*/
+$cursor-disabled:not-allowed !default;
+/* -- /.custom -- */
+/* -- Blue -- */
+$blue-base:#00afaa;
+$blue-seawater:#00aea9;
+/* -- /.Blue -- */
+/* -- seawater -- */
+/*
+$seawater-base:#184e7c;
+$seawater-blue:#134874;
+$brand-seawater:#225681;
+*/
+/* -- /.seawater -- */
+$navbar-disabled-color: rgba($white, .25) !default;
+/* -- logo -- */
+$primary-color-logo:$feng-shui-orange-dark;
+$primary-color-logo-sub:#daad69;
+$primary-color-logo-title:#8e8066;
+$primary-color-logo-hover:$feng-shui-orange;
+$primary-color-logo-active:$feng-shui-orange;
+
+$logo-element-bg-color:none;
+
+$color-logo: #313394;
+$color-sub-logo: $white;
+$color-hover-logo: #ed1c24;
+/* --- link ---*/
+$link-color:$feng-shui-orange;
+$link-color-hover:$feng-shui-orange-dark;
+/* --- /.link ---*/
+/* -- title -- */
+$font-title:$font-sfpro-bold;
+$color-title: #2f3f8c;
+$color-hover-title:$primary-color-logo;
+
+$subtitle-color:$feng-shui-site-text-title-color;
+$subtitle-font-size:$font-size-site;
+$subtitle-text-align:center;
+$subtitle-margin-top:1rem;
+/* -- /.title --*/
+$color-star:$danger;
+/* ====== /.Colors ====== */
+
+/* ==== indicators ==== */
+$indicators-bg-color:$feng-shui-danger;
+$indicators-bg-color-hover:$feng-shui-orange;
+$indicators-bg-color-active:$feng-shui-yellow;
+/* ==== /.indicators ==== */
+/* --- banner --- */
+
+$item-title-banner-color:$white;
+$item-title-masthead-line-banner-color:$feng-shui-orange;
+$font-size-bannerdesc:1.625rem;
+$bannerdesc-color:$white;
+$banner-text-shadow-color:$feng-shui-green;
+/* ====== override tooltip ======= */
+$override-tooltip-arrow-color:$feng-shui-orange-transparency;
+$override-tooltip-bg:$feng-shui-orange-transparency;
+/* ====== /.override tooltip ======= */
+/* ====== menu ======  */
+$navbar-default-padding:1rem;
+/* ==== header-inner ==== */
+$font-size-header:.8rem;
+$header-bg-color:$primary-color-logo;
+$header-color:$white;
+$header-line-color:#8e8066;
+$header-hover-color:$feng-shui-yellow-light;
+$header-inner-border:.125rem solid $feng-shui-brown;
+/* ---- language ----*/
+$bg-color-language: $feng-shui-yellow;
+$bg-hover-color-language:$feng-shui-orange-light;
+$bg-focus-color-language:$feng-shui-orange-dark;
+$color-language:$feng-shui-green;
+$hover-color-language:$feng-shui-danger-dark;
+$line-height-dropdown-toggle:1.2!important;
+// dropdown
+$bg-color-language-dropdown: $feng-shui-yellow;
+$bg-hover-color-language-dropdown:$feng-shui-orange-light;
+$bg-focus-color-language-dropdown:$feng-shui-orange-dark;
+$color-language-dropdown:$feng-shui-green;
+$hover-color-language-dropdown:$feng-shui-danger-dark;
+$focus-color-language-dropdown:#cccccc;
+/* ---- /.language ----*/
+/* ==== /.header-inner ==== */
+/* ---- navbar - Main Menu ---- */
+$nav-main-z-index:16;
+
+$nav-main-font-size: 1.2rem;
+$nav-main-line-height:1.2rem;
+
+$nav-submain-font-size: 1.2rem;
+$nav-submain-line-height:1.2rem;
+
+$nav-bg-color:nome;
+$nav-bg-color-collapse:$feng-shui-black;
+
+$nav-color:$feng-shui-white;
+$nav-color-collapse:$white;
+$nav-hover-color:$feng-shui-orange;
+$nav-active-color:$feng-shui-orange;
+
+$nav-masthead-color:$nav-hover-color;
+$nav-masthead-hover-color:$nav-hover-color;
+$nav-masthead-active-color:$nav-hover-color;
+$nav-masthead-link-padding:1.1rem 0;
+
+$nav-dropdown-menu-bg-color:$feng-shui-blue-transparency;
+$nav-dropdown-menu-bg-hover-color:$feng-shui-blue-transparency;
+$nav-dropdown-menu-bg-active-color:$feng-shui-blue-transparency;
+$nav-dropdown-color:$white;
+$nav-dropdown-hover-color:$white;
+$nav-dropdown-active-color:$white;
+
+$nav-brand:$primary-color-logo;
+$nav-text-transform:inherit;
+$nav-dropdown-text-transform:inherit;
+
+$fixed-height-navbar:103px;
+$navbar-height-navbar:103px;
+$navbar-height-navbar-is-sticky:41px;
+
+$switchboard-nav-color:$feng-shui-orange!important;
+$switchboard-nav-hover-color:$feng-shui-orange-switchboard!important;
+/* ---- /.navbar - Main Menu ---- */
+$category-title-border-color:$feng-shui-danger;
+$bg-category-title-color:$feng-shui-orange;
+$category-title-color:$white;
+/* ---- select picker - dropdown Menu ---- */
+$datetimepicker-placeholder-color: $white;
+$btn-light-padding:.45rem .75rem;
+
+$select-picker-border-color: $feng-shui-yellow-transparency;
+
+$select-picker-dropdown-menu-color:$white;
+$select-picker-dropdown-menu-hover-color:$feng-shui-yellow;
+$select-picker-dropdown-menu-bg-hover-color:$feng-shui-orange;
+$select-picker-dropdown-menu-bg-color: $feng-shui-orange-transparency;
+
+$select-picker-dropdown-toggle-bg-color:$feng-shui-orange;
+$select-picker-dropdown-btn-light-color:inherit !default;
+
+$select-picker-dropdown-item-bg-active-color:$feng-shui-orange-dark;
+$select-picker-dropdown-item-active-color:$feng-shui-blue;
+
+$select-picker-dropdown-item-padding: .25rem 1rem;
+/* ---- /.select picker - dropdown Menu ---- */
+/* ---- featured ---- */
+$bg-featured-color:$feng-shui-green;
+$text-featured-color:$white;
+$link-featured-color:$white;
+$link-hover-featured-color:$primary-color-logo;
+
+$link-btn-featured-color: $white;
+/* ---- /.featured ---- */
+/* ---- circle ---- */
+$quantity-shopping-cart-bg-color:$danger;
+$quantity-shopping-cart-color: $white;
+/* ---- /.circle ---- */
+/* ---- hotline ---- */
+$menu-hotline-color:$white;
+$menu-hover-color:#54bdfe;
+/* ---- /.hotline ---- */
+/* ---- social ---- */
+$menu-social-color:#333;
+$menu-social-hover-color:#333;
+/* ---- /.social ---- */
+/* ---- icon bg ---- */
+$navbar-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$nav-color}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23") !default;
+$icon-font-size-shopping:1.5rem;
+/* ---- /.icon bg ---- */
+/* ====== /.menu ====== */
+/* ==== page-header ====*/
+$page-header-text-align: left;
+$page-header-font-title:inherit !default;;
+$page-header-color:$feng-shui-orange;
+$page-header-text-transform: inherit;
+$page-header-font-size:$font-size-site-page-header;
+/* ==== /.page-header ====*/
+/* === headings === */
+$subheading-font-size:$font-size-site !default;
+$subheading-line-height:$font-line-height-site;
+$subheading-color: inherit !default;
+/* ==== /.headings ====*/
+/* ==== item article ==== */
+/* ---- item header ---- */
+$item-header-font-title:$font-eb-garamond-bold;
+$item-header-text-transform: uppercase;
+$item-header-font-size:1.2rem;
+$item-title-masthead-line-color:$feng-shui-site-text-title-color;
+$item-header-featurette-font-title:inherit !default;;
+
+/* ---- /.item header ---- */
+$item-font-title:$font-title;
+$item-title-color:$color-title;
+$item-title-hover-color:$color-hover-title;
+
+$item-title-text-transform: none;
+$item-title-font-size:1.2rem;
+$item-title-difference-font-size:1rem;
+
+$item-title-text-align: left;
+$item-title-margin-top:.5rem;
+$item-title-margin-bottom:1.3rem;
+
+$item-title-featurette-margin-top:.5rem;
+$item-title-featurette-margin-bottom:.5rem;
+
+$no-page-heading-margin-top:5rem;
+$fake-page-heading-margin-top:4rem;
+
+$item-title-featurette-color:$white;
+$item-title-featurette-hover-color:$feng-shui-background-site;
+
+/* --- item subtitle --- */
+$item-font-subtitle:$font-barlow-bold;
+$item-subtitle-text-transform: uppercase;
+$item-subtitle-font-size:$font-size-site-subtitle-uppercase;
+$item-subtitle-color:$color-title;
+
+/* ==== /.item article ==== */
+/* ==== carousel ==== */
+$slider-inner-margin-top: -62px;
+$slider-inner-z-index:0;
+
+$bg-carousel-item:#777; 
+$height-carousel-item:37.5rem;
+
+$testimonial-control-bg-color:$feng-shui-orange-transparency;
+$testimonial-control-bg-color-hover:$feng-shui-orange;
+$testimonial-control-color:$white;
+$testimonial-control-color-hover:$white;
+
+$carousel-control-bg-color:$feng-shui-background-site;
+$carousel-control-bg-color-hover:$white;
+$carousel-control-color:$feng-shui-green;
+$carousel-control-color-hover:$feng-shui-danger-dark;
+
+$carousel-thumbnail-control-color-hover:$feng-shui-orange;
+
+$carousel-icon-fa-phone-background-color:$feng-shui-yellow;
+$carousel-icon-fa-phone-background-color-hover:$feng-shui-orange;
+$carousel-icon-fa-phone-color:$white;
+
+$carousel-indicators-bottom-desktop: 2rem;
+/* ==== /.carousel ==== */
+/* ==== thumbnail ==== */
+$border-thumbnail-color:$white;
+$bg-shaded:#1d1d1b;
+$shaded-opacity: 0.5;
+$shaded-opacity-none: 0;
+$icon-video-color:$white;
+/* ==== /.thumbnail ==== */
+/* ==== button ==== */
+$bg-readmore: $feng-shui-orange;
+
+$btn-override-color:#ffffff;
+$btn-override-color-hover:#ffffff;
+$btn-override-bg-color:$primary-color-logo;
+$btn-override-bg-color-hover:$feng-shui-orange;
+$btn-override-border-color:$primary-color-logo;
+$btn-override-border-color-hover:$feng-shui-orange;
+
+$btn-info-override-color:#ffffff;
+$btn-info-override-color-hover:#ffffff;
+$btn-info-override-bg-color:$feng-shui-orange-dark-transparency;
+$btn-info-override-bg-color-hover:$feng-shui-orange-transparency;
+$btn-info-override-border-color:$feng-shui-orange-transparency;
+$btn-info-override-border-color-hover:$feng-shui-orange-transparency;
+
+$btn-readmore-color: $white;
+$btn-readmore-bg-color:$feng-shui-orange;
+$btn-readmore-border-color:$feng-shui-orange;
+
+$btn-readmore-color-hover:$white;
+$btn-readmore-bg-color-hover:$feng-shui-orange-dark-transparency;
+$btn-readmore-border-color-hover:$feng-shui-orange-dark-transparency;
+
+/* ---- plus ~ minus ---- */
+$btn-plus-color:#ffffff;
+$btn-plus-color-hover:#ffffff;
+$btn-plus-bg-color:$feng-shui-danger;
+$btn-plus-bg-color-hover:$feng-shui-danger-dark;
+$btn-plus-border-color:$feng-shui-danger;
+$btn-plus-border-color-hover:$feng-shui-danger-dark;
+
+$btn-minus-color:#ffffff;
+$btn-minus-color-hover:#ffffff;
+$btn-minus-bg-color:$feng-shui-orange;
+$btn-minus-bg-color-hover:$feng-shui-orange-dark;
+$btn-minus-border-color:$feng-shui-orange;
+$btn-minus-border-color-hover:$feng-shui-orange-dark;
+
+/* --- more --- */
+$more-text-transform:centence case;/*uppercase*/
+$more-text-align: center;
+$more-text-color:$white;
+$more-text-color-hover:$white;
+$btn-more-min-width:1rem;
+
+$font-book-now:$font-barlow-bold;
+$bg-book-now:$feng-shui-yellow;
+$bg-book-now-hover:$feng-shui-yellow-dark;
+
+$font-more:$font-barlow-bold;
+$font-more-weight:700;
+
+$font-learn-more:$font-barlow-bold;
+$bg-learn-more:$feng-shui-orange;
+$bg-learn-more-hover:$feng-shui-orange-dark;
+
+$learnmore-no-bg-color:$feng-shui-green;
+$learnmore-no-bg-color-hover:$feng-shui-danger-dark;
+$learnmore-no-bg-border-color:$feng-shui-green;
+$learnmore-no-bg-border-color-hover:$feng-shui-danger-dark;
+
+$btn-featurette-more-no-bg-border-color:$white;
+$btn-featurette-more-no-bg-border-color-hover:$feng-shui-yellow;
+
+$btn-featurette-more-no-bg-color:$white;
+
+/* --- /.more --- */
+
+/* ==== /.button ==== */
+$form-control-bg:$feng-shui-yellow-light;
+/* ==== content ==== */
+$bg-item-page-color:$white;
+$bg-image:$gray-300;
+$bg-text:$gray-100;
+$bg-item-color:$white;
+$bg-row-related-color:#ebebeb;
+$bg-item-related-color:#f5f5f5;
+
+$featurette-item-text-padding: 1rem 1.5rem;
+$featurette-item-item-header-padding: 1rem 1.5rem 0rem 1.5rem;
+$featurette-item-item-text-padding: 0rem 1.5rem 1.5rem 1.5rem;
+$featurette-item-more-padding: 0rem 1.5rem 1.5rem 1.5rem;
+$bg-item-featurette-color:$feng-shui-green;
+$bg-item-featurette-transparency-color:$feng-shui-green-transparency;
+$item-featurette-color:$white;
+
+/* --- differences ---*/
+$bg-item-differences-color:$feng-shui-green;
+$item-differences-color:$white;
+$item-title-differences-color:$white;
+$item-title-differences-color-hover:$white;
+$item-differences-content-text-align: center;
+$item-title-differences-margin-top:0;
+$item-title-differences-margin-bottom:0;
+/* ==== /.content ==== */
+/* ==== /booking ==== */
+$booking-bg-color:$feng-shui-brown-transparency;
+$booking-color: $white;
+$booking-link-color:#cccccc;
+$booking-link-color-hover:$primary-color-logo-hover;
+
+$support-background-color:$feng-shui-black;
+/* ==== /.booking ==== */
+/* ==== /Rate ==== */
+$rate-color:$feng-shui-orange;
+$rate-title-color:$feng-shui-orange;
+$rate-font-size:1rem;
+$rate-title-font-size:1rem;
+
+$price-font-weight:bold;
+$price-color:$feng-shui-orange;
+$price-font-size:1.125rem;
+$price-text-transform:uppercase;
+
+$rate-unit-color:$feng-shui-orange;
+$rate-unit-font-size:1rem;
+
+$rate-featurette-color:$white;
+$rate-featurette-title-color:$white;
+$price-featurette-color:$white;
+$rate-unit-featurette-color:$white;
+
+$rate-featurette-padding:0rem 1.5rem;
+/* ==== /.Rate ==== */
+$phone-font-weight:bold;
+$phone-color:$feng-shui-orange;
+$phone-font-size:1.2rem;
+$phone-text-transform:uppercase;
+/* ==== popup ==== */
+$popup-color-icon:$gray-500;
+/* ==== /.popup ==== */
+
+/* ==== button ==== */
+
+/* ==== /.button ==== */
+
+/* ==== module ====*/
+$module-header-font-size:$font-size-site-page-header-uppercase;
+$module-title-color:$custom-module-title-color;
+/* ==== /.module ====*/
+/* ==== thank you ====*/
+$font-size-icon-thank-you:350px;
+$color-thank-you:#184e7c;
+/* ==== /.module ====*/
+/* ---- pagenav ---- */
+$pagenav-bg-color:$feng-shui-orange;
+$pagenav-color:#ffffff;
+$pagenav-border:1px solid $feng-shui-yellow;
+
+$pagenav-hover-bg-color:$feng-shui-orange-transparency;
+$pagenav-hover-color:#ffffff;
+$pagenav-hover-border:1px solid $feng-shui-yellow-transparency;
+/* ---- /.pagenav ---- */
+/* ======================================== Constant Code ========================================*/
+$font-btn-contact-submit:1.25rem;
+
+$divider-color:$feng-shui-orange;
+$fa-star-color:#f2c94c;
+/* ====== background == color ====== */
+$site-text-color:$feng-shui-secondary;
+$site-title-color:#2f3f8c;
+/* ====== /.background == color ====== */
+/* ---- select picker - dropdown Menu ---- */
+$btn-light-padding:0 .75rem .45rem .75rem;
+
+$select-picker-border-color: $white;
+
+$select-picker-dropdown-menu-color:$feng-shui-secondary-light;
+$select-picker-dropdown-menu-hover-color:$feng-shui-orange;
+$select-picker-dropdown-menu-bg-hover-color:$white;
+$select-picker-dropdown-menu-bg-color: #f0f0f0;
+
+$select-picker-dropdown-toggle-bg-color:$feng-shui-orange;
+$select-picker-dropdown-btn-light-color:$feng-shui-secondary;
+
+$select-picker-dropdown-item-bg-active-color:#cccccc;
+$select-picker-dropdown-item-active-color:$feng-shui-blue;
+
+$select-picker-dropdown-item-padding: .25rem 1rem;
+/* ---- /.select picker - dropdown Menu ---- */
+/* ---- nav tabs ---- */
+$nav-tab-link-font-size:1rem;
+$nav-tab-link-font-family:$font-sfpro-regular;
+
+$nav-tab-link-line-height:1.4;
+$nav-tab-font-weight: 600;
+$nav-tab-color:$white;
+$nav-tab-active-color:$white;
+$nav-tab-hover-color:$white;
+
+$nav-tab-scroll-arrow-color:$feng-shui-orange;
+$nav-tab-scroll-arrow-hover-color:$feng-shui-orange-dark;
+/* ---- /.nav tabs ---- */
+
+/* ====== component ====== */
+$carousel-control-color: #6c757d;
+
+$font-size-hot-deals-title:1rem;
+$font-size-hot-deals-content:0.8125rem;
+
+$component-title-font-size:2.125rem;
+$component-title-color:$feng-shui-orange;
+$component-title-font-weight:600;
+$marketing-text-align: center;
+$other-partner-font-size:1.5625rem;
+
+$mobile-component-title-font-size:1.8rem;
+/* ====== /.component ====== */
+/* ======================================== /.Constant Code ========================================*/
+/* ===== footer ==== */
+$footer-font-size:0.875rem;
+/* ---- breadcrumb ---- */
+$breadcrumb-bg-color:$feng-shui-orange;
+$breadcrumb-color:$white;
+$breadcrumb-link-color:$white;
+$breadcrumb-link-hover-color:$white; 
+/* ---- /.breadcrumb ----*/
+$footer-border-top-color:$primary-color-logo-hover;
+$footer-bg-color:$feng-shui-black;
+$footer-color:$white;
+$footer-link-color:#333;
+$footer-link-hover-color:#333;
+$footer-masthead-line-color:$feng-shui-danger;
+
+$footer-bg-all-rights-reserved: $feng-shui-brown;
+
+$back-to-top-color:$feng-shui-orange;
+$back-to-top-color-hover:$feng-shui-orange-dark;
+/* ===== /.footer ==== */

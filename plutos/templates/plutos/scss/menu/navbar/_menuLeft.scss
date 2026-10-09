@@ -1,0 +1,60 @@
+/*
+    Created on : Aug 6, 2021, 12:04:51 PM
+    Author     : BinhNguyen
+*/
+.moduletable_menuLeft{
+    &.smart-menus{
+        .navbar-nav{
+            padding-top: 0.75rem;
+            padding-bottom: 0.75rem;
+            .nav-item{
+                border-top: solid 1px #e8ebed;
+                &:first-child{
+                    border-top: solid 0px #e8ebed;
+                }
+            } 
+            
+            > a{
+                color: #3f3b3b;
+                background: none;
+                padding-left: 1rem;
+                
+            }
+            a:hover{
+                font-weight: bold;
+                color: #2f3f8c;
+            }
+            .active{
+                a{
+                    color: #2f3f8c;
+                    background: none;
+                }
+            } 
+            .current{
+                &.active{
+                    > a{
+                        font-weight: bold;
+                    }
+                }
+            }
+
+            .dropdown-menu{
+                background: none;
+/*                color: #2f3f8c;
+                border-bottom: solid 1px #e8ebed;*/
+                li{
+                    a{
+                        padding-left: 2rem;
+                        border: none;
+                    }
+                    > a:hover,
+                        .active > a,
+                        .active > a:hover{
+                        background: none;
+                        color: #2f3f8c;
+                    }
+                } 
+            }
+        }
+    }
+}

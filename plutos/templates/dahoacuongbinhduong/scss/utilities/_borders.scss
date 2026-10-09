@@ -1,0 +1,19 @@
+/* 
+    Created on : Oct 12, 2019, 2:06:02 PM
+    Author     : BinhNguyen
+*/
+@each $color, $value in $using-theme-colors {
+  .using-border-#{$color} {
+    border-color: $value !important;
+  }
+}
+
+.rounded-circle{
+    border-radius: 50% !important;
+    &.circle23x23{
+        width: 23px;
+        height: 23px;
+        text-align: center;
+        padding:3px;
+    }
+}

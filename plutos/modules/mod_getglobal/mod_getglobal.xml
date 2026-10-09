@@ -1,0 +1,510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+    <name>mod_getglobal</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>January 2018</creationDate>
+    <copyright>Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0.0</version>
+    <description>MOD_GETGLOBAL_XML_DESCRIPTION</description>
+    <files>
+        <filename>helper.php</filename>
+        <filename module="mod_getglobal">mod_getglobal.php</filename>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+    </files>
+    <!--
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_getglobal.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_getglobal.sys.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.mod_getglobal.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.mod_getglobal.sys.ini</language>
+    </languages>
+    -->
+    <help key="JHELP_EXTENSIONS_MODULE_MANAGER_CAROUSELFLASH"/>
+    <config>
+        <fields name="params">
+            <fieldset name="basic" addfieldpath="/administrator/components/com_standard/models/fields">
+                <field
+                    name="using_mode"
+                    type="radio"
+                    default="product"
+                    level="3"
+                    class="btn-group"
+                    label="MOD_GETGLOBAL_SETTING_SOURCE_LABEL"
+                    description="MOD_GETGLOBAL_SETTING_SOURCE_DESC">
+                    <option value="*">MOD_GETGLOBAL_SETTING_ALL</option>
+                    <option value="product">MOD_GETGLOBAL_SETTING_PRODUCT</option>
+                    <option value="text">MOD_GETGLOBAL_SETTING_TEXT</option>
+                </field>
+                
+                <field
+                    name="catid"
+                    type="categoryedit"
+                    label="JCATEGORY"
+                    description="MOD_GETGLOBAL_FIELD_CATEGORY_DESC"
+                    extension="com_standard"
+                    multiple="true"
+                    class="multipleCategories"
+                    default=""
+                    showon="using_mode:product[OR]using_mode:*"
+                />
+                
+                <field
+                    name="title"
+                    type="text"
+                    class="span10"
+                    label="JGLOBAL_TITLE"
+                    description="JGLOBAL_TITLE_DESC"
+                    showon="using_mode:text"
+                />
+                <field
+                    name="url"
+                    type="text"
+                    class="span10"
+                    label="MOD_GETGLOBAL_FIELD_LINK_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_LINK_DESC"
+                    showon="using_mode:text"
+                />
+                
+                <field name="hotline" 
+                       type="text" 
+                       class="span10" 
+                       default="" 
+                       label="MOD_GETGLOBAL_FIELD_HOTLINE_LABEL" 
+                       description="MOD_GETGLOBAL_FIELD_HOTLINE_DESC"
+                       showon="using_mode:text"
+                >
+                </field>
+                
+                <field 
+                    name="fullimage" 
+                    type="media"
+                    class="span10"
+                    label="MOD_GETGLOBAL_FIELD_FULLIMAGE_LABEL" 
+                    description="MOD_GETGLOBAL_FIELD_FULLIMAGE_DESC" 
+                    showon="using_mode:text"
+                />			
+                
+                <field 
+                    name="thumbnail" 
+                    type="media"
+                    class="span10"
+                    label="MOD_GETGLOBAL_FIELD_THUMBNAIL_LABEL" 
+                    description="MOD_GETGLOBAL_FIELD_THUMBNAIL_DESC" 
+                    showon="using_mode:text"
+                />
+                
+                <field 
+                    name="content" type="editor"
+                    label="MOD_GETGLOBAL_FIELD_FIELD_ARTICLETEXT_LABEL" 
+                    description="MOD_GETGLOBAL_FIELD_FIELD_ARTICLETEXT_DESC"
+                    filter="JComponentHelper::filterText" buttons="true" 
+                    showon="using_mode:text"
+                />
+                
+                <field
+                    name="tag"
+                    type="tag"
+                    label="JTAG"
+                    description="JTAG_DESC"
+                    mode="nested"
+                    multiple="true"
+                    class="multipleTags"
+                />
+
+                <field
+                    name="video"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_VIDEOS_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_VIDEOS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field
+                    name="image"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_IMAGES_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_IMAGES_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                    name="item_title"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_TITLE_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_TITLE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                    name="link_titles"
+                    type="list"
+                    label="MOD_GETGLOBAL_FIELD_LINKTITLE_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_LINKTITLE_DESC"
+                    class="chzn-color"
+                    showon="item_title:1"
+                >
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+
+                <field
+                    name="item_heading"
+                    type="list"
+                    label="MOD_GETGLOBAL_TITLE_HEADING"
+                    description="MOD_GETGLOBAL_TITLE_HEADING_DESCRIPTION"
+                    default="h4"
+                    showon="item_title:1"
+                >
+                    <option value="h1">JH1</option>
+                    <option value="h2">JH2</option>
+                    <option value="h3">JH3</option>
+                    <option value="h4">JH4</option>
+                    <option value="h5">JH5</option>
+                </field>
+                
+                <field
+                    name="item_header_class"
+                    type="textarea" 
+                    rows="2"
+                    label="MOD_GETGLOBAL_ITEM_HEADER_CLASS"
+                    description="MOD_GETGLOBAL_ITEM_HEADER_CLASS_DESCRIPTION"
+                    default=""
+                    showon="item_title:1"
+                >
+                </field>
+                
+                <field
+                    name="show_item_title_masthead"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_ITEM_TITLE_MASTHEAD_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_ITEM_TITLE_MASTHEAD_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    showon="item_title:1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+
+                <field
+                    name="triggerevents"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_TRIGGEREVENTS_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_TRIGGEREVENTS_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field
+                    name="showLastSeparator"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_SEPARATOR_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_SEPARATOR_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field
+                    name="textalign"
+                    type="list"
+                    label="MOD_GETGLOBAL_FIELD_TEXTALIGN_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_TEXTALIGN_DESC"
+                    default=""
+                >
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                    <option value="text-left">TEXT_LEFT</option>
+                    <option value="text-center">TEXT_CENTER</option>
+                    <option value="text-right">TEXT_RIGHT</option>
+                </field>
+                
+                <field
+                    name="show_introtext"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_SHOWINTROTEXT_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_SHOWINTROTEXT_DESC"
+                    default="1"
+                    class="btn-group btn-group-yesno"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+
+                <field
+                    name="introtext_limit"
+                    type="text"
+                    label="MOD_GETGLOBAL_FIELD_INTROTEXTLIMIT_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_INTROTEXTLIMIT_DESC"
+                    default="340"
+                    showon="show_introtext:1"
+                />
+                
+                <field
+                    name="readmore"
+                    type="radio"
+                    label="MOD_GETGLOBAL_FIELD_READMORE_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_READMORE_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                
+                <field
+                    name="readmore_class"
+                    type="textarea" 
+                    rows="2"
+                    label="MOD_GETGLOBAL_READMORE_CLASS"
+                    description="MOD_GETGLOBAL_READMORE_CLASS_DESCRIPTION"
+                    default=""
+                    showon="readmore:1"
+                >
+                </field>
+
+                <field
+                    name="readmoretext"
+                    type="text"
+                    label="MOD_GETGLOBAL_FIELD_READMORE_TEXT_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_READMORE_TEXT_DESC"
+                    showon="readmore:1"
+                />
+                
+                <field
+                    name="count"
+                    type="number"
+                    label="MOD_GETGLOBAL_FIELD_ITEMS_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_ITEMS_DESC"
+                    default="5"
+                />
+
+                <field
+                    name="show_featured"
+                    type="list"
+                    label="MOD_GETGLOBAL_FIELD_FEATURED_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_FEATURED_DESC"
+                    default=""
+                >
+                    <option value="">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                    <option value="1">MOD_GETGLOBAL_VALUE_ONLY_SHOW_FEATURED</option>
+                </field>
+                
+                <field
+                    name="banner_home"
+                    type="radio"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                    label="MOD_GETGLOBAL_SHOW_BANNER_HOME_LABEL"
+                    description="MOD_GETGLOBAL_SHOW_BANNER_HOME_DESC">
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+        
+                <field
+                    name="ordering"
+                    type="list"
+                    label="MOD_GETGLOBAL_FIELD_ORDERING_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_ORDERING_DESC"
+                    default="p.publish_up"
+                >
+                    <option value="publish_up">MOD_GETGLOBAL_FIELD_ORDERING_PUBLISHED_DATE</option>
+                    <option value="created">MOD_GETGLOBAL_FIELD_ORDERING_CREATED_DATE</option>
+                    <option value="modified">MOD_GETGLOBAL_FIELD_ORDERING_MODIFIED_DATE</option>
+                    <option value="ordering">MOD_GETGLOBAL_FIELD_ORDERING_ORDERING</option>
+                    <option value="hits">JGLOBAL_HITS</option>
+                    <option value="rand()">MOD_GETGLOBAL_FIELD_ORDERING_RANDOM</option>
+                </field>
+
+                <field
+                    name="direction"
+                    type="list"
+                    label="JGLOBAL_ORDER_DIRECTION_LABEL"
+                    description="JGLOBAL_ORDER_DIRECTION_DESC"
+                    default="1"
+                    showon="ordering:p.publish_up,p.created,p.modified,p.ordering,p.hits"
+                >
+                    <option value="0">JGLOBAL_ORDER_ASCENDING</option>
+                    <option value="1">JGLOBAL_ORDER_DESCENDING</option>
+                </field>
+                
+                <field
+                    name="autoplay"
+                    type="radio"
+                    label="MOD_GETGLOBAL_AUTOPLAY_LABEL"
+                    description="MOD_GETGLOBAL_AUTOPLAY_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                
+                <field
+                    name="show_arrows"
+                    type="radio"
+                    label="MOD_GETGLOBAL_SHOW_NEXT_PREV_LABEL"
+                    description="MOD_GETGLOBAL_SHOW_NEXT_PREV_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                
+                <field
+                    name="show_custom_nav"
+                    type="radio"
+                    label="MOD_GETGLOBAL_SHOW_CUSTOM_NAVIGATION_LABEL"
+                    description="MOD_GETGLOBAL_SHOW_CUSTOM_NAVIGATION_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                >
+                    <option value="1">JSHOW</option>
+                    <option value="0">JHIDE</option>
+                </field>
+                
+                <field name="effect" 
+                       type="list" 
+                       default="center"
+                       label="MOD_GETGLOBAL_EFFECTS_LABEL"
+                       description="MOD_GETGLOBAL_EFFECTS_DESC"
+                       showon="autoplay:1[OR]show_custom_nav:1[OR]show_arrows:1"
+                >
+                    <option value="slide">Slide</option>
+                    <option value="carousel-fade">Carousel fade</option>
+                    <option value="slide carousel-fade">Slide carousel fade</option>
+                </field>
+                
+                <field name="fluidContainer"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="MOD_GETGLOBAL_FLUID_LABEL"
+                       description="MOD_GETGLOBAL_FLUID_DESC"
+                >
+                    <option value="1">MOD_GETGLOBAL_FLUID</option>
+                    <option value="0">MOD_GETGLOBAL_STATIC</option>
+                </field>
+                
+            </fieldset>
+
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                />
+                
+                <field 
+                    name="intro_medialayoutelement"
+                    type="LayoutElement"
+                    class="span6"
+                    label="GLOBAL_INTRO_LAYOUT_ELEMENT_LABEL"
+                    description="GLOBAL_INTRO_LAYOUT_ELEMENT_DESC"
+                    default="using-max-width"
+                >
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                </field>
+                
+                <field
+                    name="position_layoutelemen"
+                    type="list"
+                    class="span6"
+                    label="GLOBAL_FIELD_POSITION_LAYOUTELEMEN_LABEL"
+                    description="GLOBAL_FIELD_POSITION_LAYOUTELEMEN_DESC"
+                    default=""
+                >
+                    <option value="">JGLOBAL_USE_GLOBAL</option>
+                    <option value="position-static">POSITION_STATIC</option>
+                    <option value="position-relative">POSITION_RELATIVE</option>
+                    <option value="position-absolute">POSITION_ABSOLUTE</option>
+                    <option value="position-fixed">POSITION_FIXED</option>
+                    <option value="position-sticky">POSITION_STICKY</option>
+                </field>
+                
+                <field
+                    name="position_sfx"
+                    type="textarea" 
+                    class="span6"
+                    rows="3"
+                    label="GLOBAL_FIELD_POSITION_SFX_LABEL"
+                    description="GLOBAL_FIELD_POSITION_SFX_DESC"
+                    default=""
+                />
+
+                <field
+                    name="class_sfx"
+                    type="textarea" rows="3"
+                    label="MOD_GETGLOBAL_FIELD_CLASS_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_CLASS_DESC"
+                />
+                
+                <field
+                    name="anchor_css"
+                    type="text"
+                    label="MOD_GETGLOBAL_FIELD_ANCHOR_CSS_LABEL"
+                    description="MOD_GETGLOBAL_FIELD_ANCHOR_CSS_DESC"
+                />
+                
+                <field
+                    name="moduleclass_sfx"
+                    type="textarea" rows="3"
+                    label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+                    description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+                />
+
+                <field
+                    name="cache"
+                    type="list"
+                    label="COM_MODULES_FIELD_CACHING_LABEL"
+                    description="COM_MODULES_FIELD_CACHING_DESC"
+                    default="1"
+                >
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+
+                <field
+                    name="cache_time"
+                    type="number"
+                    label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+                    description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+                    default="900"
+                />
+
+                <field
+                    name="cachemode"
+                    type="hidden"
+                    default="itemid"
+                >
+                    <option value="itemid"></option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

@@ -1,0 +1,52 @@
+/* 
+    Created on : Oct 4, 2018, 4:16:19 PM
+    Author     : Binh Nguyen
+*/
+// variables
+$tooltip-max-width:500px; //100%!important;//** Tooltip max width
+$popover-max-width:500px; //100%!important;//** Popover maximum width
+
+.popover, .tooltip{
+    width: auto!important;
+}
+.bs-tooltip-top {
+    .arrow {
+        &::before {
+            border-top-color: $override-tooltip-arrow-color;
+        }
+    }
+}
+
+.bs-tooltip-right {
+    .arrow {
+        &::before {
+            border-right-color: $override-tooltip-arrow-color;
+        }
+    }
+}
+
+.bs-tooltip-bottom {
+    .arrow {
+        &::before {
+            border-bottom-color: $override-tooltip-arrow-color;
+        }
+    }
+}
+
+.bs-tooltip-left {
+    .arrow {
+        &::before {
+            border-left-color: $override-tooltip-arrow-color;
+        }
+    }
+}
+// Wrapper for the tooltip content
+.tooltip-inner {
+    max-width:$tooltip-max-width;
+    width: auto!important;
+    text-align: left;
+    background-color: $override-tooltip-bg!important;
+}
+.popover{
+    max-width: $popover-max-width;
+}

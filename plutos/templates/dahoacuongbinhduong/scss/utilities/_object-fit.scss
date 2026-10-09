@@ -1,0 +1,34 @@
+/* 
+    Created on : Nov 16, 2019, 12:38:58 PM
+    Author     : BinhNguyen
+    *** Note ***
+    object-fit can be set with one of these five values:
+
+    fill: this is the default value which stretches the image to fit the content box, regardless of its aspect-ratio.
+    contain: increases or decreases the size of the image to fill the box whilst preserving its aspect-ratio.
+    cover: the image will fill the height and width of its box, once again maintaining its aspect ratio but often cropping the image in the process.
+    none: image will ignore the height and width of the parent and retain its original size.
+    scale-down: the image will compare the difference between none and contain in order to find the smallest concrete object size.
+*/
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        .object-fit#{$infix}{
+            &-fill{
+                object-fit: fill;
+            }
+            &-contain{
+                object-fit: contain;
+            }
+            &-cover{
+                object-fit: cover;
+            }
+            &-none{
+                object-fit: none;
+            }
+            &-scale-down{
+                object-fit: scale-down;
+            }
+        }
+    }
+}

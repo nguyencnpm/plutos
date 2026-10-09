@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="content" method="upgrade">
+    <name>plg_content_standardpagenavigation</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>January 2006</creationDate>
+    <copyright>Copyright (C) 2005 - 2020 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0.0</version>
+    <description>PLG_STANDARDPAGENAVIGATION_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="standardpagenavigation">standardpagenavigation.php</filename>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+    </files>
+    <languages>
+        <!--  
+        <language tag="en-GB">en-GB/en-GB.plg_content_standardpagenavigation.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_standardpagenavigation.sys.ini</language>
+        -->
+    </languages>
+    <config>
+        <fields name="params">
+
+            <fieldset name="basic">
+                <field
+                    name="position"
+                    type="list"
+                    label="PLG_STANDARDPAGENAVIGATION_FIELD_POSITION_LABEL"
+                    description="PLG_STANDARDPAGENAVIGATION_FIELD_POSITION_DESC"
+                    default="1"
+                    filter="integer"
+                >
+                    <option value="1">PLG_STANDARDPAGENAVIGATION_FIELD_VALUE_BELOW</option>
+                    <option value="0">PLG_STANDARDPAGENAVIGATION_FIELD_VALUE_ABOVE</option>
+                </field>
+
+                <field
+                    name="relative"
+                    type="list"
+                    label="PLG_STANDARDPAGENAVIGATION_FIELD_RELATIVE_LABEL"
+                    description="PLG_STANDARDPAGENAVIGATION_FIELD_RELATIVE_DESC"
+                    default="1"
+                    filter="integer"
+                >
+                    <option value="1">PLG_STANDARDPAGENAVIGATION_FIELD_VALUE_ARTICLE</option>
+                    <option value="0">PLG_STANDARDPAGENAVIGATION_FIELD_VALUE_TEXT</option>
+                </field>
+
+                <field
+                    name="display"
+                    type="list"
+                    label="PLG_STANDARDPAGENAVIGATION_FIELD_DISPLAY_LABEL"
+                    description="PLG_STANDARDPAGENAVIGATION_FIELD_DISPLAY_DESC"
+                    default="0"
+                    filter="integer"
+                >
+                    <option value="0">PLG_STANDARDPAGENAVIGATION_FIELD_VALUE_NEXTPREV</option>
+                    <option value="1">PLG_STANDARDPAGENAVIGATION_FIELD_VALUE_TITLE</option>
+                </field>
+
+            </fieldset>
+        </fields>
+    </config>
+</extension>

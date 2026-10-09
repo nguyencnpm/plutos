@@ -1,0 +1,131 @@
+/* 
+    Created on : Jun 14, 2019, 12:35:33 AM
+    Author     : BinhNguyen
+*/
+.mod-languages {
+    .inputbox, .bootstrap-select{
+        .btn, .dropdown-toggle, .btn-light{
+            background: none;
+            border: none;
+            color: inherit;
+            padding-left: 0;
+            padding-right: 0;
+            font-size:inherit;
+            &:active, &:visited, &:hover, &:focus{
+                color: $hover-color-language;
+                background: none!important;
+                border: none!important;
+                outline:0!important;
+                box-shadow:inset 0 0px 0px rgba(0,0,0,0.125)!important;
+                -webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0.125)!important;
+            }
+            .filter-option{
+                text-transform: uppercase;
+            }
+        }
+        .dropdown-menu{
+            left: auto;
+            right: 0;
+            padding:0;
+            margin: 0;
+            border-radius:0;
+            border:none;
+            background-color:$bg-color-language-dropdown;
+            color: $color-language-dropdown;
+            -webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0.125);
+            box-shadow:inset 0 0px 0px rgba(0,0,0,0.125);
+            &:hover{
+
+            }
+            &>li>a{
+                color: $color-language-dropdown;
+            }
+            &>li>a:hover{
+                background-color:$bg-hover-color-language;
+                color: $hover-color-language-dropdown;
+                outline:0;
+            }
+            &>li>a:focus{
+                background-color:$bg-focus-color-language;
+                color: $focus-color-language-dropdown;
+                outline:0;
+            }
+        }
+        .dropdown-toggle{
+            &::after{
+                border-top: .6em solid $bg-color-language;
+                border-right: .6em solid transparent;
+                border-bottom: 0;
+                border-left: .6em solid transparent; 
+            }
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style:none;
+        li {
+            /*
+            margin-left: 0px;
+            margin-right: 4px;
+            */
+        }
+    }
+    &.lang-inline li {
+        display:inline;
+    }
+    &.lang-block li {
+        display:block;
+    }
+    img {
+        border:none;
+    }
+    a {
+        text-decoration: none;
+    }
+
+}
+
+/* Advanced Dropdown style*/
+
+.advanced-dropdown {
+    position:relative;
+    a.langChoose{
+        &:link, &:visited{
+            background-color: #ccc;
+            border-radius: 2px;
+            width: 38px;
+            margin-top: 3px;
+            padding: 3px;
+            line-height: 0;
+            -webkit-transition: all 0.75s;
+        }
+        img {
+            border: 1px solid white;
+        }
+    }
+    span.caret{
+        display: inline-block;
+        width: 0px;
+        height: 0px;
+        vertical-align: middle;
+        border-top: 4px solid #fff;
+        border-right: 4px solid transparent;
+        border-left: 4px solid transparent;
+        content: "";
+        margin-left:1px;
+    }
+    a{
+        white-space:nowrap;
+    }
+}
+.mod-languages.advanced-dropdown ul {
+    background: #ccc;
+    position: absolute;
+    z-index: 100;
+    list-style-type: none;
+    left: 0;
+    padding: 5px 10px 5px 4px;
+    border-radius: 0 0 2px 2px;
+}

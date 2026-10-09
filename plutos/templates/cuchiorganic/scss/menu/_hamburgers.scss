@@ -1,0 +1,27 @@
+/* 
+    Created on : Aug 7, 2018, 11:44:34 AM
+    Author     : Binh Nguyen
+*/
+.navbar{
+    .navbar-toggler{
+        border: none;
+        outline:none;/*type="button"*/
+        .hamburger-box{
+            height:inherit;
+            .hamburger-inner{
+                background-color: $nav-color;
+                &::after {
+                    background-color: $nav-color;
+                }
+                &::before{
+                    background-color: $nav-color;
+                }
+            }
+        }
+
+    }
+    .box-shadow {
+        box-shadow: 0 .25rem .25rem 0 rgba(0, 0, 0, .5); 
+    }
+}
+

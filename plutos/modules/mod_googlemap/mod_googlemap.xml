@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+    <name>mod_googlemap</name>
+    <author>Nguyen Binh Nguyen</author>
+    <creationDate>Sep 2016</creationDate>
+    <copyright>Copyright (C) 2010 - 2016 giaiphapcongnghethongtin.vn All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+    <authorEmail>support@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0</version>
+    <description>mod_googlemap_xml_description</description>
+    
+    <!--    
+    <languages>
+        <language tag="en-GB">language/en-GB/en-GB.mod_googlemap.ini</language>
+        <language tag="en-GB">language/en-GB/en-GB.mod_googlemap.sys.ini</language>
+    </languages>
+    -->
+    
+    <files>
+        <folder>admin</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename module="mod_googlemap">helper.php</filename>
+        <filename module="mod_googlemap">mod_googlemap.php</filename>
+        <filename module="mod_googlemap">index.html</filename>
+    </files>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                
+                <field name="using_mode" type="radio"
+                       default="_apikey"
+                       class="btn-group"
+                       label="MOD_GOOGLEMAP_SETTING_SOURCE_LABEL"
+                       description="MOD_GOOGLEMAP_SETTING_SOURCE_DESC">
+                    <option value="_apikey">MOD_GOOGLEMAP_SETTING_API_KEY</option>
+                    <option value="_iframe">MOD_GOOGLEMAP_SETTING_IFRAME</option>
+                </field>
+                
+                <field name="url" type="url" validate="url" filter="url" relative="true"
+                       class="span12"
+                       label="MOD_GOOGLEMAP_FIELD_URL_LABEL"
+                       description="MOD_GOOGLEMAP_FIELD_URL_DESC" 
+                       showon="using_mode:_iframe"
+                />
+                
+                <field
+                    name="allowfullscreen"
+                    type="radio"
+                    label="MOD_GOOGLEMAP_FIELD_SHOW_ALLOW_FULL_SCREEN_LABEL"
+                    description="MOD_GOOGLEMAP_FIELD_SHOW_ALLOW_FULL_SCREEN_DESC"
+                    class="btn-group btn-group-yesno"
+                    default="1"
+                    showon="using_mode:_iframe"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                
+                <field name="api_key" type="text" 
+                       default="" 
+                       label="MOD_GOOGLEMAP_API_KEY" 
+                       description="MOD_GOOGLEMAP_API_KEY_DESC"
+                       showon="using_mode:_apikey"
+                />
+                <field name="note11" type="note" 
+                       label="MOD_GOOGLEMAP_API_KEY_GET" 
+                       showon="using_mode:_apikey"
+                />
+                <!-- 
+                <field name="lat" type="text" default="10.844058" label="MOD_GOOGLEMAP_LAT" description="MOD_GOOGLEMAP_LAT_DESC"/>
+                <field name="lng" type="text" default="106.7844242" label="MOD_GOOGLEMAP_LNG" description="MOD_GOOGLEMAP_LNG_DESC"/>
+                -->
+                <field name="width" type="text" default="100%" label="MOD_GOOGLEMAP_WIDTH" description="MOD_GOOGLEMAP_WIDTH_DESC"/>
+                <field name="height" type="text" default="400" label="HEIGHT" description="HEIGHT_DESC"/>
+                <field name="map_type" type="list" 
+                       default="ROADMAP" 
+                       label="MAP_TYPE" 
+                       description="MAP_TYPE_DESC"
+                       showon="using_mode:_apikey"
+                >
+                    <option value="google.maps.MapTypeId.ROADMAP">ROADMAP</option>
+                    <option value="google.maps.MapTypeId.SATELLITE">SATELLITE</option>
+                    <option value="google.maps.MapTypeId.HYBRID">HYBRID</option>
+                    <option value="google.maps.MapTypeId.TERRAIN">TERRAIN</option>
+                </field>
+                <field name="zoom" type="text" 
+                       default="18" 
+                       label="ZOOM" description="ZOOM_DESC"
+                       showon="using_mode:_apikey"
+                />
+                
+                <field name="content_map" type="editor" label="Content" description="Address" filter="JComponentHelper::filterText" buttons="true" />
+            </fieldset>
+            
+            <fieldset name="markers-manager" label="MOD_GOOGLEMAP_MARKERS_MANAGER" addfieldpath="/modules/mod_googlemap/admin/formfield">	
+                <field type="markers" name="marker" label="BTG_MARKERS_LABEL" description="BTG_MARKERS_DESC"/>
+            </fieldset>
+            
+            <fieldset name="advanced">
+                <field
+                    name="layout"
+                    type="modulelayout"
+                    label="JFIELD_ALT_LAYOUT_LABEL"
+                    description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+                />
+                <field
+                    name="class_sfx"
+                    type="textarea" rows="3"
+                    label="MOD_GOOGLEMAP_FIELD_CLASS_LABEL"
+                    description="MOD_GOOGLEMAP_FIELD_CLASS_DESC"
+                />
+                
+                <field
+                    name="anchor_css"
+                    type="text"
+                    label="MOD_GOOGLEMAP_FIELD_ANCHOR_CSS_LABEL"
+                    description="MOD_GOOGLEMAP_FIELD_ANCHOR_CSS_DESC"
+                />
+                
+                <field name="moduleclass_sfx" type="text" default="" label="MODSFX" description="MODSFX_DESC"/>
+                <field name="cache" type="list" default="1" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+                    <option value="1">JGLOBAL_USE_GLOBAL</option>
+                    <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+                </field>
+                <field name="cache_time" type="text" default="900" label="COM_MODULES_FIELD_CACHE_TIME_LABEL" description="COM_MODULES_FIELD_CACHE_TIME_DESC"/>
+                <field name="cachemode" type="hidden" default="itemid">
+                    <option value="itemid"/>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

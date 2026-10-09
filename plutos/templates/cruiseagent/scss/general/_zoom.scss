@@ -1,0 +1,158 @@
+/* 
+    Created on : Aug 3, 2018, 11:45:57 PM
+    Author     : Binh Nguyen
+*/
+.zoom{
+    position:relative;
+    img.hover{
+        -webkit-transition: all 1s ease; /* Safari and Chrome */
+        -moz-transition: all 1s ease; /* Firefox */
+        -o-transition: all 1s ease; /* IE 9 */
+        -ms-transition: all 1s ease; /* Opera */
+        transition: all 1s ease;
+    }
+    &:hover{
+        img.hover{ 
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform:translateZ(0) scale(1.20); /* Safari and Chrome */
+            -moz-transform:scale(1.20); /* Firefox */
+            -ms-transform:scale(1.20); /* IE 9 */
+            -o-transform:translatZ(0) scale(1.20); /* Opera */
+            transform:translatZ(0) scale(1.20);
+
+            -webkit-transition: all 1s ease; /* Safari and Chrome */
+            -moz-transition: all 1s ease; /* Firefox */
+            -o-transition: all 1s ease; /* IE 9 */
+            -ms-transition: all 1s ease; /* Opera */
+            transition: all 1s ease;
+        }
+    }
+    /* --- zooming3 --- */
+    .zooming3{
+        -border:1px solid red;
+        position:absolute;
+        top:-100px;
+        opacity:0;
+        -bottom:100px;
+        -background-color:rgba(142,198,63,.8);
+        background-color:rgba(0,0,0,0.3);
+        color:white;
+        padding:10p;
+    }
+    &:hover .zooming3 {
+        opacity:1;
+        top:0px;
+        -webkit-transition: all 1s ease; /* Safari and Chrome */
+        -moz-transition: all 1s ease; /* Firefox */
+        -o-transition: all 1s ease; /* IE 9 */
+        -ms-transition: all 1s ease; /* Opera */
+        transition: all 1s ease;
+    }
+    /* --- /.zooming3 --- */
+    /* --- zooming4 --- */
+    .zooming4{
+        position:absolute;
+        -border:1px solid red;
+        -margin-top:-80px;
+        padding-top:20px;
+        width:100%;
+        height:80px;
+        opacity:0;
+        bottom:-50px;
+        -background-color:rgba(142,198,63,.8);
+        background-color:rgba(0,0,0,0.3);
+    }
+    &:hover .zooming4{
+        opacity:1;
+        bottom:0;
+        -webkit-transition: all 1s ease; /* Safari and Chrome */
+        -moz-transition: all 1s ease; /* Firefox */
+        -o-transition: all 1s ease; /* IE 9 */
+        -ms-transition: all 1s ease; /* Opera */
+        transition: all 1s ease;
+    }
+    /* --- /.zooming4 --- */
+
+    /*
+    &:hover:after {
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        z-index:2;
+        width:30px;
+        height:30px;
+        border:1px solid #000;
+    }
+    */
+} 
+
+.grayscale {
+    -webkit-filter: brightness(1.10) grayscale(100%) contrast(90%);
+    -moz-filter: brightness(1.10) grayscale(100%) contrast(90%);
+    filter: brightness(1.10) grayscale(100%); 
+}
+.zooming2{
+    margin-top:30px;
+    position:relative;
+    margin-bottom:50px;
+    .zooming3{
+        -border:1px solid red;
+        position:absolute;
+        top:-100px;
+        opacity:0;
+        -bottom:100px;
+        -background-color:rgba(142,198,63,.8);
+        background-color:rgba(0,0,0,0.3);
+        color:white;
+        padding:10p;
+    }
+    &:hover .zooming3 {
+        opacity:1;
+        top:0px;
+        transition:1s;
+    }
+    .zooming4{
+        position:absolute;
+        -border:1px solid red;
+        -margin-top:-80px;
+        padding-top:20px;
+        width:100%;
+        height:80px;
+        opacity:0;
+        bottom:-50px;
+        -background-color:rgba(142,198,63,.8);
+        background-color:rgba(0,0,0,0.3);
+    }
+    &:hover .zooming4{
+        opacity:1;
+        bottom:0;
+        transition:1s;
+    }
+    &:hover .hover{
+        transform:scale(1.3);
+        transition:1s;
+    }
+}
+
+.zooming7{
+    border:1px solid rgb(73,183,43);
+    background-color:rgb(73,183,43);
+    color:white;
+    font-size:18px;
+    padding:10px 15px;
+    border-radius:5px 20px;
+    &:hover{
+        background-color:transparent;
+        color:rgb(73,183,43);
+        border:1px solid rgb(73,183,43);
+        transition:1s;
+    }
+}
+
+.view-more:hover{
+    background-color:transparent !important;
+    color:rgb(237,78,110) !important;
+    border:1px solid rgb(237,78,110) !important;
+}

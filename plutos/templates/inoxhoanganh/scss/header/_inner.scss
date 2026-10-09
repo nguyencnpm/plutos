@@ -1,0 +1,24 @@
+/* 
+    Created on : Jun 29, 2018, 11:17:42 PM
+    Author     : Binh Nguyen
+*/
+.header-inner{
+    font-size: $font-size-header;
+    background-color: $header-bg-color;
+    color: $header-color;
+    border-bottom: .125rem solid $header-inner-border;
+    a{
+        color: $header-color;
+        &:hover{
+            color: $header-hover-color;
+        }
+    }
+}
+/*
+@include media-breakpoint-down(md) {
+    .header-inner-brand{
+        padding-top: $navbar-default-padding;
+    }
+}
+*/
+

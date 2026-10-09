@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<extension version="3.2" type="plugin" group="content" method="upgrade">
+    <name>plg_content_socialsharing</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>January 2014</creationDate>
+    <copyright>Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.2.2</version>
+    <description>PLG_SOCIALSHARING_XML_DESCRIPTION</description>
+    <files>
+        <folder>assets</folder>
+        <folder>language</folder>
+        <folder>tmpl</folder>
+        <filename plugin="socialsharing">socialsharing.php</filename>
+    </files>
+    <languages>
+        <!--        
+        <language tag="en-GB">en-GB/en-GB.plg_content_socialsharing.ini</language>
+        <language tag="en-GB">en-GB/en-GB.plg_content_socialsharing.sys.ini</language>
+        -->
+    </languages>
+    
+    <config>
+        <fields name="params" addfieldpath="/plugins/content/socialsharing/assets/elements">
+            <fieldset 
+                name="BASIC_SETTINGS" 
+                label="BASIC_SETTINGS">			
+                <field 
+                    name="mode" 
+                    type="list"
+                    default="auto"
+                    label="DISPLAY_MODE" 
+                    description="DISPLAY_MODE_DESC">
+                    <option value="auto">Auto</option>
+                    <option value="manual">Manual</option>
+                    <option value="turnoff">Turn Off</option>
+                </field>
+                <field 
+                    name="source" 
+                    type="list" 
+                    default="both"
+                    label="ENABLE_THE_PLUGIN_FOR" 
+                    description="ENABLE_THE_PLUGIN_FOR_DESC">
+                    <option value="both">Both</option>
+                    <option value="com_standard">Product</option>
+                    <option value="com_content">Content</option>
+                    <option value="com_standardextension">Blog</option>
+                </field>
+                <field
+                    name="mode-auto-category" 
+                    type="category" 
+                    default=""
+                    class="mselect"
+                    multiple="true"
+                    size="10"
+                    extension="com_content"					
+                    label="CATEGORIES_SELECTION"  
+                    description="CATEGORIES_SELECTION_DESC">
+                </field>							
+                <field 
+                    name="mode-automatic-standardcatsid" 
+                    type="CategoryStandard"
+                    multiple="multiple" 
+                    size="10" 
+                    class="mselect"
+                    default="" 
+                    label="SELECT_STANDARD_CATEGORIES"
+                    description="SELECT_STANDARD_CATEGORIES_DESC">
+                </field>
+                 <field
+                    name="mode-automatic-category" 
+                    type="category" 
+                    default=""
+                    class="mselect"
+                    multiple="true"
+                    size="10"
+                    extension="com_standardextension"					
+                    label="CATEGORIES_STANDARDEXTENSION_SELECTION"  
+                    description="CATEGORIES_SELECTION_DESC">
+                </field>
+                <field 
+                    name="location"
+                    type="list"
+                    class="mselect"
+                    default="onContentAfterDisplay" 
+                    label="LOCATION" description="LOCATION_DESC">
+                    <option value="onContentBeforeDisplay">Before Display Content</option>
+                    <option value="onContentAfterDisplay">After Display Content</option>
+                    <option value="onContentAfterTitle">After Display Title</option>
+                    <!--
+                    <option value="BeforeContent">Before Content</option>
+                    <option value="AfterContent">After Content</option>
+                    -->
+                </field>
+            </fieldset>
+            
+            <fieldset name="advanced">
+                <field 
+                    name="class_sfx"
+                    type="textarea" rows="3"
+                    default=""
+                    label="CLASS_SUFFIX" 
+                    description="CLASS_SUFFIX_DESC" />
+                
+                <field
+                    name="anchor_css"
+                    type="text"
+                    label="ANCHOR_CSS_LABEL"
+                    description="ANCHOR_CSS_DESC"
+                />
+                
+                <field 
+                    name="widget_text" 
+                    type="text"
+                    default="" 
+                    label="WIDGET_TEXT"   
+                    description="WIDGET_TEXT_DESC" 
+                />
+                <field 
+                    name="custom_button"
+                    type="text" 
+                    default="" 
+                    label="CUSTOM_BUTTON"
+                    description="CUSTOM_BUTTON_DESC" 
+                />
+
+                <!--  system: Service -->
+                <field 
+                    name="system" 
+                    type="list"
+                    default="addthis"
+                    label="BOOKMARK_SERVICE"
+                    description="BOOKMARK_SERVICE_DESC">
+                    <option value="addthis">AddThis</option>
+                    <option value="addtoany">AddToAny</option>
+                    <option value="addbuttons">AddButtons</option>
+                </field>
+                <!--  system: Style addthis -->
+                <field 
+                    name="system-addthis-button" 
+                    type="addthis"
+                    default="tb21" 
+                    label="BUTTON_STYLE"
+                    description="BUTTON_STYLE_DESC" 
+                    showon="system:addthis"
+                />
+                <!--  /.system: Style addthis -->
+                <!--  system: Style addtoany -->
+                <field 
+                    name="system-addtoany-button" 
+                    type="addtoany" 
+                    default="share_save_106_16.gif"
+                    label="BUTTON_STYLE" 
+                    description="BUTTON_STYLE_DESC" 
+                    showon="system:addtoany"
+                />
+				
+                <field 
+                    name="system-addtoany-showpagetitle" 
+                    type="radio"
+                    default="1" 
+                    label="SHOW_PAGE_TITLE"
+                    description="SHOW_PAGE_TITLE_DESC"
+                    showon="system:addtoany"
+                >
+                    <option value="0">JNO</option>
+                    <option value="1">JYES</option>
+                </field>
+				
+                <field 
+                    name="system-addtoany-orientation" 
+                    type="list" 
+                    default="automatic" 
+                    label="ORIENTATION"
+                    description="ORIENTATION_DESC"
+                    showon="system:addtoany"
+                >
+                    <option value="automatic">ORIENTATION_AUTOMATIC</option>
+                    <option value="up">ORIENTATION_UP</option>
+                    <option value="down">ORIENTATION_DOWN</option>
+                </field>
+                <!--  /.system: Style addtoany -->
+                <!--  system: Style addbuttons -->
+                <field 
+                    name="system-addbuttons" 
+                    type="addbuttons" 
+                    label="BUTTON_STYLE"
+                    description="BUTTON_STYLE_DESC" 
+                    showon="system:addbuttons"
+                />
+                <!--  /.system: Style addbuttons -->
+            </fieldset>
+        </fields>
+    </config>
+</extension>

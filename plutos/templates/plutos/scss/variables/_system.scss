@@ -1,0 +1,134 @@
+/* 
+    Created on : Aug 12, 2019, 10:02:52 AM
+    Author     : BinhNguyen
+*/
+@mixin sentence-case() {
+  text-transform: lowercase;
+  &:first-letter {
+    text-transform: uppercase;
+  }
+}
+// --- Font system ---
+$font-barlow-regular: "Barlow-Regular script=all rev=2"!default;
+$font-barlow-light: "Barlow-Light script=all rev=2"!default;
+$font-barlow-medium: "Barlow-Medium script=all rev=2"!default;
+$font-barlow-bold: "Barlow-Bold script=all rev=2"!default;
+
+$font-eb-garamond-regular: "EBGaramond-Regular"!default;
+$font-eb-garamond-medium: "EBGaramond-Medium"!default;
+$font-eb-garamond-bold: "EBGaramond-Bold"!default;
+
+$font-montserrat-regular: "Montserrat-Regular"!default;
+$font-montserrat-light: "Montserrat-Light"!default;
+$font-montserrat-medium: "Montserrat-Medium"!default;
+$font-montserrat-bold: "Montserrat-Bold"!default;
+
+$font-sfpro-regular: "SF Pro Display"!default;
+$font-sfpro-medium: "SF Pro Display Medium"!default;
+$font-sfpro-bold: "SF Pro Display Bold"!default;
+$font-sfCompact-Regular: "SF Compact Display Regular"!default;
+
+$font-arial-regular: "Arial-Regular"!default;
+$font-arial-bold: "Arial-Bold"!default;
+
+$font-minionPro-regular: "MinionPro-Regular"!default;
+$font-minionpro-medium: "MinionPro-Medium"!default;
+$font-minionpro-bold: "MinionPro-Bold"!default;
+// --- /.Font system ---
+/* ====== Colors ====== */
+// --- Color system ---
+$feng-shui-background-site: #ecf0f5!default;
+$feng-shui-site-text-color: #1e1e1e!default;
+$feng-shui-site-text-title-color: #7f2629!default;
+
+$navigationbar-background-color:rgba(132, 52, 55, 0.8)!default;
+$navigationbar-collapse-background-color:#134874!default;
+
+$feng-shui-blue:#2f3f8c!default;
+$feng-shui-blue-transparency: rgba(47, 63, 140, 0.8);
+$feng-shui-blue-dark:#00008b!default;
+$feng-shui-blue-dark-transparency:rgba(66,106,179,0.8);
+
+
+$feng-shui-green: #008340!default;
+$feng-shui-green-transparency: rgba(0, 131, 64, 0.8)!default;
+$feng-shui-green-dark: #0a786e!default;
+$feng-shui-green-light: #219680!default;
+
+$feng-shui-brown: #8b4513!default;
+$feng-shui-brown-transparency: rgba(139,69,19, 0.8)!default;
+$feng-shui-brown-dark: #a52a2a!default;
+$feng-shui-brown-dark-transparency: rgba(165,42,42, 0.8)!default;
+$feng-shui-brown-light: #c9bb96!default;
+$feng-shui-brown-light-transparency: rgba(201, 187, 150, 0.8)!default;
+
+$feng-shui-yellow:#fff200!default;
+$feng-shui-yellow-transparency: rgba(255, 242, 0, 0.8)!default;
+$feng-shui-yellow-dark:#fbac18!default;
+$feng-shui-yellow-dark-transparency: rgba(251, 172, 24, 0.8)!default;
+$feng-shui-yellow-light:#e4e1b8!default;
+$feng-shui-yellow-light-transparency: rgba(228, 225, 184, 0.8)!default;
+
+$feng-shui-orange:#f58220!default;// eb6f21
+$feng-shui-orange-transparency: rgba(235, 111, 33, 0.8)!default;
+$feng-shui-orange-dark:#c84600!default;
+$feng-shui-orange-dark-transparency: rgba(200, 70, 0, 0.8)!default;
+$feng-shui-orange-light:#e0d3b0!default;
+$feng-shui-orange-light-transparency: rgba(224, 211, 176, 0.8)!default;
+$feng-shui-orange-switchboard:#f79321!default;
+
+$feng-shui-black:#554434!default;
+$feng-shui-black-transparency: rgba(85, 68, 52, 0.8)!default;
+$feng-shui-black-dark: #272727!default;
+$feng-shui-black-dark-transparency: rgba(39, 39, 39, 0.8)!default;
+$feng-shui-black-light: #f0f0f0!default;
+
+$feng-shui-secondary:#333333!default;
+$feng-shui-secondary-light: #828282!default;
+$feng-shui-secondary-light-transparency: rgba(130, 130, 130, 0.8)!default;
+$feng-shui-border-secondary-light:#ced4da!default;
+
+$feng-shui-danger: #ed1c24!default;
+$feng-shui-danger-transparency: rgba(237, 28, 36, 0.8)!default;
+$feng-shui-danger-dark: #d21118!default;
+$feng-shui-danger-light: #d3d3d3!default;
+
+$feng-shui-white:#fff!default;
+$feng-shui-white-dark:#f0f0f0!default;
+// --- /.Color system ----
+$using-theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$using-theme-colors: map-merge(
+    (
+        "brown":                            $feng-shui-brown
+        ,"brown-dark":                      $feng-shui-brown-dark
+        ,"brown-light":                     $feng-shui-brown-light
+        ,"blue":                            $feng-shui-blue
+        ,"blue-transparency":               $feng-shui-blue-transparency
+        ,"blue-dark-transparency":          $feng-shui-blue-dark-transparency
+        ,"green":                           $feng-shui-green
+        ,"green-dark":                      $feng-shui-green-dark
+        ,"green-light":                     $feng-shui-green-light
+        ,"yellow":                          $feng-shui-yellow
+        ,"yellow-dark":                     $feng-shui-yellow-dark
+        ,"orange":                          $feng-shui-orange
+        ,"orange-transparency":             $feng-shui-orange-transparency
+        ,"orange-dark-transparency":        $feng-shui-orange-dark-transparency
+        ,"black":                           $feng-shui-black
+        ,"black-transparency":              $feng-shui-black-transparency 
+        ,"black-dark":                      $feng-shui-black-dark
+        ,"black-dark-transparency":         $feng-shui-black-dark-transparency 
+        ,"black-light":                     $feng-shui-black-light
+        ,"danger":                          $feng-shui-danger
+        ,"danger-transparency":             $feng-shui-danger-transparency
+        ,"danger-dark":                     $feng-shui-danger-dark
+        ,"danger-light":                    $feng-shui-danger-light
+        ,"white":                           $feng-shui-white
+        ,"white-dark":                      $feng-shui-white-dark
+        ,"secondary":                       $feng-shui-secondary
+        ,"secondary-light":                 $feng-shui-secondary-light
+        ,"secondary-light-transparency":    $feng-shui-secondary-light-transparency
+        ,"bordersecondary-light":           $feng-shui-border-secondary-light
+    )
+    ,$using-theme-colors
+);

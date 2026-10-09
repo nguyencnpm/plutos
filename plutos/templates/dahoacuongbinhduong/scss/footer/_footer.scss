@@ -1,0 +1,18 @@
+/* 
+    Created on : Jul 2, 2018, 12:26:40 AM
+    Author     : Binh Nguyen
+*/
+.footer{
+    /*border-top: .6035rem solid $footer-border-top-color; */
+    background-color: $footer-bg-color;
+    color: $footer-color;
+    a{
+        color: $footer-link-color;
+        @include hover-focus-active{
+            color: $footer-link-hover-color;
+        }
+    }
+    .footer-all-rights-reserved{
+        background-color: $footer-bg-all-rights-reserved;
+    }
+}

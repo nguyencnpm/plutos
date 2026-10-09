@@ -1,0 +1,30 @@
+/* 
+    Created on : Jan 16, 2019, 3:13:13 PM
+    Author     : BinhNguyen
+*/
+
+@include media-breakpoint-down(xl) {
+    .w-xl-100{
+        width: 100% !important;
+    }
+}
+@include media-breakpoint-down(lg) {
+    .w-lg-100{
+        width: 100% !important;
+    }
+}
+@include media-breakpoint-down(md) {
+    .w-md-100{
+        width: 100% !important;
+    }
+}
+@include media-breakpoint-down(sm) {
+    .w-sm-100{
+        width: 100% !important;
+    }
+}
+@include media-breakpoint-down(xs) {
+    .w-xs-100{
+        width: 100% !important;
+    }
+}

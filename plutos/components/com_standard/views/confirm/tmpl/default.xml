@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_STANDARD_CONFIRM_VIEW_DEFAULT_TITLE" option="COM_STANDARD_INFORMATION_VIEW_DEFAULT_OPTION">
+        <help key = "JHELP_MENUS_MENU_ITEM_CONFIRM_SINGLE_CONFIRM" />
+        <message>
+            <![CDATA[COM_STANDARD_CONFIRM_VIEW_DEFAULT_DESC]]>
+        </message>
+    </layout>
+    <!-- Add fields to the request variables for the layout. -->
+    <fields name="request">
+        <fieldset name="request" addfieldpath="/administrator/components/com_standard/models/fields">
+            <field name="id"
+                   type="ConfirmPageType"
+                   class="span12"
+                   label="COM_STANDARD_FIELD_CONFIRM_PAGE_TYPE_LABEL"
+                   description="COM_STANDARD_FIELD_CONFIRM_PAGE_TYPE_DESC"
+                   required="true"
+                   default=""
+            >
+                <option value="">COM_STANDARD_SELECT_CONFIRM_PAGE_TYPE</option>
+            </field>
+        </fieldset>
+    </fields>
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields name="params">
+        <fieldset name="page-options" label="COM_MENUS_PAGE_OPTIONS_LABEL">
+
+            <field
+                name="page_title"
+                type="text"
+                class="span6"
+                label="COM_MENUS_ITEM_FIELD_PAGE_TITLE_LABEL"
+                description="COM_MENUS_ITEM_FIELD_PAGE_TITLE_DESC"
+                useglobal="true"
+            />
+
+            <field
+                name="show_page_heading"
+                type="list"
+                label="COM_MENUS_ITEM_FIELD_SHOW_PAGE_HEADING_LABEL"
+                description="COM_MENUS_ITEM_FIELD_SHOW_PAGE_HEADING_DESC"
+                class="chzn-color"
+                default=""
+                useglobal="true"
+            >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+            
+            <field
+                name="show_page_masthead"
+                type="list"
+                label="COM_STANDARD_ITEM_FIELD_SHOW_PAGE_MASTHEAD_LABEL"
+                description="COM_STANDARD_ITEM_FIELD_SHOW_PAGE_MASTHEAD_DESC"
+                class="chzn-color"
+                default=""
+                useglobal="true"
+            >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field
+                name="page_heading"
+                type="text"
+                class="span6"
+                label="COM_MENUS_ITEM_FIELD_PAGE_HEADING_LABEL"
+                description="COM_MENUS_ITEM_FIELD_PAGE_HEADING_DESC"
+            />
+            
+            <field
+                name="page_subheading"
+                type="textarea"
+                class="span12"
+                label="COM_STANDARD_ITEM_FIELD_PAGE_SUBHEADING_LABEL"
+                description="COM_STANDARD_ITEM_FIELD_PAGE_SUBHEADING_DESC"
+            />
+
+            <field
+                name="pageclass_sfx"
+                type="text"
+                class="span6"
+                label="COM_MENUS_ITEM_FIELD_PAGE_CLASS_LABEL"
+                description="COM_MENUS_ITEM_FIELD_PAGE_CLASS_DESC"
+            />
+            
+            <field
+                name="pageclass_heading"
+                type="text"
+                class="span6"
+                label="COM_STANDARD_ITEM_FIELD_PAGE_CLASS_HEADING_LABEL"
+                description="COM_STANDARD_ITEM_FIELD_PAGE_CLASS_HEADING_DESC"
+            />
+            
+            <field
+                name="pageclass_subheading"
+                type="text"
+                class="span6"
+                label="COM_STANDARD_ITEM_FIELD_PAGE_CLASS_SUBHEADING_LABEL"
+                description="COM_STANDARD_ITEM_FIELD_PAGE_CLASS_SUBHEADING_DESC"
+            />
+        </fieldset>
+        <fieldset name="menu-options"
+                  label="COM_MENUS_LINKTYPE_OPTIONS_LABEL"
+                  addfieldpath="/administrator/components/com_standard/models/fields"
+        >
+            <field name="link_type" 
+                   type="list" 
+                   label="COM_STANDARD_LINK_TYPE"
+                   description="COM_STANDARD_LINK_TYPE_DESC" 
+                   default=""
+            >
+                <option value="">COM_STANDARD_DO_NOT_LINK</option>
+                <option value="menu">COM_STANDARD_MENU</option>
+                <option value="url">COM_STANDARD_URL</option>
+                <option value="product">COM_STANDARD_PRODUCT</option>
+            </field>
+			
+            <field name="link_menu" 
+                   type="menuitem"
+                   label="COM_STANDARD_MENU"
+                   description="COM_STANDARD_MENU"
+                   disable="separator,heading,alias"
+                   showon="link_type:menu"
+            />
+            <field name="link_url"
+                   type="text"
+                   label="COM_STANDARD_URL"
+                   description="COM_STANDARD_URL"
+                   class="inputbox"
+                   size="30"
+                   showon="link_type:url"
+            />
+            <field name="link_product" 
+                   type="modal_product"
+                   label="COM_STANDARD_PRODUCT" 
+                   description="COM_STANDARD_PRODUCT"
+                   select="true"
+                   new="true"
+                   edit="true"
+                   clear="true"
+                   showon="link_type:product"
+            />
+                
+            <field name="url_text"
+                   type="text"
+                   label="COM_STANDARD_FIELD_URL_LINK_TEXT_LABEL"
+                   description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+                   showon="link_type:current,menu,url,product"
+            />
+			
+            <field name="link_target" 
+                   type="list" 
+                   label="COM_STANDARD_LINK_TARGET"
+                   description="COM_STANDARD_LINK_TARGET_DESC" 
+                   default=""
+                   showon="link_type:menu,url,product"
+            >
+                <option value="">COM_STANDARD_AUTO</option>
+                <option value="_self">COM_STANDARD_PARENT_WINDOW</option>
+                <option value="_blank">COM_STANDARD_NEW_WINDOW</option>
+            </field>
+			
+            <field name="link_rel" 
+                   type="list" 
+                   label="COM_STANDARD_LINK_REL"
+                   description="COM_STANDARD_LINK_REL_DESC" 
+                   default=""
+                   showon="link_type:menu,url,product"
+            >
+                <option value="">JNONE</option>
+                <option value="alternate">alternate</option>
+                <option value="author">author</option>
+                <option value="bookmark">bookmark</option>
+                <option value="help">help</option>
+                <option value="license">license</option>
+                <option value="next">next</option>
+                <option value="nofollow">nofollow</option>
+                <option value="noreferrer">noreferrer</option>
+                <option value="prefetch">prefetch</option>
+                <option value="prev">prev</option>
+                <option value="search">search</option>
+                <option value="tag">tag</option>
+            </field>
+            <field
+                name="spacer_linkType"
+                type="spacer"
+                hr="true"
+            />
+        </fieldset>
+    </fields>
+</metadata>

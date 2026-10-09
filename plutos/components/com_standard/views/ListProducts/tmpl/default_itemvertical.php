@@ -1,0 +1,181 @@
+<?php
+/**
+ * @package     Giaiphapcongnghethongtin.Site
+ * @subpackage  com_standard
+ *
+ * @copyright   Copyright (C) 2005 - 2017 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+defined('_JEXEC') or die;
+
+// Create a shortcut for params.
+$params = &$this->item->params;
+$images = json_decode($this->item->images);
+$canEdit = $this->item->params->get('access-edit');
+$info = $this->item->params->get('info_block_position', 0);
+
+// Check if associations are implemented. If they are, define the parameter.
+$assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associations'));
+
+$columns = (int) $this->columns;
+$app = JFactory::getApplication();
+$template = $app->getTemplate(true);
+$templateParams = $template->params;
+$templateParams->get('tooltip_viewport');
+$tooltip = $templateParams->get('tooltip_viewport');
+
+if (!class_exists('Stringhandling')) {
+    jimport("informationtechnology.stringhandling.stringhandling");
+}
+/*
+  $mobile = new MobileDetect();
+  // Desktop - default
+  $numberwords = 200;
+
+
+  // Phone
+  if ($mobile->isMobile()) {
+  $numberwords = 200;
+  }
+  // Tablet
+  if ($mobile->isTablet()) {
+  $numberwords = 130;
+  }
+
+
+  $moretxt = "...";
+  $lengthtitles = round(80 / ($columns == 1 ? $columns + 1 : $columns));
+  $lengthReadmoreText = round($numberwords / ($columns == 1 ? $columns + 1 : $columns));
+  $lengthtext = round(1230 / ($columns == 1 ? $columns + 1 : $columns));
+ */
+// $lengthReadmoreText = 200;
+// $lengthtext = 500;
+
+$introtext = $this->item->introtext; // Stringhandling::trimString($this->item->introtext, $lengthReadmoreText);
+// $introlengthtext = Stringhandling::trimString($this->item->introtext, $lengthtext);
+
+$cItem = "item bg-item d-flex flex-fill mb-4 column-" . $this->rowcount . " rounded border border-color-item box-shadow";
+$cItemText = " item-text flex-fill text-justify-center px-3 pt-3";
+?>
+<div class="<?php echo $cItem; ?> <?php echo $this->item->state == 0 ? ' system-unpublished' : null; ?>">
+    <div class="row flex-fill">
+        <div class="post d-flex flex-column col-12">
+            <?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate()) || ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != JFactory::getDbo()->getNullDate())) :
+                ?>
+                <div class="system-unpublished">
+                <?php endif; ?>
+
+                <?php if (isset($images->image_medium) && !empty($images->image_medium)) : ?>
+                    <?php $imgfloat = empty($images->float_intro) ? $params->get('float_intro') : $images->float_intro; ?>
+
+                    <?php 
+                    // echo JLayoutHelper::render('standard.intro_imageVertical', array('params' => $params, 'item' => $this->item, 'class' => 'item-image bg-image zoom rounded-top', 'subClass' => 'rounded-top')); 
+                    echo JLayoutHelper::render('standard.media', array('item' => $this->item, 'sublayout' => 'galleryChild'));
+                    ?>
+
+                <?php else: ?>
+                    <?php // code here ?>
+                <?php endif; ?>
+                <div class="<?php echo $cItemText; ?>">
+
+                    <?php //-- show title -- ?>
+                    <?php echo JLayoutHelper::render('standard.featurette_StyleItemTitle', $this->item); ?>
+
+                    <?php if ($canEdit || $params->get('show_print_icon') || $params->get('show_email_icon')) : ?>
+                        <?php echo JLayoutHelper::render('standard.icons', array('params' => $params, 'item' => $this->item, 'print' => false)); ?>
+                    <?php endif; ?>
+
+                    <?php // Todo Not that elegant would be nice to group the params    ?>
+                    <?php $useDefList = ($params->get('show_modify_date') || $params->get('show_publish_date') || $params->get('show_create_date') || $params->get('show_hits') || $params->get('show_category') || $params->get('show_parent_category') || $params->get('show_author') || $assocParam);
+                    ?>
+
+                    <?php if ($useDefList && ($info == 0 || $info == 2)) : ?>
+                        <?php // Todo: for Joomla4 standard.info_block.block can be changed to standard.info_block  ?>
+                        <?php echo JLayoutHelper::render('standard.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'above')); ?>
+                        <?php if ($info == 0 && $params->get('show_tags', 1) && !empty($this->item->tags->itemTags)) : ?>
+                            <?php echo JLayoutHelper::render('standard.tags', $this->item->tags->itemTags); ?>
+                        <?php endif; ?>
+                    <?php endif; ?>
+                    <?php if (!$params->get('show_intro')) : ?>
+                        <?php // Content is generated by content plugin event "onContentAfterTitle"  ?>
+                        <?php echo $this->item->event->afterDisplayTitle; ?>
+                    <?php endif; ?>
+                    <?php //--  /.show title -- ?>  
+
+                    <?php // Content is generated by content plugin event "onContentBeforeDisplay"    ?>
+                    <?php echo $this->item->event->beforeDisplayContent; ?>
+                    <?php //echo $this->item->introtext; ?>
+                    <p><?php echo $introtext; ?></p>
+                    <?php
+                    if ($params->get('show_manufacturer') || ($useDefList && ($info == 1 || $info == 2)) || ($params->get('show_price') || $params->get('show_call_price') || $params->get('show_call_hotline'))
+                    ) :
+                        ?>
+
+                        <div class="info-group-vertical mb-2 text-justify-left">
+                            <?php if ($params->get('show_manufacturer')) : ?>
+                                <p class="cut-string-multiple-lines">
+                                    <i class="fa fa-building-o text-info" aria-hidden="true"></i> 
+                                    <?php echo JText::_('COM_STANDARD_MANUFACTURER') . ': '; ?>
+                                    <?php echo empty($this->item->manufacturer_title) ? " - " : $this->item->manufacturer_title; ?>
+                                </p>
+                            <?php endif; ?>
+
+                            <?php if ($useDefList && ($info == 1 || $info == 2)) : ?>
+                                <?php // Todo: for Joomla4 joomla.content.info_block.block can be changed to joomla.content.info_block   ?>
+                                <?php echo JLayoutHelper::render('joomla.content.info_block.block', array('item' => $this->item, 'params' => $params, 'position' => 'below')); ?>
+                            <?php endif; ?>
+                            <?php
+                            if ($params->get('show_price') || $params->get('show_call_price') || $params->get('show_call_hotline')) :
+                                echo JLayoutHelper::render('standard.price', array('item' => $this->item, 'params' => $params));
+                            endif;
+                            ?>
+                        </div>
+                    <?php endif; ?>
+                </div>
+                <?php // --- Book now - Learn more --- ?>
+                <div class="more  px-3 pb-3">
+                    <?php
+                    if ($params->get('show_payment_methods')) :
+                        echo JLayoutHelper::render('standard.payment_methods', array('item' => $this->item, 'params' => $params));
+                    endif;
+                    ?>
+                    <?php
+                    if ($params->get('show_readmore')) :
+                        $link = JRoute::_(StandardHelperRoute::getProductRoute($this->item->slug, $this->item->catid, $this->item->language));
+                        echo JLayoutHelper::render('standard.learnmore', array('item' => $this->item, 'params' => $params, 'link' => $link, 'class' => 'w-100'));
+                    endif;
+                    ?>
+
+                </div>
+                <?php // --- /.Book now - Learn more ---  ?>
+                <?php /*
+                  if ($params->get('show_readmore')) :// && $this->item->readmore
+                  if ($params->get('access-view')) :
+                  $link = JRoute::_(StandardHelperRoute::getProductRoute($this->item->slug, $this->item->catid, $this->item->language));
+                  else :
+                  $menu = JFactory::getApplication()->getMenu();
+                  $active = $menu->getActive();
+                  $itemId = $active->id;
+                  $link = new JUri(JRoute::_('index.php?option=com_users&view=login&Itemid=' . $itemId, false));
+                  $link->setVar('return', base64_encode(StandardHelperRoute::getProductRoute($this->item->slug, $this->item->catid, $this->item->language)));
+                  endif;
+                  ?>
+
+                  <?php echo JLayoutHelper::render('standard.readmore', array('item' => $this->item, 'params' => $params, 'link' => $link)); ?>
+
+                  <?php endif; */ ?>
+
+                <?php //echo(!empty($this->flagleading) or ( $columns == 1)) ? '</div><div class="post col-md-8 paddingColumnEnd">' : '<div class="clearfix"></div>'; //Binh nguyen add         ?>
+
+                <?php //echo(!empty($this->flagleading) or ( $columns == 1)) ? '</div></div>' : ''; //Binh nguyen add        ?>
+
+                <?php if ($this->item->state == 0 || strtotime($this->item->publish_up) > strtotime(JFactory::getDate()) || ((strtotime($this->item->publish_down) < strtotime(JFactory::getDate())) && $this->item->publish_down != $this->db->getNullDate() )) :
+                    ?>
+                </div>
+            <?php endif; ?>
+
+            <?php // Content is generated by content plugin event "onContentAfterDisplay"      ?>
+            <?php echo $this->item->event->afterDisplayContent; ?>
+        </div>
+    </div>
+</div>

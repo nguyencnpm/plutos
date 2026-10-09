@@ -1,0 +1,46 @@
+/* 
+    Created on : Jan 24, 2018, 3:55:34 PM
+    Author     : Binh Nguyen
+*/
+/* --- FONT PATH  --- */
+@font-face {
+  font-family: 'FontMontserrat';
+  /*src: url('#{$montserrat-font-path}/TUV-Montserrat-Bold.ttf');*/
+  src: url('#{$montserrat-font-path}/TUV-Montserrat-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'FontMontserratBold';
+  src: url('#{$montserrat-font-path}/TUV-Montserrat-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratRegular';
+  src: url('#{$montserrat-font-path}/Montserrat-Regular.otf') format("opentype");;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratLight';
+  src: url('#{$montserrat-font-path}/Montserrat-Light.otf') format("opentype");;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'MontserratMedium';
+  src: url('#{$montserrat-font-path}/Montserrat-Medium.otf') format("opentype");;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MontserratBold';
+  src: url('#{$montserrat-font-path}/Montserrat-Bold.otf') format("opentype");;
+  font-weight: normal;
+  font-style: normal;
+}

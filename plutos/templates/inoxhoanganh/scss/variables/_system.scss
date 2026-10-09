@@ -1,0 +1,69 @@
+/* 
+    Created on : Aug 12, 2019, 10:02:52 AM
+    Author     : BinhNguyen
+*/
+// --- Font system ---
+$font-barlow-regular: "Barlow-Regular script=all rev=2"!default;
+$font-barlow-light: "Barlow-Light script=all rev=2"!default;
+$font-barlow-medium: "Barlow-Medium script=all rev=2"!default;
+$font-barlow-bold: "Barlow-Bold script=all rev=2"!default;
+
+$font-eb-garamond-regular: "EBGaramond-Regular"!default;
+$font-eb-garamond-medium: "EBGaramond-Medium"!default;
+$font-eb-garamond-bold: "EBGaramond-Bold"!default;
+
+$font-montserrat-regular: "Montserrat-Regular"!default;
+$font-montserrat-light: "Montserrat-Light"!default;
+$font-montserrat-medium: "Montserrat-Medium"!default;
+$font-montserrat-bold: "Montserrat-Bold"!default;
+// --- /.Font system ---
+/* ====== Colors ====== */
+// --- Color system ---
+$feng-shui-background-site: #dfeedf!default;
+$feng-shui-site-text-color: #323232!default;
+$feng-shui-site-text-title-color: #646464!default;
+
+$navigationbar-background-color:#0a786e!default;
+$navigationbar-collapse-background-color:#134874!default;
+
+$feng-shui-blue:#2f3192!default;
+$feng-shui-blue-dark:#00008b!default;
+
+$feng-shui-green: #219680!default;
+$feng-shui-green-transparency: rgba(33, 150, 128, 0.8)!default;
+$feng-shui-green-dark: #0a786e!default;
+$feng-shui-green-light: #d5e4d5!default;
+
+$feng-shui-brown: #946146!default;
+$feng-shui-brown-transparency: rgba(148, 97, 70, 0.8)!default;
+$feng-shui-brown-dark: #8e8066!default;
+$feng-shui-brown-light: #c9bb96!default;
+
+$feng-shui-yellow:#fbeca7!default;
+$feng-shui-yellow-dark:#ebe9c3!default;
+$feng-shui-yellow-light:#e4e1b8!default;
+
+$feng-shui-orange:#daad69!default;
+$feng-shui-orange-dark:#e0d6a3!default;
+$feng-shui-orange-light:#e0d3b0!default;
+
+$feng-shui-black:#323232!default;
+// --- /.Color system ----
+$using-theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$using-theme-colors: map-merge(
+    (
+        "brown":    $feng-shui-brown
+        ,"brown-dark":  $feng-shui-brown-dark
+        ,"brown-light":    $feng-shui-brown-light
+        ,"blue": $feng-shui-blue
+        ,"green":    $feng-shui-green
+        ,"green-dark":  $feng-shui-green-dark
+        ,"green-light":    $feng-shui-green-light
+        ,"yellow":       $feng-shui-yellow
+        ,"yellow-dark":    $feng-shui-yellow-dark
+        ,"orange":    $feng-shui-orange
+        ,"black":      $feng-shui-black
+    )
+    ,$using-theme-colors
+);

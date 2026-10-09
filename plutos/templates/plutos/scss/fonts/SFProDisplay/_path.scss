@@ -1,0 +1,44 @@
+/* 
+    Created on : Jun 24, 2018, 3:55:34 PM
+    Author     : Binh Nguyen
+*/
+/* --- FONT PATH  --- */
+@font-face {
+    font-family: "SF Pro Display";
+    src: url("#{$SFProDisplay-font-path}/SF Pro Display Regular.eot"); /* IE9*/
+    src: url("#{$SFProDisplay-font-path}/SF Pro Display Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Regular.woff2") format("woff2"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Regular.woff") format("woff"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Regular.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("#{$SFProDisplay-font-path}/SF Pro Display Regular.svg#SF Pro Display") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+    font-family: "SF Pro Display Medium";
+    src: url("#{$SFProDisplay-font-path}/SF Pro Display Medium.eot"); /* IE9*/
+    src: url("#{$SFProDisplay-font-path}/SF Pro Display Medium.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Medium.woff2") format("woff2"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Medium.woff") format("woff"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Medium.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("#{$SFProDisplay-font-path}/SF Pro Display Medium.svg#SF Pro Display") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+    font-family: "SF Pro Display Bold";
+    src: url("#{$SFProDisplay-font-path}/SF Pro Display Bold.eot"); /* IE9*/
+    src: url("#{$SFProDisplay-font-path}/SF Pro Display Bold.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Bold.woff2") format("woff2"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Bold.woff") format("woff"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Pro Display Bold.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("#{$SFProDisplay-font-path}/SF Pro Display Bold.svg#SF Pro Display") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {
+    font-family: "SF Compact Display Regular";
+    src: url("#{$SFProDisplay-font-path}/SF Compact Display Regular.eot"); /* IE9*/
+    src: url("#{$SFProDisplay-font-path}/SF Compact Display Regular.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("#{$SFProDisplay-font-path}/SF Compact Display Regular.woff2") format("woff2"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Compact Display Regular.woff") format("woff"), /* chrome firefox */
+    url("#{$SFProDisplay-font-path}/SF Compact Display Regular.ttf") format("truetype"), /* chrome firefox opera Safari, Android, iOS 4.2+*/
+    url("#{$SFProDisplay-font-path}/SF Compact Display Regular.svg#SF Pro Display") format("svg"); /* iOS 4.1- */
+}

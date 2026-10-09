@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset ><!-- addfieldpath="/administrator/components/com_categories/models/fields" -->
+        <field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+               description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+               readonly="true" />
+
+        <field name="title" type="text" label="JGLOBAL_TITLE"
+               description="JFIELD_TITLE_DESC"
+               class="input-xxlarge input-large-text"
+               size="40"
+               required="true" />
+
+        <field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+               hint="JFIELD_ALIAS_PLACEHOLDER"
+               size="40" />
+        
+        <field name="paymenttype_id" type="PaymentType" 
+               label="COM_STANDARD_PAYMENT_TYPE_LABEL"
+               description="COM_STANDARD_PAYMENT_TYPE_DESC"
+               class="span12"
+               required="true" />
+        <field
+            name="limit_days_deposit"
+            type="number"
+            default="0"
+            label="COM_STANDARD_LIMIT_DAYS_DEPOSIT_LABEL"
+            description="COM_STANDARD_LIMIT_DAYS_DEPOSIT_DESC"
+            step="1"  
+            min="0"
+        />
+        
+        <field
+            name="limit_days_remaining"
+            type="number"
+            default="0"
+            label="COM_STANDARD_LIMIT_DAYS_REMAINING_LABEL"
+            description="COM_STANDARD_LIMIT_DAYS_REMAINING_DESC"
+            step="1"  
+            min="0"
+        />
+        
+        <field name="percent_or_total" 
+               type="radio"
+               class="btn-group btn-group-yesno"
+               label="COM_STANDARD_PERCENT_OR_TOTAL_LABEL" 
+               description="COM_STANDARD_PERCENT_OR_TOTAL_DESC" 
+               default="percent">
+            <option value="percent">percent</option>
+            <option value="total">total</option>
+        </field>
+        
+        <field name="currency_id" type="listcurrencies" 
+               label="COM_STANDARD_CURRENCY" 
+               description="COM_STANDARD_CURRENCY" 
+               default="147" 
+               required="true" 
+               showon="percent_or_total:total" />
+
+        <field name="value" type="number" 
+               label="COM_STANDARD_VALUE" 
+               description="COM_STANDARD_VALUE" 
+               default="0" 
+               required="true" 
+               step="0.0001"  
+               min="0.0001" />
+
+        <field name="price" type="number" class="span12"
+               label="COM_STANDARD_PAYMENT_COST_LABEL" 
+               description="COM_STANDARD_PAYMENT_COST_DESC" 
+               default="0"  
+               step="0.0001"  
+               min="0.0001" />
+        
+        <field name="tax_id" type="Calculation" 
+               class="span12" 
+               label="COM_STANDARD_SELECT_TAX_LABEL"
+               description="COM_STANDARD_SELECT_TAX_DESC"
+               default="0">
+            <option value="-1">COM_STANDARD_TAX_NONE</option>
+            <option value="0">COM_STANDARD_TAX_NO_SPECIAL</option>
+        </field>
+        
+        <field name="nbproducts_start" type="number" 
+               class="span12"
+               label="COM_STANDARD_NBPRODUCTS_START_LABEL" 
+               description="COM_STANDARD_NBPRODUCTS_START_DESC" 
+               default="0" 
+               step="1"  
+               min="0" />
+        <field name="nbproducts_stop" type="number" 
+               class="span12"
+               label="COM_STANDARD_NBPRODUCTS_STOP_LABEL" 
+               description="COM_STANDARD_NBPRODUCTS_STOP_DESC" 
+               default="0" 
+               step="1"  
+               min="0" />
+        
+        <field name="orderamount_start" type="number" class="span12"
+               label="COM_STANDARD_ORDERAMOUNT_START_LABEL" 
+               description="COM_STANDARD_ORDERAMOUNT_START_DESC" 
+               default="0" 
+               step="0.0001"  
+               min="0.0001" />
+        <field name="orderamount_stop" type="number" class="span12"
+               label="COM_STANDARD_ORDERAMOUNT_STOP_LABEL" 
+               description="COM_STANDARD_ORDERAMOUNT_STOP_DESC" 
+               default="0" 
+               step="0.0001"  
+               min="0.0001" />
+        
+        <field name="package_fee" type="number" class="span12"
+               label="COM_STANDARD_PACKAGE_FEE_LABEL" 
+               description="COM_STANDARD_PACKAGE_FEE_DESC" 
+               default="0" 
+               step="0.0001"  
+               min="0.0001" />
+        
+        <field name="free_payment" type="number" class="span12"
+               label="COM_STANDARD_FREE_PAYMENT_LABEL" 
+               description="COM_STANDARD_FREE_PAYMENT_DESC" 
+               default="0" 
+               step="0.0001"  
+               min="0.0001" />
+
+        <field name="catid" type="categoryedit" label="JCATEGORY"
+               description="JFIELD_CATEGORY_DESC"
+               class="span12" default="" multiple="true" />
+        
+        <field name="manufacturer_id" type="ListManufacturers" label="COM_STANDARD_MANUFACTURER" description="COM_STANDARD_MANUFACTURER_DESC"
+               class="span12" multiple="true" />
+        
+        <field name="paymenttext" type="editor"
+               label="COM_STANDARD_FIELD_PAYMENTTEXT_LABEL" 
+               description="COM_STANDARD_FIELD_PAYMENTTEXT_DESC"
+               filter="JComponentHelper::filterText" buttons="true" />
+                      
+        <field name="state" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" 
+               class="chzn-color-state" filter="intval" size="1" default="1"
+        >
+            <option value="1">
+                JPUBLISHED</option>
+            <option value="0">
+                JUNPUBLISHED</option>
+            <option value="2">
+                JARCHIVED</option>
+            <option value="-2">
+                JTRASHED</option>
+        </field>
+
+        <field
+            name="buttonspacer"
+            description="JGLOBAL_ACTION_PERMISSIONS_DESCRIPTION"
+            type="spacer" />
+
+        <field name="created" type="calendar" label="COM_STANDARD_FIELD_CREATED_LABEL"
+               description="COM_STANDARD_FIELD_CREATED_DESC" 
+               translateformat="true"
+               weeknumbers="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="created_by" type="user"
+               label="COM_STANDARD_FIELD_CREATED_BY_LABEL" description="COM_STANDARD_FIELD_CREATED_BY_DESC" />
+
+        <field name="created_by_alias" type="text"
+               label="COM_STANDARD_FIELD_CREATED_BY_ALIAS_LABEL" description="COM_STANDARD_FIELD_CREATED_BY_ALIAS_DESC"
+               size="20" />
+
+        <field name="modified" type="calendar" class="readonly"
+               label="JGLOBAL_FIELD_MODIFIED_LABEL" description="COM_STANDARD_FIELD_MODIFIED_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               readonly="true"
+               filter="user_utc" />
+
+        <field name="modified_by" type="user"
+               label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+               class="readonly"
+               readonly="true"
+               filter="unset"
+        />
+
+        <field name="checked_out" type="hidden" filter="unset" />
+
+        <field name="checked_out_time" type="hidden" filter="unset" />
+        
+        <field name="publish_up" type="calendar"
+               label="COM_STANDARD_FIELD_PUBLISH_UP_LABEL" description="COM_STANDARD_FIELD_PUBLISH_UP_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="publish_down" type="calendar"
+               label="COM_STANDARD_FIELD_PUBLISH_DOWN_LABEL" description="COM_STANDARD_FIELD_PUBLISH_DOWN_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+        
+        <field name="version" type="text" class="readonly"
+               label="COM_STANDARD_FIELD_VERSION_LABEL" size="6" description="COM_STANDARD_FIELD_VERSION_DESC"
+               readonly="true" filter="unset" />
+
+        <field name="ordering" type="text" label="JFIELD_ORDERING_LABEL"
+               description="JFIELD_ORDERING_DESC" size="6"
+               default="0" />
+
+        <field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL"
+               description="JFIELD_ACCESS_DESC" size="1" />
+
+        <field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+               description="COM_STANDARD_FIELD_LANGUAGE_DESC"
+        >
+            <option value="*">JALL</option>
+        </field>
+
+        <field name="rules" type="rules" label="JFIELD_RULES_LABEL"
+               translate_label="false" filter="rules"
+               component="com_standard" section="payment" validate="rules"
+        />
+
+    </fieldset>
+</form>

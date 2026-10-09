@@ -1,0 +1,73 @@
+
+/* 
+    Created on : Nov 29, 2019, 12:38:12 AM
+    Author     : BinhNguyen
+*/
+@each $color, $value in $using-theme-colors{
+    .line-#{$color} {
+        border-color: $value!important;
+    }
+
+    .line-top-#{$color}{
+        border-top: 1px solid $value!important;
+        &-2{
+            border-top: 2px solid $value!important;
+        }
+        &-3{
+            border-top: 3px solid $value!important;
+        }
+        &-4{
+            border-top: 4px solid $value!important;
+        }
+        &-5{
+            border-top: 5px solid $value!important;
+        }
+    }
+
+    .line-bottom-#{$color}{
+        border-bottom: 1px solid $value!important;
+        &-2{
+            border-bottom: 2px solid $value!important;
+        }
+        &-3{
+            border-bottom: 3px solid $value!important;
+        }
+        &-4{
+            border-bottom: 4px solid $value!important;
+        }
+        &-5{
+            border-bottom: 5px solid $value!important;
+        }
+    }
+}
+
+.line{
+    border-bottom: 1px solid!important;
+    &-2{
+        border-bottom: 2px solid!important;
+    }
+    &-3{
+        border-bottom: 3px solid!important;
+    }
+    &-4{
+        border-bottom: 4px solid!important;
+    }
+    &-5{
+        border-bottom: 5px solid!important;
+    }
+    &-top{
+        border-top: 1px solid!important;
+        &-2{
+            border-top: 2px solid!important;
+        }
+        &-3{
+            border-top: 3px solid!important;
+        }
+        &-4{
+            border-top: 4px solid!important;
+        }
+        &-5{
+            border-top: 5px solid!important;
+        }
+    }
+}

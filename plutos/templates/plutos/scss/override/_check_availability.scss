@@ -1,0 +1,30 @@
+/* 
+    Created on : Oct 27, 2019, 11:26:56 AM
+    Author     : BinhNguyen
+*/
+.check-availability{
+
+}
+
+@include media-breakpoint-up(lg) {
+    .check-availability{
+        .control-label{
+            label{
+                margin-bottom:0;
+            }
+        }
+        
+        .input-group{
+            &.datetimepicker{
+                .form-control{
+                    padding: 0 .5rem;
+                }
+            }
+        }
+        
+        .dropdown-toggle{
+            padding-left:  .5rem;
+            padding-right: .5rem;
+        }
+    }
+}

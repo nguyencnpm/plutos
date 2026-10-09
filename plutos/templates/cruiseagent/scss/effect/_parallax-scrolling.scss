@@ -1,0 +1,21 @@
+/* 
+    Created on : Aug 14, 2019, 10:03:52 AM
+    Author     : BinhNguyen
+*/
+.parallax-scrolling{
+    /* Set a specific height */
+    /*min-height: 500px;*/
+    /* Full height */
+    /*height: 100%;*/ 
+    /* --- Create the parallax scrolling effect --- */ 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &.fixed{
+        background-attachment: fixed;
+    }
+    &.scroll{
+        background-attachment: scroll;
+    }
+}

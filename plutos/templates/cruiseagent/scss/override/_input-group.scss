@@ -1,0 +1,18 @@
+/* 
+    Created on : Jan 16, 2019, 3:47:00 PM
+    Author     : BinhNguyen
+*/
+
+.input-group-text-danger{
+    &--override{
+        background-color: $primary-color-logo;
+        border-color: $primary-color-logo;
+        color: $color-sub-logo;
+    }
+}
+.input-group-text{
+    $input-border-radius: 0;
+    &--override{
+        @include border-radius($input-border-radius);
+    }
+}

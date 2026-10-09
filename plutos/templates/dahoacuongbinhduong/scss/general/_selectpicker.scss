@@ -1,0 +1,97 @@
+/* 
+    Created on : Oct 7, 2019, 2:05:40 PM
+    Author     : BinhNguyen
+*/
+.radius-0 {
+    -webkit-border-radius: 0px!important;
+    -moz-border-radius: 0px!important;
+    border-radius: 0px!important;
+    .btn-light{
+        -webkit-border-radius: 0px!important;
+        -moz-border-radius: 0px!important;
+        border-radius: 0px!important;
+    }
+}
+.btn-light{
+    color: $select-picker-dropdown-btn-light-color!important;
+    padding:$btn-light-padding;
+}
+.btn-light:not(:disabled):not(.disabled):active, 
+.btn-light:not(:disabled):not(.disabled).active, 
+.show>.btn-light.dropdown-toggle{
+    color: $select-picker-dropdown-btn-light-color!important;
+    background: none!important;
+    -webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0.125);
+    box-shadow:inset 0 0px 0px rgba(0,0,0,0.125);
+}
+
+.dropdown-toggle{
+    &::after{
+        border-top: .6em solid $select-picker-dropdown-toggle-bg-color;
+        border-right: .6em solid transparent;
+        border-bottom: 0;
+        border-left: .6em solid transparent; 
+    }
+}
+
+.dropup .dropdown-toggle::after{
+    border-top: 0;
+    border-right: .6em solid transparent;
+    border-bottom: .6em solid $select-picker-dropdown-toggle-bg-color;
+    border-left: .6em solid transparent;
+}
+
+.bootstrap-select{
+    .btn, 
+    .dropdown-toggle, 
+    .btn-light{
+        background: none;
+        border: 1px solid $select-picker-border-color;
+        /*        -webkit-border-radius: 0px;
+                -moz-border-radius: 0px;
+                border-radius: 0px;
+        */
+
+        @include hover-focus {
+            background: none!important;
+            border: 1px solid $select-picker-border-color;
+            outline:0!important;
+            box-shadow:inset 0 0px 0px rgba(0,0,0,0.125)!important;
+            -webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0.125)!important;
+            text-decoration: none;
+        }
+        .filter-option{
+
+        }
+    }
+
+    .dropdown-menu{
+        margin: 0;
+        border-radius:0;
+        border-top: 0px solid $select-picker-border-color!important;
+        background-color:$select-picker-dropdown-menu-bg-color;
+        color:  $select-picker-dropdown-menu-color;
+        -webkit-box-shadow:inset 0 0px 0px rgba(0,0,0,0.125);
+        box-shadow:inset 0 0px 0px rgba(0,0,0,0.125);
+        &>li{
+            &>a{
+                color: $select-picker-dropdown-menu-color;
+                @include hover-focus-active{
+                    color: $select-picker-dropdown-menu-hover-color;
+                    background: $select-picker-dropdown-menu-bg-hover-color;
+                    outline:0;
+                }
+            }
+            .dropdown-item{
+                padding: $select-picker-dropdown-item-padding;
+                &.active,
+                &:active{
+                    color: $select-picker-dropdown-item-active-color;
+                    background: $select-picker-dropdown-item-bg-active-color;
+                    outline:0;
+                }
+            } 
+
+        }
+    }
+}

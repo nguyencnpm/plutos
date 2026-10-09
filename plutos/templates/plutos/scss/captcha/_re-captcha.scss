@@ -1,0 +1,63 @@
+/* 
+    Created on : Aug 10, 2018, 10:18:56 PM
+    Author     : Binh Nguyen
+*/
+.captcha{
+    &--center{
+        text-align: center;
+        .g-recaptcha{
+            /*
+            margin: 0 auto; 
+            width: 310px;
+            */
+            div{
+                max-width: 100%;
+                width: 100%!important;
+                iframe{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.was-validated{
+    .captcha{
+        .invalid-feedback{
+            display: block;
+        }
+        /* rc-anchor */
+        .g-recaptcha{
+            .rc-anchor{
+                border: 1px solid $is-invalid!important;
+            }
+        }
+        .required{
+            &.g-recaptcha{
+                &.error{
+                    border: 1px solid $is-invalid;
+                }
+            }
+        } 
+        /*
+        .rc-anchor-light{
+            &.rc-anchor-normal{
+                
+            }
+        }
+        */
+    }
+
+}
+
+/*
+@include media-breakpoint-down(xs) {
+    .g-recaptcha{
+        width:auto;
+        transform:scale(0.63);
+        -webkit-transform:scale(0.63);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+}
+*/

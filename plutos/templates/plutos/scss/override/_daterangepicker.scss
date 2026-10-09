@@ -1,0 +1,38 @@
+.daterange{
+    .fa-calendar-color{
+        color: $btn-primary-bg;
+    }
+}
+
+.daterangepicker{
+    .applyBtn{
+        background-color: $primary-color-logo!important;
+        border-color: $primary-color-logo!important;
+    }
+
+    td{
+        &.available{
+            &:hover{
+                background:$primary-color-logo-hover;
+            }
+        }
+        &.in-range{
+            background: #c6e8f8!important;
+            &:hover{
+                background: $primary-color-logo-hover!important;
+            }
+        }
+        &.active, &.active:hover{
+            background-color:$primary-color-logo!important;
+        }
+        &.active.end-date.in-range{
+            background-color:$primary-color-logo!important;
+        }
+        &.disabled,
+        &.disabled:hover {
+            color: $gray-400;
+            pointer-events: auto! important;
+            cursor: not-allowed! important;
+        }
+    }
+} 

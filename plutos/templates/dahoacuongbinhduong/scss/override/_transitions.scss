@@ -1,0 +1,19 @@
+/* 
+    Created on : Apr 22, 2019, 9:03:01 PM
+    Author     : BinhNguyen
+*/
+.collapse {
+    &:not(.show) {
+        display: none;
+    }
+    &.show {
+        display: block;
+        .collapse {
+            display: block;
+        }
+    }
+    &.row.show {
+        display: flex;
+    }
+}
+

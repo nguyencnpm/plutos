@@ -1,0 +1,58 @@
+/* 
+    Created on : Jul 21, 2018, 5:20:57 PM
+    Author     : Binh Nguyen
+*/
+.disabled{
+    cursor: $cursor-disabled;
+    pointer-events: none;
+} 
+.btn-icon{
+    padding: 0rem .2rem;
+}
+
+.btn{
+    &--override{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        color:$btn-override-color;
+        background-color: $btn-override-bg-color;
+        border-color: $btn-override-border-color;
+        &:hover, &:focus{
+            color:$btn-override-color-hover;
+            background-color: $btn-override-bg-color-hover;
+            border-color: $btn-override-border-color-hover;
+        }
+        .display-processing{
+            margin-top: .2rem;
+            position: absolute; 
+            margin-left: -1.2rem;
+        }
+    }
+}
+.btn-group-vertical {
+    .btn-number{
+        padding:0 .3rem;
+        font-size: 12px;
+        @include border-left-radius(0);
+        &.quantity-plus{
+            color:$btn-plus-color;
+            background-color: $btn-plus-bg-color;
+            border-color: $btn-plus-border-color;
+            @include hover-focus-active{
+                color:$btn-plus-color-hover;
+                background-color: $btn-plus-bg-color-hover;
+                border-color: $btn-plus-border-color-hover;
+            }
+        }
+        &.quantity-minus{
+            color:$btn-minus-color;
+            background-color: $btn-minus-bg-color;
+            border-color: $btn-minus-border-color;
+            @include hover-focus-active{
+                color:$btn-minus-color-hover;
+                background-color: $btn-minus-bg-color-hover;
+                border-color: $btn-minus-border-color-hover;
+            }
+        }
+    }
+}

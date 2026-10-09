@@ -1,0 +1,62 @@
+/* 
+    Created on : Aug 5, 2018, 4:24:41 PM
+    Author     : Binh Nguyen
+*/
+.video{
+    background: rgba(0,0,0,0.2);
+    &__thumbnail{
+        position: relative;
+        
+        .popup-video{
+            cursor: pointer;
+        }
+        .icon-video{
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            text-align: center;
+            color: $icon-video-color;
+            &.fa{
+                text-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); 
+            }
+        }
+        .shaded{
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);/*$bg-shaded;*/
+            position: absolute;
+            /*opacity:$shaded-opacity-none;*/
+            top:0px;
+            right: 0px;
+            bottom: 0px;
+            left:0px;
+            &:hover{
+                /*opacity: $shaded-opacity;*/
+                background: rgba(0,0,0,0);
+            }
+        }
+        img{
+            &.icon-video{
+                margin-top: -20px;
+                margin-left: auto;
+                margin-right: auto;
+                height: 40px;
+                width: auto;
+            }
+        }
+        .video-desc{
+            position: absolute;
+            top: 60%;
+            h2{
+                margin: 0 auto;
+                text-align: center;
+                text-transform: uppercase;
+                font-family: $font-family-bold-site;
+                color: #fff;
+                line-height: 40px;
+                padding: 0 70px;
+            }
+        }
+    }
+}

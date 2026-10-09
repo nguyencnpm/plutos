@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+    <name>System - Facebook Live Chat</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>January 2020</creationDate>
+    <copyright>Copyright (C) 2005 - 2018 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>1.3.2</version>
+    <description>This plugin puts the Facebook Live Chat code into your web site.</description>
+    <files>
+        <filename plugin="facebooklivechat">facebooklivechat.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <updateservers>
+        <server type="extension" priority="1" name="Facebook Live Chat - Updates"></server>
+    </updateservers>
+    <config>
+        <fields name="params">
+            <fieldset name="basic">
+                <field name="page_id"
+                       type="text"
+                       default="XXXXXXXXXXXXXX"
+                       label="Facebook Page ID"
+                       description="Facebook Page ID">
+                </field>
+                <field 
+                    name="is_greeting" 
+                    type="radio"
+                    label="Automatic greeting"
+                    description="Automatic greeting"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>	
+                <field name="logged_in_greeting"
+                       type="text"
+                       default="Hi"
+                       label="Logged In Greeting"
+                       description="Logged In Greeting"
+                       showon="is_greeting:0"
+                >
+                </field>
+                <field name="logged_out_greeting"
+                       type="text"
+                       default="Good Bye"
+                       label="Logged Out Greeting"
+                       description="Logged Out Greeting"
+                       showon="is_greeting:0"
+                >
+                </field>
+                <field name="page_color" 
+                       class="" 
+                       type="color" 
+                       default="#7C2529"
+                       label="Background color"
+                       description="Background color">	
+                </field>
+                <field 
+                    name="isLanguage" 
+                    type="radio"
+                    label="Automatic language"
+                    description="Automatic language"
+                    class="btn-group btn-group-yesno"
+                    default="0"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

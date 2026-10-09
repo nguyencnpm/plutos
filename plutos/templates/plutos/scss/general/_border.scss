@@ -1,0 +1,15 @@
+/* 
+    Created on : Jul 28, 2018, 8:49:28 AM
+    Author     : Binh Nguyen
+*/
+.border-color-item{
+    border: $border-color-site;
+}
+.border-image{
+    border: solid 5px $border-thumbnail-color;
+}
+
+.bg-quantity-shopping-cart {
+    background-color: $quantity-shopping-cart-bg-color;
+    color: $quantity-shopping-cart-color;
+}

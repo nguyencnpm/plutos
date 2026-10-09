@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="flightenquiry" addrulepath="components/com_standard/models/rules" label="COM_STANDARD_CONTACT_US_DEFAULT_LABEL">
+        <field
+            name="contact_name"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_NAME_LABEL"
+            description="COM_STANDARD_CONTACT_US_NAME_DESC"
+            filter="string"
+            required="true"            
+        />
+        
+        <field name="contact_gender" 
+               type="list" 
+               default="1" 
+               label="COM_STANDARD_CONTACT_US_GENDER" 
+               description="COM_STANDARD_CONTACT_US_GENDER" 
+        >
+            <option value="1">COM_STANDARD_CONTACT_US_MALE_LABEL</option>
+            <option value="2">COM_STANDARD_CONTACT_US_FEMALE_LABEL</option>
+            <option value="3">COM_STANDARD_CONTACT_US_OTHER_LABEL</option>
+        </field>
+        
+        <field
+            name="contact_country_id"
+            type="Country"
+            default="" 
+            class="selectpicker show-tick dropupAuto"
+            label="COM_STANDARD_CONTACT_US_COUNTRY_OF_RESIDENCE_LABEL"
+            description="COM_STANDARD_CONTACT_US_COUNTRY_OF_RESIDENCE_DESC"
+            required="true"           
+        >
+            <option value="" data-hidden="true">COM_STANDARD_CONTACT_US_SELECT_COUNTRY_OF_RESIDENCE</option>
+        </field>
+        
+        <field
+            name="contact_birthday"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_BIRTHDAY_LABEL"
+            description="COM_STANDARD_CONTACT_US_BIRTHDAY_DESC"
+            filter="string"
+            hint="COM_STANDARD_CONTACT_US_BIRTHDAY_PLACEHOLDER"
+        />
+        
+        <field
+            name="contact_phone"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_PHONE_LABEL"
+            description="COM_STANDARD_CONTACT_US_PHONE_DESC"
+            filter="string"
+            required="true"
+        />
+        
+        <field
+            name="contact_mobile"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_MOBILE_LABEL"
+            description="COM_STANDARD_CONTACT_US_MOBILE_DESC"
+            filter="string"
+        />
+       
+        <field
+            name="contact_email"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_EMAIL_LABEL"
+            description="COM_STANDARD_CONTACT_US_EMAIL_DESC"
+            filter="string"
+            required="true"
+        />
+       
+        <field
+            name="contact_flighttypeid"
+            type="Type"
+            default="" 
+            class="selectpicker show-tick dropupAuto"
+            label="COM_STANDARD_CONTACT_US_FLIGHT_ENQUIRY_LABEL"
+            description="COM_STANDARD_CONTACT_US_FLIGHT_ENQUIRY_DESC"
+            required="true"           
+        >
+        </field>
+        
+        <field
+            name="contact_fax"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_FAX_LABEL"
+            description="COM_STANDARD_CONTACT_US_FAX_DESC"
+            filter="string"
+            hint="COM_STANDARD_CONTACT_US_FAX_LABEL"
+        />
+       
+        <field
+            name="enquiry_datedeparture"
+            type="Datepicker"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_DATE_DEPARTURE_LABEL"
+            description="COM_STANDARD_CONTACT_US_DATE_DEPARTURE_DESC"
+            required="true"
+            hint="DD/MM/YYYY"
+        />
+        
+        
+        <field
+            name="contact_message"
+            type="textarea"
+            class="form-control"
+            label="COM_STANDARD_CONTACT_US_ENTER_MESSAGE_LABEL"
+            description="COM_STANDARD_CONTACT_US_ENTER_MESSAGE_DESC"
+            cols="50"
+            rows="3"
+            filter="safehtml"
+            validate="contactemailmessage"
+        />
+
+        <field
+            name="contact_email_copy"
+            type="checkbox"
+            label="COM_STANDARD_CONTACT_US_EMAIL_A_COPY_LABEL"
+            description="COM_STANDARD_CONTACT_US_EMAIL_A_COPY_DESC"
+            default="0"
+        />
+    </fieldset>
+    <fieldset name="captcha">
+        <field
+            name="captcha"
+            type="captcha"
+            label="COM_STANDARD_CAPTCHA_LABEL"
+            description="COM_STANDARD_CAPTCHA_DESC"
+            validate="captcha"
+            namespace="contact"
+        />
+    </fieldset>
+</form>

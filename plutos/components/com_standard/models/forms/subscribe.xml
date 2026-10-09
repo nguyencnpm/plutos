@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="subscribe" addrulepath="components/com_standard/models/rules" label="COM_STANDARD_CONTACT_DEFAULT_LABEL">
+        <field
+            name="spacer"
+            type="spacer"
+            label="COM_STANDARD_CONTACT_REQUIRED"
+            class="text"
+        />
+               
+        <field
+            name="subscribe_email"
+            type="Subscribe"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_EMAIL_LABEL"
+            description="COM_STANDARD_CONTACT_EMAIL_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_CONTACT_EMAIL_LABEL"
+        />
+    </fieldset>
+    
+    <fieldset name="captcha">
+        <field
+            name="captcha"
+            type="captcha"
+            label="COM_STANDARD_CAPTCHA_LABEL"
+            description="COM_STANDARD_CAPTCHA_DESC"
+            validate="captcha"
+            namespace="contact"
+        />
+    </fieldset>
+</form>

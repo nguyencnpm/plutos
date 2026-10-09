@@ -1,0 +1,43 @@
+/* 
+    Created on : Oct 6, 2019, 2:20:20 AM
+    Author     : BinhNguyen
+*/
+
+.small-thumbnails{
+    &.carousel{
+        .carousel-control-prev, 
+        .carousel-control-next{
+            width: auto;
+        }
+        .carousel-multiple-items{
+            .carousel-indicators{
+                position:relative;
+                margin-top: 1.5rem;
+
+                .position-relative{
+                    position:relative;
+                }
+                .shaded{
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.5);/*$bg-shaded;*/
+                    position: absolute;
+                    /*opacity:$shaded-opacity-none;*/
+                    top:0px;
+                    right: 0px;
+                    bottom: 0px;
+                    left:0px;
+                    &:hover{
+                        /*opacity: $shaded-opacity;*/
+                        background: rgba(0,0,0,0);
+                    }
+                }
+                .active{
+                    .shaded{
+                        background: rgba(0,0,0,0);
+                    }
+                }
+            }
+        }
+    }
+}

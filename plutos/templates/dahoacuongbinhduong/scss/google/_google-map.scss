@@ -1,0 +1,20 @@
+/* 
+    Created on : Nov 25, 2019, 2:51:21 PM
+    Author     : BinhNguyen
+*/
+div{
+    &.gp-map{
+        width: 100%;
+        height:100%;
+    }
+    &.gp-google-map{
+        position: relative;
+    }
+}
+.gm-style {
+    .gm-style-iw-d{
+        color: $color-title;
+    }
+}
+
+

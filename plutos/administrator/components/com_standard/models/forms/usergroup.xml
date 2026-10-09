@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset addfieldpath="/administrator/components/com_users/models/fields">
+        <field 
+            name="id" 
+            type="hidden"
+            default="0"
+            required="true"
+            readonly="true"
+        />
+
+        <field 
+            name="title" 
+            type="text"
+            label="COM_STANDARD_USERGROUP_FIELD_TITLE_LABEL"
+            description="COM_STANDARD_USERGROUP_FIELD_TITLE_DESC"
+            required="true"
+            class="span12"
+        />
+
+        <field 
+            name="parent_id" 
+            type="groupparent"
+            label="COM_STANDARD_USERGROUP_FIELD_PARENT_LABEL"
+            description="COM_STANDARD_USERGROUP_FIELD_PARENT_DESC"
+            required="true"
+        />
+
+        <field 
+            name="actions" 
+            type="hidden"
+            multiple="true"
+        />
+
+        <field 
+            name="lft" 
+            type="hidden"
+            filter="unset"
+        />
+
+        <field 
+            name="rgt" 
+            type="hidden"
+            filter="unset"
+        />
+        
+        <field 
+            name="contractgroup_id" 
+            type="ContractGroup" 
+            label="COM_STANDARD_CONTRACT_GROUP_LABEL" 
+            description="COM_STANDARD_CONTRACT_GROUP_DESC" 
+            class="span12"
+            default="0"  
+        >
+            <option value="0">COM_STANDARD_SELECT_CONTRACT_GROUP</option>
+        </field>
+        
+        <field name="catid" 
+               type="categoryedit" 
+               label="COM_STANDARD_CATEGORIES"
+               description="JFIELD_CATEGORY_DESC" 
+               class="span12"
+               multiple="true"
+        />
+    </fieldset>
+</form>

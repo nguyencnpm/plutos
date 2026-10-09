@@ -1,0 +1,16 @@
+/* 
+    Created on : Jul 29, 2018, 1:37:56 PM
+    Author     : Binh Nguyen
+*/
+.ias-trigger{
+    a{
+        color: $primary-color-logo!important;
+        font-size: $font-size-site-title;
+        &:link{
+            color: $primary-color-logo!important;
+        }
+        &:hover, &:focus{
+            color: $primary-color-logo-sub!important;
+        }
+    }
+}

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+    <name>com_standard</name>
+    <author>Binh Nguyen! Project</author>
+    <creationDate>March 2017</creationDate>
+    <copyright>(C) 2017 - 2018 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0.0</version>
+    <description>COM_STANDARD_XML_DESCRIPTION</description>
+    <!-- Runs on install -->
+       
+    <install> 
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.sql</file>
+        </sql>
+    </install>
+   
+    <!-- Runs on uninstall -->
+    <!--    
+    <uninstall> 
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+    -->
+    <!--    
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates</schemapath>
+        </schemas>
+    </update>
+    -->
+    
+    <files folder="site">
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <filename>standard.php</filename>
+        <folder>controllers</folder>
+        <folder>helpers</folder>
+        <folder>language</folder>
+        <folder>layouts</folder>
+        <folder>models</folder>
+        <folder>views</folder>
+    </files>
+    <!--
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB/en-GB.com_standard.ini</language>
+        <language tag="vi-VN">language/vi-VN/vi-VN.com_standard.ini</language>
+    </languages>
+    -->
+    <layouts folder="layouts">
+        <folder>standard</folder>
+    </layouts>
+    <libraries folder="libraries">
+        <folder>giaiphap</folder>
+        <folder>gp_convert</folder>
+    </libraries>
+    <administration>
+        <menu img="class:icon-16-component">com_standard</menu>
+        <submenu>
+            <!--
+                Note that all & must be escaped to &amp; for the file to be valid
+                XML and be parsed by the installer
+            -->
+            <menu link="option=com_standard&amp;view=products" view="products" img="class:icon-16-component" alt="Standard/Products">COM_STANDARD_PRODUCTS</menu>
+            <menu link="option=com_standard&amp;view=categories" view="categories" img="class:icon-16-component" alt="Standard/Categories">COM_STANDARD_SUBMENU_CATEGORIES</menu>
+            <!--
+            <menu link="option=com_categories&amp;extension=com_standard" view="categories" img="class:icon-16-component" alt="Standard/Categories">COM_STANDARD_SUBMENU_CATEGORIES</menu>
+            -->
+            <!--
+            <menu link="option=com_standard&amp;view=featured" view="featured" img="class:icon-16-component" alt="Standard/Featured">COM_STANDARD_SUBMENU_FEATURED</menu>
+           
+            <menu link="option=com_standard&amp;view=productblocks" view="productblocks" img="class:icon-16-component" alt="Standard/Product block">COM_STANDARD_PRODUCT_BLOCKS</menu>
+            
+            <menu link="option=com_standard&amp;view=inventory" view="inventory" img="class:icon-16-component" alt="Standard/Inventory">COM_STANDARD_INVENTORY</menu>
+            
+            <menu link="option=com_standard&amp;view=itineraries" view="itineraries" img="class:icon-16-component" alt="Standard/Itineraries">COM_STANDARD_ITINERARIES</menu>
+            <menu link="option=com_standard&amp;view=ItineraryTypes" view="ItineraryTypes" img="class:icon-16-component" alt="Standard/Itinerary Types">COM_STANDARD_ITINERARY_TYPES</menu>
+            <menu link="option=com_standard&amp;view=combos" view="combos" img="class:icon-16-component" alt="Standard/Combos">COM_STANDARD_COMBOS</menu>
+           
+            <menu link="option=com_standard&amp;view=allotments" view="allotments" img="class:icon-16-component" alt="Standard/allotment">COM_STANDARD_ALLOTMENTS</menu>
+            
+            <menu link="option=com_standard&amp;view=routes" view="routes" img="class:icon-16-component" alt="Standard/routes">COM_STANDARD_ROUTES</menu>
+            
+            <menu link="option=com_standard&amp;view=rates" view="rates" img="class:icon-16-component" alt="Standard/rates">COM_STANDARD_RATES</menu>
+            
+            <menu link="option=com_standard&amp;view=contractrates" view="contractrates" img="class:icon-16-component" alt="Cruises/contract rates">COM_STANDARD_CONTRACT_RATES</menu>
+            <menu link="option=com_standard&amp;view=contractgroups" view="contractgroups" img="class:icon-16-component" alt="Cruises/Contract groups">COM_STANDARD_CONTRACT_GROUPS</menu>
+            
+            <menu link="option=com_standard&amp;view=calculations" view="calculations" img="class:icon-16-component" alt="Standard/Tax Calculation rule">COM_STANDARD_TAXES_CALCULATION_RULES</menu>
+            
+            <menu link="option=com_standard&amp;view=manufacturers" view="manufacturers" img="class:icon-16-component" alt="Standard/Manufacturer">COM_STANDARD_MANUFACTURERS</menu>
+            
+            <menu link="option=com_standard&amp;view=shipmentMethods" view="shipmentMethods" img="class:icon-16-component" alt="Standard/Shipment Methods">COM_STANDARD_SHIPMENT_METHODS</menu>
+            -->
+            <!--
+            <menu link="option=com_standard&amp;view=extras" view="extras" img="class:icon-16-component" alt="Standard/Extras Methods">COM_STANDARD_EXTRAS</menu>
+            -->
+            <!--
+            <menu link="option=com_standard&amp;view=paymentMethods" view="paymentMethods" img="class:icon-16-component" alt="Standard/payment Methods">COM_STANDARD_PAYMENT_METHODS</menu>
+      
+            <menu link="option=com_standard&amp;view=promotions" view="promotions" img="class:icon-16-component" alt="Standard/Promotions">COM_STANDARD_PROMOTIONS</menu>
+            
+            <menu link="option=com_standard&amp;view=couponsTypes" view="couponsTypes" img="class:icon-16-component" alt="Standard/coupons Types">COM_STANDARD_COUPONS_TYPES</menu>
+            <menu link="option=com_standard&amp;view=coupons" view="coupons" img="class:icon-16-component" alt="Standard/Coupon">COM_STANDARD_COUPONS</menu>
+          
+            <menu link="option=com_standard&amp;view=currencies" view="currencies" img="class:icon-16-component" alt="Standard/Currencies">COM_STANDARD_CURRENCIES</menu>
+            
+            <menu link="option=com_standard&amp;view=users" view="users" img="class:icon-16-component" alt="Cruises/Agent users">COM_STANDARD_USERS</menu>
+            <menu link="option=com_standard&amp;view=usergroups" view="usergroups" img="class:icon-16-component" alt="Cruises/Agent groups">COM_STANDARD_USER_GROUPS</menu>
+            
+            
+            <menu link="option=com_standard&amp;view=orders" view="orders" img="class:icon-16-component" alt="Standard/orders">COM_STANDARD_ORDERS</menu>
+            <menu link="option=com_standard&amp;view=subscribedemails" view="subscribedemails" img="class:icon-16-component" alt="Standard/subscribed emails">COM_STANDARD_SUBSCRIBED_EMAILS</menu>
+            <menu link="option=com_standard&amp;view=requests" view="requests" img="class:icon-16-component" alt="Standard/requests">COM_STANDARD_CONTACT_REQUESTS</menu>
+            -->
+            <menu link="option=com_standard&amp;view=registrations" view="registrations" img="class:icon-16-component" alt="Standard/registrations">COM_STANDARD_REGISTRATIONS</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>standard.php</filename>
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>layouts</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <!--
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB/en-GB.com_standard.ini</language>
+            <language tag="en-GB">language/en-GB/en-GB.com_standard.sys.ini</language>
+            <language tag="vi-VN">language/vi-VN/vi-VN.com_standard.ini</language>
+            <language tag="vi-VN">language/vi-VN/vi-VN.com_standard.sys.ini</language>
+        </languages>
+        -->
+    </administration>
+</extension>

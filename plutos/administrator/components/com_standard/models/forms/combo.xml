@@ -1,0 +1,1618 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fieldset ><!-- addfieldpath="/administrator/components/com_categories/models/fields" -->
+        <field name="id"  type="text" class="readonly" label="JGLOBAL_FIELD_ID_LABEL"
+               description ="JGLOBAL_FIELD_ID_DESC" size="10" default="0"
+               readonly="true" />
+
+        <field name="asset_id" type="hidden" filter="unset" />
+
+        <field name="title" type="text" label="JGLOBAL_TITLE"
+               description="JFIELD_TITLE_DESC"
+               class="input-xxlarge input-large-text"
+               size="40"
+               required="true" />
+
+        <field name="alias" type="text" label="JFIELD_ALIAS_LABEL"
+               description="JFIELD_ALIAS_DESC"
+               hint="JFIELD_ALIAS_PLACEHOLDER"
+               size="40" />
+        
+        <field name="subtitle" type="text" label="SUBTITLE_DESC"
+               description="SUBTITLE_DESC"
+               class="input-xxlarge input-large-text"
+               size="40" />
+
+        <field name="version_note" type="text" label="JGLOBAL_FIELD_VERSION_NOTE_LABEL"
+               description="JGLOBAL_FIELD_VERSION_NOTE_DESC"
+               class="span12"
+               maxlength="255"
+               size="45" />
+        
+        <field name="code" type="text" label="COM_STANDARD_PRODUCT_CODE"
+               description="COM_STANDARD_PRODUCT_CODE_DESC"
+               maxlength="255" /> 
+
+        <field name="product_id"
+               type="Product"
+               class="span12"
+               label="COM_STANDARD_PRODUCT_LABEL"
+               description="COM_STANDARD_PRODUCT_DESC"
+               default=""
+        >
+            <option value="">COM_STANDARD_PRODUCT_CHOOSE_A</option>
+        </field>
+        
+        <field name="itinerary_id"
+               type="Itinerary"
+               class="span12"
+               label="COM_STANDARD_ITINERARY_LABEL"
+               description="COM_STANDARD_ITINERARY_DESC"
+               default=""
+        >
+            <option value="">COM_STANDARD_ITINERARY_CHOOSE_A</option>
+        </field>
+        
+        <field name="price" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_BASE_PRICE"
+               description="COM_STANDARD_NO_VALUE" 
+               default="0" 
+               min="0" />
+        
+        <field
+            name="currency_id"
+            type="currency"
+            class="span12"
+            label="COM_STANDARD_CURRENCY"
+            description="COM_STANDARD_CURRENCY"
+            default="144"
+        >
+            <option value="">COM_STANDARD_SELECT_CURRENCY</option>
+        </field>
+
+        <field name="in_stock" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_INSTOCK"
+               description="COM_STANDARD_UNLIMITED" 
+               default="0" 
+               min="0" />
+        
+        <field name="combotext" type="editor"
+               label="COM_STANDARD_FIELD_PRODUCTTEXT_LABEL" description="COM_STANDARD_FIELD_PRODUCTTEXT_DESC"
+               filter="JComponentHelper::filterText" buttons="false" />
+
+        <field name="state" 
+               type="list" 
+               label="JSTATUS"
+               description="JFIELD_PUBLISHED_DESC" 
+               class="chzn-color-state span12"
+               filter="intval" 
+               size="1" 
+               default="1"
+        >
+            <option value="1">JPUBLISHED</option>
+            <option value="0">UNPUBLISHED</option>
+            <option value="2">JARCHIVED</option>
+            <option value="-2">JTRASHED</option>
+        </field>
+        <!--
+        <field name="manufacturer_id" type="ListManufacturers" label="COM_STANDARD_MANUFACTURER"
+               description="COM_STANDARD_MANUFACTURER_DESC"
+               class="span12" multiple="true" />
+        -->
+        <field name="catid"
+               type="categoryedit"
+               class="span12"
+               label="JCATEGORY"
+               description="JFIELD_CATEGORY_DESC"
+               required="true"
+               default=""
+        >
+        </field>
+        
+        <field 
+            name="description_layoutelement"
+            type="LayoutElement"
+            class="span12"
+            label="COM_STANDARD_LAYOUT_ELEMENT_LABEL"
+            description="COM_STANDARD_LAYOUT_ELEMENT_DESC"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        <field name="description_title" 
+               type="text" 
+               class="span12"
+               label="JGLOBAL_TITLE"
+               description="JFIELD_TITLE_DESC"
+        />
+        
+        <field 
+            name="displaytype_id"
+            type="displaytype"
+            class="span12"
+            label="COM_STANDARD_DISPLAY_TYPE_LABEL"
+            description="COM_STANDARD_DISPLAY_TYPE_DESC"
+            default="0"
+        />
+        
+        <field name="description_column" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_COLUMN_LABEL"
+               description="COM_STANDARD_COLUMN_DESC" 
+               default="4" 
+               min="0" />
+        
+        <field 
+            name="plans_mediadisplaytype"
+            type="mediadisplaytype"
+            class="span12"
+            label="COM_STANDARD_DISPLAY_TYPE_LABEL"
+            description="COM_STANDARD_DISPLAY_TYPE_DESC"
+            default="singleslides"
+        >
+            <option value=" ">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="plans_medialayoutelement"
+            type="LayoutElement"
+            class="span12"
+            label="COM_STANDARD_LAYOUT_ELEMENT_LABEL"
+            description="COM_STANDARD_LAYOUT_ELEMENT_DESC"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="plans_displaytype_id"
+            type="displaytype"
+            class="span12"
+            label="COM_STANDARD_DISPLAY_TYPE_LABEL"
+            description="COM_STANDARD_DISPLAY_TYPE_DESC"
+            default="3"
+        />
+        
+        <field 
+            name="plans_layout"
+            type="Layout"
+            class="span12"
+            label="COM_STANDARD_LAYOUT_LABEL"
+            description="COM_STANDARD_LAYOUT_DESC"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="plans_layoutelement"
+            type="LayoutElement"
+            class="span12"
+            label="COM_STANDARD_LAYOUT_ELEMENT_LABEL"
+            description="COM_STANDARD_LAYOUT_ELEMENT_DESC"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        
+        <field name="plans_num_leading" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_NUM_LEADING_PLANS_LABEL"
+               description="COM_STANDARD_NUM_LEADING_PLANS_DESC" 
+               default="4" 
+               min="0" />
+        
+        <field name="plans_column_leading" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_COLUMN_LABEL"
+               description="COM_STANDARD_COLUMN_DESC" 
+               default="4" 
+               min="0" />
+        
+        <field name="plans_num_intro" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_NUM_INTRO_PLANS_LABEL"
+               description="COM_STANDARD_NUM_INTRO_PLANS_DESC" 
+               default="0" 
+               min="0" />
+        
+        <field name="plans_column_intro" 
+               type="number" 
+               class="span12"
+               label="COM_STANDARD_COLUMN_LABEL"
+               description="COM_STANDARD_COLUMN_DESC" 
+               default="3" 
+               min="0" />
+
+        <field name="tags"
+               type="tag"
+               label="JTAG"
+               description="JTAG_DESC"
+               class="span12"
+               multiple="true"
+        >
+        </field>
+        
+        <field name="aspect_ratio"
+               type="AspectRatio"
+               class="span12"
+               label="COM_STANDARD_ASPECT_RATIO_LABEL"
+               description="COM_STANDARD_ASPECT_RATIO_DESC"
+               default="16by9"
+        >
+        </field>
+        
+        <field name="frame_rate"
+               type="FrameRate"
+               class="span12"
+               label="COM_STANDARD_FRAME_RATE_LABEL"
+               description="COM_STANDARD_FRAME_RATE_DESC"
+               default="allowfullscreen"
+        >
+        </field>
+
+        <field
+            name="buttonspacer"
+            description="JGLOBAL_ACTION_PERMISSIONS_DESCRIPTION"
+            type="spacer" />
+
+        <field name="created" type="calendar" label="COM_STANDARD_FIELD_CREATED_LABEL"
+               description="COM_STANDARD_FIELD_CREATED_DESC" 
+               translateformat="true"
+               weeknumbers="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="created_by" type="user"
+               label="COM_STANDARD_FIELD_CREATED_BY_LABEL" description="COM_STANDARD_FIELD_CREATED_BY_DESC" />
+
+        <field name="created_by_alias" type="text"
+               label="COM_STANDARD_FIELD_CREATED_BY_ALIAS_LABEL" description="COM_STANDARD_FIELD_CREATED_BY_ALIAS_DESC"
+               size="20" />
+
+        <field name="modified" type="calendar" class="readonly"
+               label="JGLOBAL_FIELD_MODIFIED_LABEL" description="COM_STANDARD_FIELD_MODIFIED_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               readonly="true"
+               filter="user_utc" />
+
+        <field name="modified_by" type="user"
+               label="JGLOBAL_FIELD_MODIFIED_BY_LABEL"
+               class="readonly"
+               readonly="true"
+               filter="unset"
+        />
+
+        <field name="checked_out" type="hidden" filter="unset" />
+
+        <field name="checked_out_time" type="hidden" filter="unset" />
+
+        <field name="publish_up" type="calendar"
+               label="COM_STANDARD_FIELD_PUBLISH_UP_LABEL" description="COM_STANDARD_FIELD_PUBLISH_UP_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="publish_down" type="calendar"
+               label="COM_STANDARD_FIELD_PUBLISH_DOWN_LABEL" description="COM_STANDARD_FIELD_PUBLISH_DOWN_DESC"
+               translateformat="true"
+               showtime="true"
+               size="22"
+               filter="user_utc" />
+
+        <field name="version" type="text" class="readonly"
+               label="COM_STANDARD_FIELD_VERSION_LABEL" size="6" description="COM_STANDARD_FIELD_VERSION_DESC"
+               readonly="true" filter="unset" />
+
+        <field name="ordering" type="text" label="JFIELD_ORDERING_LABEL"
+               description="JFIELD_ORDERING_DESC" size="6"
+               default="0" />
+
+        <field name="metakey" type="textarea"
+               label="JFIELD_META_KEYWORDS_LABEL" description="JFIELD_META_KEYWORDS_DESC"
+               rows="3" cols="30" />
+
+        <field name="metadesc" type="textarea"
+               label="JFIELD_META_DESCRIPTION_LABEL" description="JFIELD_META_DESCRIPTION_DESC"
+               rows="3" cols="30" />
+
+        <field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL"
+               description="JFIELD_ACCESS_DESC" size="1" />
+
+        <field name="hits" type="text" label="JGLOBAL_HITS"
+               description="COM_STANDARD_FIELD_HITS_DESC" class="readonly" size="6"
+               readonly="true" filter="unset" />
+
+        <field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL"
+               description="COM_STANDARD_FIELD_LANGUAGE_DESC"
+        >
+            <option value="*">JALL</option>
+        </field>
+
+        <field name="featured" type="radio"
+               class="btn-group btn-group-yesno"
+               label="JFEATURED"
+               description="COM_STANDARD_FIELD_FEATURED_DESC"
+               default="0"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+
+        <field name="rules" type="rules" label="JFIELD_RULES_LABEL"
+               translate_label="false" filter="rules"
+               component="com_standard" section="combo" validate="rules"
+        />
+
+    </fieldset>
+
+    <fields name="attribs" label="COM_STANDARD_ATTRIBS_FIELDSET_LABEL">
+        <fieldset name="basic" label="COM_STANDARD_ATTRIBS_FIELDSET_LABEL">
+            <field
+                name="show_title"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_TITLE_LABEL"
+                description="JGLOBAL_SHOW_TITLE_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+
+            <field
+                name="link_titles"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_LINKED_TITLES_LABEL"
+                description="JGLOBAL_LINKED_TITLES_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field name="show_tags"
+                   type="list"
+                   class="chzn-color"
+                   label="COM_STANDARD_FIELD_SHOW_TAGS_LABEL"
+                   description="COM_STANDARD_FIELD_SHOW_TAGS_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+
+            <field name="show_intro"
+                   type="list"
+                   class="chzn-color"
+                   description="JGLOBAL_SHOW_INTRO_DESC"
+                   label="JGLOBAL_SHOW_INTRO_LABEL"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="1">JSHOW</option>
+                <option value="0">JHIDE</option>
+            </field>
+            <field
+                name="info_block_position"
+                type="list"
+                default=""
+                label="COM_STANDARD_FIELD_INFOBLOCK_POSITION_LABEL"
+                description="COM_STANDARD_FIELD_INFOBLOCK_POSITION_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">COM_STANDARD_FIELD_OPTION_ABOVE</option>
+                <option value="1">COM_STANDARD_FIELD_OPTION_BELOW</option>
+                <option value="2">COM_STANDARD_FIELD_OPTION_SPLIT</option>
+            </field>
+
+            <field
+                name="info_block_show_title"
+                type="list"
+                class="chzn-color"
+                label="COM_STANDARD_FIELD_INFOBLOCK_TITLE_LABEL"
+                description="COM_STANDARD_FIELD_INFOBLOCK_TITLE_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_category"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_CATEGORY_LABEL"
+                description="JGLOBAL_SHOW_CATEGORY_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="link_category"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_LINK_CATEGORY_LABEL"
+                description="JGLOBAL_LINK_CATEGORY_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JNO</option>
+                <option	value="1">JYES</option>
+            </field>
+
+            <field
+                name="show_parent_category"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_PARENT_CATEGORY_LABEL"
+                description="JGLOBAL_SHOW_PARENT_CATEGORY_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="link_parent_category"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_LINK_PARENT_CATEGORY_LABEL"
+                description="JGLOBAL_LINK_PARENT_CATEGORY_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JNO</option>
+                <option	value="1">JYES</option>
+            </field>
+
+            <field
+                name="show_author"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_AUTHOR_LABEL"
+                description="JGLOBAL_SHOW_AUTHOR_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="link_author"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_LINK_AUTHOR_LABEL"
+                description="JGLOBAL_LINK_AUTHOR_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JNO</option>
+                <option	value="1">JYES</option>
+            </field>
+
+            <field
+                name="show_create_date"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_CREATE_DATE_LABEL"
+                description="JGLOBAL_SHOW_CREATE_DATE_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_modify_date"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_MODIFY_DATE_LABEL"
+                description="JGLOBAL_SHOW_MODIFY_DATE_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_publish_date"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_PUBLISH_DATE_LABEL"
+                description="JGLOBAL_SHOW_PUBLISH_DATE_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_item_navigation"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_NAVIGATION_LABEL"
+                description="JGLOBAL_SHOW_NAVIGATION_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_icons"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_ICONS_LABEL"
+                description="JGLOBAL_SHOW_ICONS_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_print_icon"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_PRINT_ICON_LABEL"
+                description="JGLOBAL_SHOW_PRINT_ICON_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_email_icon"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_EMAIL_ICON_LABEL"
+                description="JGLOBAL_SHOW_EMAIL_ICON_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_vote"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_VOTE_LABEL"
+                description="JGLOBAL_SHOW_VOTE_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_hits"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_HITS_LABEL"
+                description="JGLOBAL_SHOW_HITS_DESC">
+                <option	value="">JGLOBAL_USE_GLOBAL</option>
+                <option	value="0">JHIDE</option>
+                <option	value="1">JSHOW</option>
+            </field>
+
+            <field
+                name="show_noauth"
+                type="list"
+                class="chzn-color"
+                label="JGLOBAL_SHOW_UNAUTH_LINKS_LABEL"
+                description="JGLOBAL_SHOW_UNAUTH_LINKS_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+
+            <field
+                name="urls_position"
+                type="list"
+                class="chzn-color"
+                label="COM_STANDARD_FIELD_URLSPOSITION_LABEL"
+                description="COM_STANDARD_FIELD_URLSPOSITION_DESC">
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">COM_STANDARD_FIELD_OPTION_ABOVE</option>
+                <option value="1">COM_STANDARD_FIELD_OPTION_BELOW</option>
+            </field>
+
+            <field
+                name="spacer2"
+                type="spacer"
+                hr="true"
+            />
+
+            <field name="alternative_readmore" type="text"
+                   label="JFIELD_READMORE_LABEL"
+                   description="JFIELD_READMORE_DESC"
+                   size="25" />
+
+            <field name="combo_layout" type="componentlayout"
+                   label="JFIELD_ALT_LAYOUT_LABEL"
+                   description="JFIELD_ALT_COMPONENT_LAYOUT_DESC"
+                   useglobal="true"
+                   extension="com_standard" view="combo"
+            />
+        </fieldset>
+
+        <fieldset name="editorConfig" label="COM_STANDARD_EDITORCONFIG_FIELDSET_LABEL">
+            <field
+                name="show_publishing_options"
+                type="list"
+                class="chzn-color"
+                default=""
+                label="COM_STANDARD_SHOW_PUBLISHING_OPTIONS_LABEL"
+                description="COM_STANDARD_SHOW_PUBLISHING_OPTIONS_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+
+            </field>
+            <field
+                name="show_combo_options"
+                type="list"
+                class="chzn-color"
+                default=""
+                label="COM_STANDARD_SHOW_PRODUCT_OPTIONS_LABEL"
+                description="COM_STANDARD_SHOW_PRODUCT_OPTIONS_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+
+            </field>
+            <field
+                name="show_urls_images_backend"
+                type="list"
+                class="chzn-color"
+                default=""
+                label="COM_STANDARD_SHOW_IMAGES_URLS_BACK_LABEL"
+                description="COM_STANDARD_SHOW_IMAGES_URLS_BACK_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+
+            </field>
+            <field
+                name="show_urls_images_frontend"
+                type="list"
+                class="chzn-color"
+                default=""
+                label="COM_STANDARD_SHOW_IMAGES_URLS_FRONT_LABEL"
+                description="COM_STANDARD_SHOW_IMAGES_URLS_FRONT_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="0">JNO</option>
+                <option value="1">JYES</option>
+            </field>
+        </fieldset>
+
+        <fieldset name="basic-limited" label="COM_STANDARD_ATTRIBS_FIELDSET_LABEL">
+            <field
+                name="show_title"
+                type="hidden"
+                label="JGLOBAL_SHOW_TITLE_LABEL"
+                description="JGLOBAL_SHOW_TITLE_DESC"
+            >
+            </field>
+
+            <field
+                name="link_titles"
+                type="hidden"
+                label="JGLOBAL_LINKED_TITLES_LABEL"
+                description="JGLOBAL_LINKED_TITLES_DESC">
+            </field>
+
+            <field name="show_intro"
+                   type="hidden"
+                   description="JGLOBAL_SHOW_INTRO_DESC"
+                   label="JGLOBAL_SHOW_INTRO_LABEL"
+            >
+            </field>
+
+            <field
+                name="show_category"
+                type="hidden"
+                label="JGLOBAL_SHOW_CATEGORY_LABEL"
+                description="JGLOBAL_SHOW_CATEGORY_DESC">
+            </field>
+
+            <field
+                name="link_category"
+                type="hidden"
+                label="JGLOBAL_LINK_CATEGORY_LABEL"
+                description="JGLOBAL_LINK_CATEGORY_DESC">
+            </field>
+
+            <field
+                name="show_parent_category"
+                type="hidden"
+                label="JGLOBAL_SHOW_PARENT_CATEGORY_LABEL"
+                description="JGLOBAL_SHOW_PARENT_CATEGORY_DESC">
+            </field>
+
+            <field
+                name="link_parent_category"
+                type="hidden"
+                label="JGLOBAL_LINK_PARENT_CATEGORY_LABEL"
+                description="JGLOBAL_LINK_PARENT_CATEGORY_DESC">
+            </field>
+
+            <field
+                name="show_author"
+                type="hidden"
+                label="JGLOBAL_SHOW_AUTHOR_LABEL"
+                description="JGLOBAL_SHOW_AUTHOR_DESC">
+            </field>
+
+            <field
+                name="link_author"
+                type="hidden"
+                label="JGLOBAL_LINK_AUTHOR_LABEL"
+                description="JGLOBAL_LINK_AUTHOR_DESC">
+            </field>
+
+            <field
+                name="show_create_date"
+                type="hidden"
+                label="JGLOBAL_SHOW_CREATE_DATE_LABEL"
+                description="JGLOBAL_SHOW_CREATE_DATE_DESC">
+            </field>
+
+            <field
+                name="show_modify_date"
+                type="hidden"
+                label="JGLOBAL_SHOW_MODIFY_DATE_LABEL"
+                description="JGLOBAL_SHOW_MODIFY_DATE_DESC">
+            </field>
+
+            <field
+                name="show_publish_date"
+                type="hidden"
+                label="JGLOBAL_SHOW_PUBLISH_DATE_LABEL"
+                description="JGLOBAL_SHOW_PUBLISH_DATE_DESC">
+            </field>
+
+            <field
+                name="show_item_navigation"
+                type="hidden"
+                label="JGLOBAL_SHOW_NAVIGATION_LABEL"
+                description="JGLOBAL_SHOW_NAVIGATION_DESC">
+            </field>
+
+            <field
+                name="show_icons"
+                type="hidden"
+                label="JGLOBAL_SHOW_ICONS_LABEL"
+                description="JGLOBAL_SHOW_ICONS_DESC">
+            </field>
+
+            <field
+                name="show_print_icon"
+                type="hidden"
+                label="JGLOBAL_SHOW_PRINT_ICON_LABEL"
+                description="JGLOBAL_SHOW_PRINT_ICON_DESC">
+            </field>
+
+            <field
+                name="show_email_icon"
+                type="hidden"
+                label="JGLOBAL_SHOW_EMAIL_ICON_LABEL"
+                description="JGLOBAL_SHOW_EMAIL_ICON_DESC">
+            </field>
+            <field
+                name="show_vote"
+                type="hidden"
+                label="JGLOBAL_SHOW_VOTE_LABEL"
+                description="JGLOBAL_SHOW_VOTE_DESC"
+            >
+            </field>
+            <field
+                name="show_hits"
+                type="hidden"
+                label="JGLOBAL_SHOW_HITS_LABEL"
+                description="JGLOBAL_SHOW_HITS_DESC">
+            </field>
+
+            <field
+                name="show_noauth"
+                type="hidden"
+                label="JGLOBAL_SHOW_UNAUTH_LINKS_LABEL"
+                description="JGLOBAL_SHOW_UNAUTH_LINKS_DESC">
+            </field>
+
+            <field name="alternative_readmore" type="hidden"
+                   label="JFIELD_READMORE_LABEL"
+                   description="JFIELD_READMORE_DESC"
+                   size="25" />
+
+            <field name="combo_layout" type="hidden"
+                   label="JFIELD_ALT_LAYOUT_LABEL"
+                   description="JFIELD_ALT_COMPONENT_LAYOUT_DESC"
+                   useglobal="true"
+                   extension="com_standard" view="combo"
+            />
+        </fieldset>
+    </fields>
+
+    <field name="xreference" type="text"
+           label="JFIELD_KEY_REFERENCE_LABEL"
+           description="JFIELD_KEY_REFERENCE_DESC"
+           size="20" />
+    
+    <fields name="images" label="COM_STANDARD_FIELD_IMAGE_OPTIONS">
+                
+        <field 
+            name="effect" 
+            type="EffectBackground" 
+            label="COM_STANDARD_EFFECT_LABEL" 
+            description="COM_STANDARD_EFFECT_DESC"
+            default="parallax-scrolling scroll"
+        >
+            <option value="">COM_STANDARD_EFFECT_GLOBAL</option>
+        </field>
+        
+        <field name="scrollinghr" type="spacer" hr="true" />
+        
+        <field 
+            name="text_aspectratio" 
+            type="TextAspectRatio" 
+            label="COM_STANDARD_TEXT_ASPECT_RATIO_LABEL" 
+            description="COM_STANDARD_TEXT_ASPECT_RATIO_DESC"
+            default="3"
+        >
+            <option value="">COM_STANDARD_TEXT_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="device" 
+            type="Device" 
+            label="COM_STANDARD_TEXT_DEVICE_LABEL" 
+            description="COM_STANDARD_TEXT_DEVICE_DESC"
+            default="-lg"
+        >
+        </field>
+        
+        <field 
+            name="text_position" 
+            type="Position" 
+            label="COM_STANDARD_TEXT_POSITION_LABEL" 
+            description="COM_STANDARD_TEXT_POSITION_DESC"
+            default="left"
+        >
+            <option value="">COM_STANDARD_TEXT_POSITION_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="text_medialayoutelement"
+            type="LayoutElement"
+            class="span6"
+            label="GLOBAL_TEXT_LAYOUT_ELEMENT_LABEL"
+            description="GLOBAL_TEXT_LAYOUT_ELEMENT_DESC"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        <field type="spacer" hr="true" />
+        
+        <field name="linktype" 
+               type="list" 
+               label="COM_STANDARD_LINK_TYPE"
+               description="COM_STANDARD_LINK_TYPE_DESC" 
+               default=""
+        >
+            <option value="">COM_STANDARD_DO_NOT_LINK</option>
+            <option value="current">COM_STANDARD_CURRENT_LINK</option>
+            <option value="menu">COM_STANDARD_MENU</option>
+            <option value="url">COM_STANDARD_URL</option>
+            <option value="article">COM_STANDARD_ARTICLE</option>
+        </field>
+        
+        <field name="paymenttype_id"
+               type="PaymentType"
+               class="span12"
+               label="COM_STANDARD_FIELD_PAYMENT_TYPE_LABEL"
+               description="COM_STANDARD_FIELD_PAYMENT_TYPE_DESC"
+               default=""
+        >
+            <option value="">COM_STANDARD_SELECT_PAYMENT_TYPE</option>
+        </field>
+        
+        <field name="linkmenu" 
+               type="menuitem"
+               label="COM_STANDARD_MENU"
+               description="COM_STANDARD_MENU"
+               disable="separator,heading,alias"
+               showon="linktype:menu"
+        />
+        <field name="linkurl"
+               type="text"
+               label="COM_STANDARD_URL"
+               description="COM_STANDARD_URL"
+               class="inputbox"
+               size="30"
+               showon="linktype:url"
+        />
+        <field name="linkarticle" 
+               type="modal_article"
+               label="COM_STANDARD_ARTICLE" 
+               description="COM_STANDARD_ARTICLE"
+               select="true"
+               new="true"
+               edit="true"
+               clear="true"
+               showon="linktype:article"
+        />
+	
+                
+        <field
+            name="url_type"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="COM_STANDARD_SHOW_URL_LABEL"
+            description="COM_STANDARD_SHOW_URL_DESC"
+            showon="linktype:current,menu,url,article"
+        >
+            <option value="1">COM_STANDARD_FIELD_URL_ARTICLE_LABEL</option>
+            <option value="2">COM_STANDARD_FIELD_URL_IMAGE_LABEL</option>
+        </field>
+        
+        
+        <field
+            name="url_class_sfx"
+            type="textarea" rows="2"
+            label="COM_STANDARD_FIELD_URL_CLASS_LABEL"
+            description="COM_STANDARD_FIELD_URL_CLASS_DESC"
+            showon="linktype:current,menu,url,article"
+        />
+        
+        <field name="urltext"
+               type="text"
+               label="COM_STANDARD_FIELD_URL_LINK_TEXT_LABEL"
+               description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+               showon="linktype:current,menu,url,article"
+        />
+        		
+        <field name="linktarget" 
+               type="list" 
+               label="COM_STANDARD_LINK_TARGET"
+               description="COM_STANDARD_LINK_TARGET_DESC" 
+               default=""
+               showon="linktype:current,menu,url,article"
+        >
+            <option value="">COM_STANDARD_AUTO</option>
+            <option value="_self">COM_STANDARD_PARENT_WINDOW</option>
+            <option value="_blank">COM_STANDARD_NEW_WINDOW</option>
+        </field>
+        <field name="linktypehr" type="spacer" hr="true" />
+        <field name="linkatype" 
+               type="list" 
+               label="COM_STANDARD_LINK_A_TYPE"
+               description="COM_STANDARD_LINK_A_TYPE_DESC" 
+               default=""
+        >
+            <option value="">COM_STANDARD_DO_NOT_LINK</option>
+            <option value="current">COM_STANDARD_CURRENT_LINK</option>
+            <option value="menu">COM_STANDARD_MENU</option>
+            <option value="url">COM_STANDARD_URL</option>
+            <option value="article">COM_STANDARD_ARTICLE</option>
+        </field>
+        
+        <field name="paymentatype_id"
+               type="PaymentType"
+               class="span12"
+               label="COM_STANDARD_FIELD_PAYMENT_TYPE_LABEL"
+               description="COM_STANDARD_FIELD_PAYMENT_TYPE_DESC"
+               default=""
+        >
+            <option value="">COM_STANDARD_SELECT_PAYMENT_TYPE</option>
+        </field>
+        
+        <field name="linkamenu" 
+               type="menuitem"
+               label="COM_STANDARD_MENU"
+               description="COM_STANDARD_MENU"
+               disable="separator,heading,alias"
+               showon="linkatype:menu"
+        />
+        <field name="linkaurl"
+               type="text"
+               label="COM_STANDARD_URL"
+               description="COM_STANDARD_URL"
+               class="inputbox"
+               size="30"
+               showon="linkatype:url"
+        />
+        <field name="linkaarticle" 
+               type="modal_article"
+               label="COM_STANDARD_ARTICLE" 
+               description="COM_STANDARD_ARTICLE"
+               select="true"
+               new="true"
+               edit="true"
+               clear="true"
+               showon="linkatype:article"
+        />
+	
+        <field
+            name="urla_type"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="COM_STANDARD_SHOW_URL_LABEL"
+            description="COM_STANDARD_SHOW_URL_DESC"
+            showon="linkatype:current,menu,url,article"
+        >
+            <option value="1">COM_STANDARD_FIELD_URL_ARTICLE_LABEL</option>
+            <option value="2">COM_STANDARD_FIELD_URL_IMAGE_LABEL</option>
+        </field>
+        
+        <field
+            name="urla_class_sfx"
+            type="textarea" rows="2"
+            label="COM_STANDARD_FIELD_URL_CLASS_LABEL"
+            description="COM_STANDARD_FIELD_URL_CLASS_DESC"
+            showon="linkatype:current,menu,url,article"
+        />
+        
+        <field name="urlatext"
+               type="text"
+               label="COM_STANDARD_FIELD_URL_LINK_TEXT_LABEL"
+               description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+               showon="linkatype:current,menu,url,article"
+        />
+        		
+        <field name="linkatarget" 
+               type="list" 
+               label="COM_STANDARD_LINK_TARGET"
+               description="COM_STANDARD_LINK_TARGET_DESC" 
+               default=""
+               showon="linkatype:current,menu,url,article"
+        >
+            <option value="">COM_STANDARD_AUTO</option>
+            <option value="_self">COM_STANDARD_PARENT_WINDOW</option>
+            <option value="_blank">COM_STANDARD_NEW_WINDOW</option>
+        </field>
+        <field name="linkatypehr" type="spacer" hr="true" />    
+        
+        <!--        
+        <field name="image_full" type="media" label="COM_STANDARD_FIELD_INTRO_LABEL" description="COM_STANDARD_FIELD_INTRO_DESC" />
+        <field name="image_intro_desktop" type="media" label="COM_STANDARD_FIELD_INTRO_DESKTOP_LABEL" description="COM_STANDARD_FIELD_INTRO_DESKTOP_DESC" />
+        <field name="image_intro_tablet" type="media" label="COM_STANDARD_FIELD_INTRO_TABLET_LABEL" description="COM_STANDARD_FIELD_INTRO_TABLET_DESC" />
+        <field name="image_intro_phone" type="media" label="COM_STANDARD_FIELD_INTRO_PHONE_LABEL" description="COM_STANDARD_FIELD_PHONE_TABLET_DESC" />
+        -->
+        <field name="COM_STANDARD_FIELD_INTRO_LABEL" type="spacer" description="COM_STANDARD_FIELD_INTRO_DESC" />
+        <field name="float_intro" type="list" label="COM_STANDARD_FLOAT_LABEL" description="COM_STANDARD_FLOAT_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="right">COM_STANDARD_RIGHT</option>
+            <option value="left">COM_STANDARD_LEFT</option>
+            <option value="none">COM_STANDARD_NONE</option>
+        </field>
+        <field name="image_intro_title" type="text" label="COM_STANDARD_FIELD_IMAGE_TITLE_LABEL" description="COM_STANDARD_FIELD_IMAGE_TITLE_DESC"/>
+        <field name="image_intro_alt" type="text" label="COM_STANDARD_FIELD_IMAGE_ALT_LABEL" description="COM_STANDARD_FIELD_IMAGE_ALT_DESC" size="20"/>
+        <field name="image_intro_caption" type="text" label="COM_STANDARD_FIELD_IMAGE_CAPTION_LABEL" description="COM_STANDARD_FIELD_IMAGE_CAPTION_DESC" size="20"/>
+        <field name="spacer2" type="spacer" hr="true" />
+        
+        <!--        
+        <field name="image_fulltext" type="media" label="COM_STANDARD_FIELD_FULL_LABEL" description="COM_STANDARD_FIELD_FULL_DESC"/>
+        <field name="image_fulltext_desktop" type="media" label="COM_STANDARD_FIELD_FULL_DESKTOP_LABEL" description="COM_STANDARD_FIELD_FULL_DESKTOP_DESC"/>
+        <field name="image_fulltext_tablet" type="media" label="COM_STANDARD_FIELD_FULL_TABLET_LABEL" description="COM_STANDARD_FIELD_FULL_TABLET_DESC"/>
+        <field name="image_fulltext_phone" type="media" label="COM_STANDARD_FIELD_FULL_PHONE_LABEL" description="COM_STANDARD_FIELD_FULL_PHONE_DESC"/>
+        -->
+        <field name="COM_STANDARD_FIELD_FULL_LABEL" type="spacer" description="COM_STANDARD_FIELD_FULL_DESC" />
+        <field name="float_fulltext" type="list" label="COM_STANDARD_FLOAT_LABEL" description="COM_STANDARD_FLOAT_DESC">
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="right">COM_STANDARD_RIGHT</option>
+            <option value="left">COM_STANDARD_LEFT</option>
+            <option value="none">COM_STANDARD_NONE</option>
+        </field>
+        <field name="image_fulltext_title" type="text" label="COM_STANDARD_FIELD_IMAGE_TITLE_LABEL" description="COM_STANDARD_FIELD_IMAGE_TITLE_DESC"/>
+        <field name="image_fulltext_alt"
+               type="text"
+               label="COM_STANDARD_FIELD_IMAGE_ALT_LABEL"
+               description="COM_STANDARD_FIELD_IMAGE_ALT_DESC"
+               size="20"/>
+        <field name="image_fulltext_caption"
+               type="text"
+               label="COM_STANDARD_FIELD_IMAGE_CAPTION_LABEL"
+               description="COM_STANDARD_FIELD_IMAGE_CAPTION_DESC"
+               size="20"/>
+    </fields>
+    
+    <field
+        name="banner_status"
+        type="radio"
+        class="btn-group btn-group-yesno"
+        default="1"
+        label="COM_STANDARD_SHOW_BANNER_LABEL"
+        description="COM_STANDARD_SHOW_BANNER_DESC">
+        <option value="1">JSHOW</option>
+        <option value="0">JHIDE</option>
+    </field>
+    <field
+        name="banner_home"
+        type="radio"
+        class="btn-group btn-group-yesno"
+        default="0"
+        label="COM_STANDARD_SHOW_BANNER_HOME_LABEL"
+        description="COM_STANDARD_SHOW_BANNER_HOME_DESC">
+        <option value="1">JSHOW</option>
+        <option value="0">JHIDE</option>
+    </field>
+    
+    <fields name="banners" label="COM_STANDARD_FIELD_BANNERS_OPTIONS">
+        <field 
+            name="effect" 
+            type="EffectBackground" 
+            label="COM_STANDARD_EFFECT_LABEL" 
+            description="COM_STANDARD_EFFECT_DESC"
+            default="parallax-scrolling scroll"
+        >
+            <option value="">COM_STANDARD_EFFECT_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="text_aspectratio" 
+            type="TextAspectRatio" 
+            label="COM_STANDARD_TEXT_ASPECT_RATIO_LABEL" 
+            description="COM_STANDARD_TEXT_ASPECT_RATIO_DESC"
+            default="3"
+        >
+            <option value="">COM_STANDARD_TEXT_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="device" 
+            type="Device" 
+            label="COM_STANDARD_TEXT_DEVICE_LABEL" 
+            description="COM_STANDARD_TEXT_DEVICE_DESC"
+            default="-lg"
+        >
+        </field>
+        
+        <field 
+            name="text_position" 
+            type="Position" 
+            label="COM_STANDARD_TEXT_POSITION_LABEL" 
+            description="COM_STANDARD_TEXT_POSITION_DESC"
+            default="left"
+        >
+            <option value="">COM_STANDARD_TEXT_POSITION_GLOBAL</option>
+        </field>
+        
+        <field 
+            name="text_medialayoutelement"
+            type="LayoutElement"
+            class="span6"
+            label="GLOBAL_TEXT_LAYOUT_ELEMENT_LABEL"
+            description="GLOBAL_TEXT_LAYOUT_ELEMENT_DESC"
+            default=""
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+        </field>
+        
+        <field type="spacer" hr="true" />
+        
+        <field name="linktype" 
+               type="list" 
+               label="COM_STANDARD_LINK_TYPE"
+               description="COM_STANDARD_LINK_TYPE_DESC" 
+               default=""
+        >
+            <option value="">COM_STANDARD_DO_NOT_LINK</option>
+            <option value="bannercurrent">COM_STANDARD_CURRENT_LINK</option>
+            <option value="bannermenu">COM_STANDARD_MENU</option>
+            <option value="bannerurl">COM_STANDARD_URL</option>
+            <option value="bannerarticle">COM_STANDARD_ARTICLE</option>
+        </field>
+        
+        <field name="paymenttype_id"
+               type="PaymentType"
+               class="span12"
+               label="COM_STANDARD_FIELD_PAYMENT_TYPE_LABEL"
+               description="COM_STANDARD_FIELD_PAYMENT_TYPE_DESC"
+               default=""
+        >
+            <option value="">COM_STANDARD_SELECT_PAYMENT_TYPE</option>
+        </field>
+        
+        <field name="linkmenu" 
+               type="menuitem"
+               label="COM_STANDARD_MENU"
+               description="COM_STANDARD_MENU"
+               disable="separator,heading,alias"
+               showon="linktype:bannermenu"
+        />
+        <field name="linkurl"
+               type="text"
+               label="COM_STANDARD_URL"
+               description="COM_STANDARD_URL"
+               class="inputbox"
+               size="30"
+               showon="linktype:bannerurl"
+        />
+        <field name="linkarticle" 
+               type="modal_article"
+               label="COM_STANDARD_ARTICLE" 
+               description="COM_STANDARD_ARTICLE"
+               select="true"
+               new="true"
+               edit="true"
+               clear="true"
+               showon="linktype:bannerarticle"
+        />
+	          
+        <field
+            name="url_type"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="COM_STANDARD_SHOW_URL_LABEL"
+            description="COM_STANDARD_SHOW_URL_DESC"
+            showon="linktype:bannercurrent,bannermenu,bannerurl,bannerarticle"
+        >
+            <option value="1">COM_STANDARD_FIELD_URL_ARTICLE_LABEL</option>
+            <option value="2">COM_STANDARD_FIELD_URL_BANNER_LABEL</option>
+        </field>
+        
+        <field
+            name="url_class_sfx"
+            type="textarea" rows="2"
+            label="COM_STANDARD_FIELD_URL_CLASS_LABEL"
+            description="COM_STANDARD_FIELD_URL_CLASS_DESC"
+            showon="linktype:bannercurrent,bannermenu,bannerurl,bannerarticle"
+        />
+        
+        <field name="urlbannertext"
+               type="text"
+               label="COM_STANDARD_FIELD_URL_BANNER_LINK_TEXT_LABEL"
+               description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+               showon="linktype:bannercurrent,bannermenu,bannerurl,bannerarticle"
+        />
+        		
+        <field name="linktarget" 
+               type="list" 
+               label="COM_STANDARD_LINK_TARGET"
+               description="COM_STANDARD_LINK_TARGET_DESC" 
+               default=""
+               showon="linktype:bannercurrent,bannermenu,bannerurl,bannerarticle"
+        >
+            <option value="">COM_STANDARD_AUTO</option>
+            <option value="_self">COM_STANDARD_PARENT_WINDOW</option>
+            <option value="_blank">COM_STANDARD_NEW_WINDOW</option>
+        </field>
+        
+        <field name="linktype_bannerhr" type="spacer" hr="true" />
+        
+        <field name="linkatype" 
+               type="list" 
+               label="COM_STANDARD_LINK_A_TYPE"
+               description="COM_STANDARD_LINK_A_TYPE_DESC" 
+               default=""
+        >
+            <option value="">COM_STANDARD_DO_NOT_LINK</option>
+            <option value="current">COM_STANDARD_CURRENT_LINK</option>
+            <option value="menu">COM_STANDARD_MENU</option>
+            <option value="url">COM_STANDARD_URL</option>
+            <option value="article">COM_STANDARD_ARTICLE</option>
+        </field>
+        
+        <field name="paymentatype_id"
+               type="PaymentType"
+               class="span12"
+               label="COM_STANDARD_FIELD_PAYMENT_TYPE_LABEL"
+               description="COM_STANDARD_FIELD_PAYMENT_TYPE_DESC"
+               default=""
+        >
+            <option value="">COM_STANDARD_SELECT_PAYMENT_TYPE</option>
+        </field>
+        
+        <field name="linkamenu" 
+               type="menuitem"
+               label="COM_STANDARD_MENU"
+               description="COM_STANDARD_MENU"
+               disable="separator,heading,alias"
+               showon="linkatype:menu"
+        />
+        <field name="linkaurl"
+               type="text"
+               label="COM_STANDARD_URL"
+               description="COM_STANDARD_URL"
+               class="inputbox"
+               size="30"
+               showon="linkatype:url"
+        />
+        <field name="linkaarticle" 
+               type="modal_article"
+               label="COM_STANDARD_ARTICLE" 
+               description="COM_STANDARD_ARTICLE"
+               select="true"
+               new="true"
+               edit="true"
+               clear="true"
+               showon="linkatype:article"
+        />
+	
+                
+        <field
+            name="urla_type"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="COM_STANDARD_SHOW_URL_LABEL"
+            description="COM_STANDARD_SHOW_URL_DESC"
+            showon="linkatype:current,menu,url,article"
+        >
+            <option value="1">COM_STANDARD_FIELD_URL_ARTICLE_LABEL</option>
+            <option value="2">COM_STANDARD_FIELD_URL_IMAGE_LABEL</option>
+        </field>
+        
+        <field
+            name="urla_class_sfx"
+            type="textarea" rows="2"
+            label="COM_STANDARD_FIELD_URL_CLASS_LABEL"
+            description="COM_STANDARD_FIELD_URL_CLASS_DESC"
+            showon="linkatype:current,menu,url,article"
+        />
+        
+        <field name="urlatext"
+               type="text"
+               label="COM_STANDARD_FIELD_URL_LINK_TEXT_LABEL"
+               description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+               showon="linkatype:current,menu,url,article"
+        />
+        		
+        <field name="linkatarget" 
+               type="list" 
+               label="COM_STANDARD_LINK_TARGET"
+               description="COM_STANDARD_LINK_TARGET_DESC" 
+               default=""
+               showon="linkatype:current,menu,url,article"
+        >
+            <option value="">COM_STANDARD_AUTO</option>
+            <option value="_self">COM_STANDARD_PARENT_WINDOW</option>
+            <option value="_blank">COM_STANDARD_NEW_WINDOW</option>
+        </field>
+        
+        <field name="linkatype_bannerhr" type="spacer" hr="true" />
+        
+        <field
+            name="bannertitle_status"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="COM_STANDARD_SHOW_BANNER_TITLE_STATUS_LABEL"
+            description="COM_STANDARD_SHOW_BANNER_TITLE_STATUS_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
+        
+        <field
+            name="bannertitle"
+            type="textarea"
+            label="COM_STANDARD_BANNERTITLE_LABEL"
+            description="COM_STANDARD_BANNERTITLE_DESC"
+            rows="2"
+        />
+        <field
+            name="bannerdesc"
+            type="textarea"
+            label="COM_STANDARD_DESCRIPTION_LABEL"
+            description="COM_STANDARD_DESCRIPTION_DESC"
+            rows="2"
+        />
+        <field name="banner_alt" type="text" label="COM_STANDARD_FIELD_BANNER_ALT_LABEL" description="COM_STANDARD_FIELD_BANNER_ALT_DESC"/>
+        <field name="banner_caption" type="text" label="COM_STANDARD_FIELD_BANNER_CAPTION_LABEL" description="COM_STANDARD_FIELD_BANNER_CAPTION_DESC"/>
+    </fields>
+
+    <fields name="links">
+        <field name="link_type" 
+               type="list" 
+               label="COM_STANDARD_LINK_TYPE"
+               description="COM_STANDARD_LINK_TYPE_DESC" 
+               default=""
+        >
+            <option value="">COM_STANDARD_DO_NOT_LINK</option>
+            <option value="menu">COM_STANDARD_MENU</option>
+            <option value="url">COM_STANDARD_URL</option>
+            <option value="article">COM_STANDARD_ARTICLE</option>
+        </field>
+			
+        <field name="link_menu" 
+               type="menuitem"
+               label="COM_STANDARD_MENU"
+               description="COM_STANDARD_MENU"
+               disable="separator,heading,alias"
+               showon="link_type:menu"
+        />
+        <field name="link_url"
+               type="text"
+               label="COM_STANDARD_URL"
+               description="COM_STANDARD_URL"
+               class="inputbox"
+               size="30"
+               showon="link_type:url"
+        />
+        <field name="link_article" 
+               type="modal_combo"
+               label="COM_STANDARD_PRODUCT" 
+               description="COM_STANDARD_PRODUCT"
+               select="true"
+               new="true"
+               edit="true"
+               clear="true"
+               showon="link_type:article"
+        />
+			
+        <field name="link_target" 
+               type="list" 
+               label="COM_STANDARD_LINK_TARGET"
+               description="COM_STANDARD_LINK_TARGET_DESC" 
+               default=""
+               showon="link_type:menu,url,article"
+        >
+            <option value="">COM_STANDARD_AUTO</option>
+            <option value="_self">COM_STANDARD_PARENT_WINDOW</option>
+            <option value="_blank">COM_STANDARD_NEW_WINDOW</option>
+        </field>
+			
+        <field name="link_rel" 
+               type="list" 
+               label="COM_STANDARD_LINK_REL"
+               description="COM_STANDARD_LINK_REL_DESC" 
+               default=""
+               showon="link_type:menu,url,article"
+        >
+            <option value="">JNONE</option>
+            <option value="alternate">alternate</option>
+            <option value="author">author</option>
+            <option value="bookmark">bookmark</option>
+            <option value="help">help</option>
+            <option value="license">license</option>
+            <option value="next">next</option>
+            <option value="nofollow">nofollow</option>
+            <option value="noreferrer">noreferrer</option>
+            <option value="prefetch">prefetch</option>
+            <option value="prev">prev</option>
+            <option value="search">search</option>
+            <option value="tag">tag</option>
+        </field>
+    </fields>
+    
+    <fields name="urls" label="COM_STANDARD_FIELD_URLS_OPTIONS">
+        <field
+            name="urla"
+            type="url"
+            validate="url"
+            filter="url"
+            relative="true"
+            label="COM_STANDARD_FIELD_URLA_LABEL"
+            description="COM_STANDARD_FIELD_URL_DESC" />
+        <field name="urlatext"
+               type="text"
+               label="COM_STANDARD_FIELD_URLA_LINK_TEXT_LABEL"
+               description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+               size="20"/>
+        <field
+            name="targeta"
+            type="list"
+            label="COM_STANDARD_URL_FIELD_BROWSERNAV_LABEL"
+            description="COM_STANDARD_URL_FIELD_BROWSERNAV_DESC"
+            default=""
+            filter="options"
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+        <field
+            name="spacer3"
+            type="spacer"
+            hr="true"
+        />
+        <field
+            name="urlb"
+            type="url"
+            validate="url"
+            filter="url"
+            relative="true"
+            label="COM_STANDARD_FIELD_URLB_LABEL"
+            description="COM_STANDARD_FIELD_URL_DESC"/>
+        <field name="urlbtext"
+               type="text"
+               label="COM_STANDARD_FIELD_URLB_LINK_TEXT_LABEL"
+               description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+               size="20"/>
+        <field
+            name="targetb"
+            type="list"
+            label="COM_STANDARD_URL_FIELD_BROWSERNAV_LABEL"
+            description="COM_STANDARD_URL_FIELD_BROWSERNAV_DESC"
+            default=""
+            filter="options"
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+        <field
+            name="spacer4"
+            type="spacer"
+            hr="true"
+        />
+        <field
+            name="urlc"
+            type="url"
+            validate="url"
+            filter="url"
+            relative="true"
+            label="COM_STANDARD_FIELD_URLC_LABEL"
+            description="COM_STANDARD_FIELD_URL_DESC"/>
+        <field
+            name="urlctext"
+            type="text"
+            label="COM_STANDARD_FIELD_URLC_LINK_TEXT_LABEL"
+            description="COM_STANDARD_FIELD_URL_LINK_TEXT_DESC"
+            size="20"/>
+        <field
+            name="targetc"
+            type="list"
+            label="COM_STANDARD_URL_FIELD_BROWSERNAV_LABEL"
+            description="COM_STANDARD_URL_FIELD_BROWSERNAV_DESC"
+            default=""
+            filter="options"
+        >
+            <option value="">JGLOBAL_USE_GLOBAL</option>
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
+
+    </fields>
+
+    <fields name="metadata" label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+        <fieldset name="jmetadata"
+                  label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+
+            <field name="robots"
+                   type="list"
+                   label="JFIELD_METADATA_ROBOTS_LABEL"
+                   description="JFIELD_METADATA_ROBOTS_DESC"
+            >
+                <option value="">JGLOBAL_USE_GLOBAL</option>
+                <option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+                <option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+                <option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+                <option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+            </field>
+
+            <field name="author" type="text"
+                   label="JAUTHOR" description="JFIELD_METADATA_AUTHOR_DESC"
+                   size="20" />
+
+            <field name="rights" type="textarea" label="JFIELD_META_RIGHTS_LABEL"
+                   description="JFIELD_META_RIGHTS_DESC" required="false" filter="string"
+                   cols="30" rows="2" />
+            <field name="xreference" type="text"
+                   label="COM_STANDARD_FIELD_XREFERENCE_LABEL"
+                   description="COM_STANDARD_FIELD_XREFERENCE_DESC"
+                   size="20" />
+
+        </fieldset>
+    </fields>
+    <!-- These fields are used to get labels for the Content History Preview and Compare Views -->
+    <fields>
+        <field name="introtext" label="COM_STANDARD_FIELD_INTROTEXT" />
+        <field name="fulltext" label="COM_STANDARD_FIELD_FULLTEXT" />
+    </fields>
+
+</form>

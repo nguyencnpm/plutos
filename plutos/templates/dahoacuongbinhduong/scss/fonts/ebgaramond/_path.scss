@@ -1,0 +1,19 @@
+/* 
+    Created on : Jun 24, 2018, 3:55:34 PM
+    Author     : Binh Nguyen
+*/
+/* --- FONT PATH  --- */
+@font-face {
+    font-family: 'EBGaramond-Regular';
+    src: url('#{$ebgaramond-font-path}/EBGaramond-Regular.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'EBGaramond-Medium';
+    src: url('#{$ebgaramond-font-path}/EBGaramond-Medium.ttf') format("truetype");
+}
+
+@font-face {
+    font-family: 'EBGaramond-Bold';
+    src: url('#{$ebgaramond-font-path}/EBGaramond-Bold.ttf') format("truetype");
+}

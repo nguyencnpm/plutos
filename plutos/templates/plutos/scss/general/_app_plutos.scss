@@ -1,0 +1,20 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/*
+    Created on : Apr 19, 2021, 3:52:17 PM
+    Author     : BinhNguyen
+*/
+.app-plutos-agent {
+    cursor: pointer;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    color: $feng-shui-orange;
+    z-index:11;
+    &:hover, &:focus{
+        color: $feng-shui-orange-dark;
+    }
+}

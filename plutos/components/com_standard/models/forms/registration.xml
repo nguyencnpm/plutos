@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="registration" 
+              addfieldpath="/administrator/components/com_standard/models/fields"
+              addrulepath="components/com_standard/models/rules" 
+              label="COM_STANDARD_REGISTRATION_DEFAULT_LABEL"
+    >
+        <field
+            name="spacer"
+            type="spacer"
+            label="COM_STANDARD_REGISTRATION_REQUIRED"
+            class="text"
+        />
+        <!-- Thông tin cá nhân -->
+        <field
+            name="fullName"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_FULL_NAME_LABEL"
+            description="COM_STANDARD_REGISTRATION_FULL_NAME_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_FULL_NAME"
+        />
+        
+        <field
+            name="phone"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_PHONE_LABEL"
+            description="COM_STANDARD_REGISTRATION_PHONE_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_PHONE"
+        />
+       
+        <field
+            name="email"
+            type="email"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_EMAIL_LABEL"
+            description="COM_STANDARD_REGISTRATION_EMAIL_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_EMAIL"
+        />
+        
+        
+        <field
+            name="position"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_POSITION_LABEL"
+            description="COM_STANDARD_REGISTRATION_POSITION_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_POSITION"
+        />
+        
+        <field
+            name="referrerphonenumber"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REFERRER_PHONE_NUMBER_LABEL"
+            description="COM_STANDARD_REFERRER_PHONE_NUMBER_DESC"
+            filter="string"
+            hint="COM_STANDARD_REFERRER_PHONE_NUMBER"
+        />
+        
+        <!-- Thông tin doanh nghiệp -->
+        
+        <field
+            name="companyName"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_COMPANYNAME_LABEL"
+            description="COM_STANDARD_REGISTRATION_COMPANYNAME_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_COMPANYNAME"
+        />
+        
+        <field
+            name="rentalCode"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_RENTALCODE_LABEL"
+            description="COM_STANDARD_REGISTRATION_RENTALCODE_DESC"
+            filter="string"
+            hint="COM_STANDARD_REGISTRATION_RENTALCODE"
+        />
+        <field
+            name="city"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_CITY_LABEL"
+            description="COM_STANDARD_REGISTRATION_CITY_DESC"
+            filter="string"
+            hint="COM_STANDARD_REGISTRATION_CITY"
+        />
+        <field
+            name="nation"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_NATION_LABEL"
+            description="COM_STANDARD_REGISTRATION_NATION_DESC"
+            filter="string"
+            hint="COM_STANDARD_REGISTRATION_NATION"
+        />
+        <field
+            name="address"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_ADDRESS_LABEL"
+            description="COM_STANDARD_REGISTRATION_ADDRESS_DESC"
+            filter="string"
+            hint="COM_STANDARD_REGISTRATION_ADDRESS"
+        />
+        <field
+            name="typeOfBusiness"
+            type="TypeOfBusiness"
+            default="" 
+            class="form-control selectpicker show-tick dropupAuto"
+            label="COM_STANDARD_REGISTRATION_TYPEOFBUSINESS_LABEL"
+            description="COM_STANDARD_REGISTRATION_TYPEOFBUSINESS_DESC"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_TYPEOFBUSINESS"
+        >
+            <option value="">COM_STANDARD_TYPEOFBUSINESS</option>
+        </field>
+        
+        <field
+            name="revenueLevel"
+            type="text"
+            class="form-control"
+            label="COM_STANDARD_REGISTRATION_REVENUELEVEL_LABEL"
+            description="COM_STANDARD_REGISTRATION_REVENUELEVEL_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_REGISTRATION_REVENUELEVEL"
+        />
+        
+        <field
+            name="fbWebsite"
+            type="url"
+            class="form-control"
+            validate="url"
+            filter="url"
+            relative="true"
+            label="COM_STANDARD_FIELD_REGISTRATION_FBWEBSITE_LABEL"
+            description="COM_STANDARD_FIELD_REGISTRATION_FBWEBSITE_DESC" 
+        />
+        
+        <!--
+        <field
+            name="country_id"
+            type="Country"
+            default="" 
+            class="form-control selectpicker show-tick dropupAuto"
+            label="COM_STANDARD_REGISTRATION_COUNTRY_OF_RESIDENCE_LABEL"
+            description="COM_STANDARD_REGISTRATION_COUNTRY_OF_RESIDENCE_DESC"
+            hint="COM_STANDARD_REGISTRATION_COUNTRY_OF_RESIDENCE"
+        >
+            <option value="">COM_STANDARD_REGISTRATION_COUNTRY_OF_RESIDENCE</option>
+        </field>
+        -->
+
+    </fieldset>
+    <fieldset name="captcha">
+        <field
+            name="captcha"
+            type="captcha"
+            label="COM_STANDARD_CAPTCHA_LABEL"
+            description="COM_STANDARD_CAPTCHA_DESC"
+            validate="captcha"
+            namespace="registration"
+        />
+    </fieldset>
+</form>

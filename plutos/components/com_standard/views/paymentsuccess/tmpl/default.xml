@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+    <layout title="COM_STANDARD_PAYMENTSUCCESS_VIEW_DEFAULT_TITLE" option="COM_STANDARD_PAYMENTSUCCESS_VIEW_DEFAULT_OPTION">
+        <help
+            key = "JHELP_MENUS_MENU_ITEM_PRODUCT_PAYMENTSUCCESS"
+        />
+        <message>
+            <![CDATA[COM_STANDARD_CATEGORY_VIEW_PAYMENTSUCCESS_DESC]]>
+        </message>
+    </layout>
+    <!-- Add fields to the parameters object for the layout. -->
+    <fields name="params">
+        <fieldset name="page-options" label="COM_MENUS_PAGE_OPTIONS_LABEL">
+
+            <field
+                name="page_title"
+                type="text"
+                class="span6"
+                label="COM_MENUS_ITEM_FIELD_PAGE_TITLE_LABEL"
+                description="COM_MENUS_ITEM_FIELD_PAGE_TITLE_DESC"
+                useglobal="true"
+            />
+
+            <field
+                name="show_page_heading"
+                type="list"
+                label="COM_MENUS_ITEM_FIELD_SHOW_PAGE_HEADING_LABEL"
+                description="COM_MENUS_ITEM_FIELD_SHOW_PAGE_HEADING_DESC"
+                class="chzn-color"
+                default=""
+                useglobal="true"
+            >
+                <option value="1">JYES</option>
+                <option value="0">JNO</option>
+            </field>
+
+            <field
+                name="page_heading"
+                type="text"
+                class="span6"
+                label="COM_MENUS_ITEM_FIELD_PAGE_HEADING_LABEL"
+                description="COM_MENUS_ITEM_FIELD_PAGE_HEADING_DESC"
+            />
+
+            <field
+                name="pageclass_sfx"
+                type="text"
+                class="span6"
+                label="COM_MENUS_ITEM_FIELD_PAGE_CLASS_LABEL"
+                description="COM_MENUS_ITEM_FIELD_PAGE_CLASS_DESC"
+            />
+        </fieldset>
+    </fields>
+</metadata>

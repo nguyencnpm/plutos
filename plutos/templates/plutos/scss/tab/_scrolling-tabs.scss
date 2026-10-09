@@ -1,0 +1,177 @@
+/*
+    Created on : Jun 2, 2020, 2:10:40 PM
+    Author     : BinhNguyen
+*/
+/**
+ * jquery-bootstrap-scrolling-tabs
+ * @version v2.6.1
+ * @link https://github.com/mikejacobson/jquery-bootstrap-scrolling-tabs
+ * @author Mike Jacobson <michaeljjacobson1@gmail.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+$smart-tab-margin-top:-179px;
+$bg-tab-inner:rgba(66, 106, 179, 0.8);
+$bg-tab-inner-active: rgba(47, 63, 140, 0.8);
+$bg-tab-inner-hover:rgba(245, 130, 32, 0.8);
+$tab-content-min-height: 200px;
+
+$smart-tab-margin-top-ms:-279px;
+
+.smart-tab{
+    &.position-relative{
+        position: relative; 
+        margin-top: $smart-tab-margin-top;
+        z-index: 11;
+    }
+    .nav-tabs{
+        border-bottom:0;
+        &>li.nav-tab-item{
+            position: relative; 
+            display: block;
+
+            padding: 0 0.5rem;
+
+            &:first-child{
+                padding-left: 0;
+            }
+            &:last-child{
+                padding-right: 0;
+            }
+            &>a.nav-tab-link{
+                line-height:$nav-tab-link-line-height;
+                color: $nav-tab-color;
+                font-size: $nav-tab-link-font-size;
+                font-family: $nav-tab-link-font-family;
+                &.active{
+                    color: $nav-tab-active-color!important;
+                    .bg-tab-inner{
+                        background-color: $bg-tab-inner-active;
+                    }
+                }
+
+                @include hover-focus {
+                    color: $nav-tab-hover-color;
+                    text-decoration: none;
+                    outline: 0;
+                }
+
+                .bg-tab-inner{
+                    background-color: $bg-tab-inner;
+                    /*                    padding: 17px 23px;*/
+                    @include hover-focus {
+                        background-color: $bg-tab-inner-active;
+                    }
+                }
+            } 
+        }
+    }
+    .tab-content{
+        .bg-tab-content{
+            background-color: $bg-tab-inner-active;
+            color: $white;
+            padding: 1rem 2rem;
+            min-height: $tab-content-min-height;
+        }
+        .input-location{
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+        }
+    }
+
+    .scrtabs-tab-container {
+        * {
+            box-sizing: border-box; 
+        }
+        .tab-content {
+            clear: left; 
+        }
+        &.scrtabs-bootstrap4 .scrtabs-tabs-movable-container > .navbar-nav {
+            -ms-flex-direction: row;
+            flex-direction: row; 
+        }
+        &.scrtabs-rtl .scrtabs-tabs-movable-container > ul.nav-tabs {
+            padding-right: 0; 
+        }
+    }
+
+    .scrtabs-tabs-fixed-container {
+        float: left;
+        overflow: hidden;
+        width: 100%; 
+        ul.nav-tabs > li {
+            white-space: nowrap; 
+        }
+    }
+
+    .scrtabs-tabs-movable-container {
+        position: relative; 
+        .tab-content {
+            display: none; 
+        }
+    }
+
+    .scrtabs-tab-scroll-arrow {
+        color: $nav-tab-scroll-arrow-color;
+        display: none;
+        float: left;
+        width: 20px; 
+        &.scrtabs-with-click-target {
+            cursor: default;
+        }
+        &.scrtabs-disable{
+            color: #ddd;
+            cursor: default; 
+            .scrtabs-click-target {
+                color: #ddd;
+                cursor: default; 
+            }
+            &:hover {
+                background-color: initial; 
+            }
+        }
+        @include hover-focus {
+            color: $nav-tab-scroll-arrow-hover-color;
+            text-decoration: none;
+            outline: 0;
+        }
+    }
+    .scrtabs-tab-scroll-arrow 
+    .scrtabs-click-target {
+        cursor: pointer; 
+    }
+
+    .scrtabs-tab-scroll-arrow-right{
+        text-align: right;
+    }
+
+    .custom-input-position{
+        padding-left: 2.6rem;
+    }
+
+    .title-hot-key{
+        font-family: $font-sfpro-medium;
+    }
+    .hot-key{
+        padding: 2px 10px ;
+        border-radius: 20px;
+        background-color: #426ab3;
+        display: inline-block;
+        font-family: $font-sfCompact-Regular;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    .smart-tab{
+        &.position-relative{
+            margin-top: $smart-tab-margin-top-ms;
+        }
+        .nav-tabs{
+            &>li.nav-tab-item{
+                padding: 0 0.1rem;
+                &>a.nav-tab-link{
+                    font-size: 0.8rem;
+                }
+            }
+        }
+    }
+}

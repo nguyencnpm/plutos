@@ -1,0 +1,23 @@
+/* 
+    Created on : Jun 24, 2018, 3:55:34 PM
+    Author     : Binh Nguyen
+*/
+/* --- FONT PATH  --- */
+@font-face {
+    font-family: 'Taviraj-Regular';
+    src: url('#{$taviraj-font-path}/Taviraj-Regular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Taviraj-Light';
+    src: url('#{$taviraj-font-path}/Taviraj-Light.otf') format("opentype");
+}
+@font-face {
+    font-family: 'Taviraj-Medium';
+    src: url('#{$taviraj-font-path}/Taviraj-Medium.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Taviraj-Bold';
+    src: url('#{$taviraj-font-path}/Taviraj-Bold.otf') format("opentype");
+}

@@ -1,0 +1,23 @@
+/* 
+    Created on : Jun 24, 2018, 3:55:34 PM
+    Author     : Binh Nguyen
+*/
+/* --- FONT PATH  --- */
+@font-face {
+    font-family: 'Barlow-Regular';
+    src: url('#{$barlow-font-path}/Barlow-Regular.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Barlow-Light';
+    src: url('#{$barlow-font-path}/Barlow-Light.otf') format("opentype");
+}
+@font-face {
+    font-family: 'Barlow-Medium';
+    src: url('#{$barlow-font-path}/Barlow-Medium.otf') format("opentype");
+}
+
+@font-face {
+    font-family: 'Barlow-Bold';
+    src: url('#{$barlow-font-path}/Barlow-Bold.otf') format("opentype");
+}

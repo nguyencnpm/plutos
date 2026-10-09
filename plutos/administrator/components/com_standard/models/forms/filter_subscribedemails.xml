@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field
+            name="search"
+            type="text"
+            label="COM_STANDARD_FILTER_SEARCH_LABEL"
+            description="COM_STANDARD_FILTER_SEARCH_DESC"
+            hint="JSEARCH_FILTER"
+        />
+
+        <field
+            name="ticketDate" 
+            class="ticket-date"
+            type="daterangepicker"
+            label="COM_STANDARD_FILTER_TICKET_DATE_LABEL"
+            description="COM_STANDARD_FILTER_TICKET_DATE_DESC"
+            hint="TICKET_DATE_RANGE_FILTER"
+            onchange="this.form.submit();"
+            default=""
+            readonly="true"
+        />
+
+    </fields>
+    <fields name="list">
+        <field
+            name="fullordering"
+            type="list"
+            label="COM_STANDARD_LIST_FULL_ORDERING"
+            description="COM_STANDARD_LIST_FULL_ORDERING_DESC"
+            onchange="this.form.submit();"
+            default="se.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="se.subscribe_email ASC">COM_STANDARD_CONTACT_EMAIL_ASC</option>
+            <option value="se.subscribe_email DESC">COM_STANDARD_CONTACT_EMAIL_DESC</option>
+            <option value="se.created ASC">JDATE_ASC</option>
+            <option value="se.created DESC">JDATE_DESC</option>
+
+            <option value="se.ip_address ASC">COM_STANDARD_IP_ADDRESS_ASC</option>
+            <option value="se.ip_address DESC">COM_STANDARD_IP_ADDRESS_DESC</option>
+            
+            <option value="se.device ASC">COM_STANDARD_DEVICES_ASC</option>
+            <option value="se.device DESC">COM_STANDARD_DEVICES_DESC</option>
+            
+            <option value="se.browser ASC">COM_STANDARD_BROWSER_ASC</option>
+            <option value="se.browser DESC">COM_STANDARD_BROWSER_DESC</option>
+            
+            <option value="se.id ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="se.id DESC">JGRID_HEADING_ID_DESC</option>
+        </field>
+        <field
+            name="limit"
+            type="limitbox"
+            class="input-mini"
+            default="25"
+            label="COM_STANDARD_LIST_LIMIT"
+            description="COM_STANDARD_LIST_LIMIT_DESC"
+            onchange="this.form.submit();"
+        />
+    </fields>
+</form>

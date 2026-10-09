@@ -1,0 +1,16 @@
+/*
+    Created on : Sep 7, 2021, 3:43:37 PM
+    Author     : BinhNguyen
+*/
+.blog-search-results{
+    .page-header{
+        padding-top: 0;
+        h1{
+            border-bottom: solid 1px #e8ebed;
+        }
+    }
+    background-color: $blog-search-results-bg-color;
+    .item-title{
+        text-transform: uppercase;
+    }
+}

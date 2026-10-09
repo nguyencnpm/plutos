@@ -1,0 +1,19 @@
+/* 
+    Created on : Apr 15, 2019, 1:29:49 PM
+    Author     : BinhNguyen
+*/
+.navbar-cart{
+    .nav-masthead &{
+        .navbar-nav{
+            &>li{
+                .nav-link {
+                    padding: .25rem 0 .25rem 0;
+                    border-bottom: none;
+                    &:hover, &:focus{
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+/* 
+    Created on : Jul 21, 2019, 5:35:11 PM
+    Author     : BinhNguyen
+*/
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+        $max: breakpoint-max($breakpoint,$grid-breakpoints);
+
+        .using-max-width#{$infix}  { 
+            max-width: $max;
+        }
+    }
+}

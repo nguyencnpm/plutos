@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+    <name>com_standardextension</name>
+    <author>Binh Nguyen Project</author>
+    <creationDate>July 2019</creationDate>
+    <copyright>(C) 2005 - 2019 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>admin@giaiphapcongnghethongtin.vn</authorEmail>
+    <authorUrl>www.giaiphapcongnghethongtin.vn</authorUrl>
+    <version>3.0.0</version>
+    <description>COM_STANDARDEXTENSION_XML_DESCRIPTION</description>
+    
+    <!-- Runs on install -->
+       
+    <install> 
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.sql</file>
+        </sql>
+    </install>
+   
+    <!-- Runs on uninstall -->
+    <!--    
+    <uninstall> 
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.sql</file>
+        </sql>
+    </uninstall>
+    -->
+    <!--    
+    <update>
+        <schemas>
+            <schemapath type="mysql">sql/updates</schemapath>
+        </schemas>
+    </update>
+    -->
+    <!--
+    <files folder="site">
+        <filename>standardextension.php</filename>
+        <filename>controller.php</filename>
+        <filename>router.php</filename>
+        <folder>helpers</folder>
+        <folder>models</folder>
+    </files>
+    
+    <languages folder="site">
+        <language tag="en-GB">language/en-GB.com_standardextension.ini</language>
+    </languages>
+    -->
+    <administration>
+        <menu img="class:icon-16-component">com_standardextension</menu>
+        <submenu>
+            <menu link="option=com_standardextension&amp;view=articles" view="articles" img="class:icon-16-component" alt="Standard Extension/articles">JGLOBAL_ARTICLES</menu>
+            <menu link="option=com_categories&amp;extension=com_standardextension" view="categories" img="class:icon-16-component" alt="Standard Extension/Categories">COM_STANDARDEXTENSION_SUBMENU_CATEGORIES</menu>
+            <menu link="option=com_standardextension&amp;view=featured" view="featured" img="class:icon-16-component" alt="Standard Extension/Featured">COM_STANDARDEXTENSION_SUBMENU_FEATURED</menu>
+        </submenu>
+        <files folder="admin">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <filename>controller.php</filename>
+            <filename>standardextension.php</filename>
+            <folder>assets</folder>
+            <folder>controllers</folder>
+            <folder>helpers</folder>
+            <folder>language</folder>
+            <folder>models</folder>
+            <folder>sql</folder>
+            <folder>tables</folder>
+            <folder>views</folder>
+        </files>
+        <!--
+        <languages folder="admin">
+            <language tag="en-GB">language/en-GB.com_standardextension.ini</language>
+            <language tag="en-GB">language/en-GB.com_standardextension.sys.ini</language>
+        </languages>
+        -->
+    </administration>
+</extension>
+
+

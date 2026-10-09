@@ -1,0 +1,55 @@
+/*
+    Created on : Apr 2, 2021, 10:16:44 AM
+    Author     : BinhNguyen
+*/
+.label-contact{
+    color:  #828282;
+    margin-bottom: 0;
+}
+.icon-group-select-position-relative{
+    margin-bottom: -2.2rem;
+    z-index: 4;
+
+}
+/* bootstrap-select */
+.custom-select-position{
+    .filter-option{
+        padding-left: 1.7rem;
+    }
+} 
+.no-arrow{
+    .dropdown-toggle{
+        &::after{
+            border-top: 0em solid $select-picker-dropdown-toggle-bg-color!important;
+            border-right: 0em solid transparent!important;
+            border-bottom: 0!important;
+            border-left: 0em solid transparent!important;
+        }
+    }
+
+    .dropup{
+        .dropdown-toggle{
+            &::after{
+                border-top: 0!important;
+                border-right: 0em solid transparent!important;
+                border-bottom: 0em solid $select-picker-dropdown-toggle-bg-color!important;
+                border-left: 0em solid transparent!important;
+            }
+        }
+    } 
+}
+.guests{
+    .count{
+        color: #333333;
+        text-decoration: none;
+    }
+    .minus, .plus{
+        color: #fff;
+    }
+    .total-guests{
+        color:  #828282;
+    }
+}
+.btn-contact-submit{
+    font-size: $font-btn-contact-submit;
+}

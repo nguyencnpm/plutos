@@ -1,0 +1,21 @@
+/* 
+    Created on : Jul 2, 2018, 1:10:11 AM
+    Author     : Binh Nguyen
+*/
+.breadcrumbs-bottom{
+    background-color: $breadcrumb-bg-color;
+    color: $breadcrumb-color;
+    .breadcrumb{
+        padding: .2rem 0;
+        background:none;
+        margin-bottom:0;
+        @include border-radius(0);
+        a{
+            color: $breadcrumb-link-color;
+            &:hover{
+                color: $breadcrumb-link-hover-color;
+            }
+        }
+    }
+
+}

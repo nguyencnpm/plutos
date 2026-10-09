@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset> <!--    addfieldpath="/administrator/components/com_standardextension/models/fields"-->
+        <field
+            name="search"
+            type="text"
+            class="form-control radius-0"
+            label="COM_STANDARDEXTENSION_MODAL_FILTER_SEARCH_LABEL"
+            description="COM_STANDARDEXTENSION_MODAL_FILTER_SEARCH_DESC"
+            hint="COM_STANDARDEXTENSION_MODAL_FILTER_SEARCH_LABEL"
+        />
+        <field
+            name="catid"
+            type="category" 
+            class="form-control selectpicker show-tick dropupAuto"
+            label="JCATEGORY"
+            extension="com_standardextension"
+            description="JCATEGORY"
+            published="1"
+        >
+            <option value="">JOPTION_SELECT_CATEGORY</option>
+        </field>
+    </fieldset>
+</form>
+

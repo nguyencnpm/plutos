@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+    <fields name="filter">
+        <field
+            name="search"
+            type="text"
+            label="COM_STANDARD_FILTER_SEARCH_LABEL"
+            description="COM_STANDARD_FILTER_SEARCH_DESC"
+            hint="JSEARCH_FILTER"
+        />
+        <field
+            name="orderDate" 
+            class="order-date"
+            type="daterangepicker"
+            label="COM_STANDARD_FILTER_ORDER_DATE_LABEL"
+            description="COM_STANDARD_FILTER_ORDER_DATE_DESC"
+            hint="ORDER_DATE_RANGE_FILTER"
+            onchange="this.form.submit();"
+            default=""
+            readonly="true"
+        />
+
+        <field
+            name="published"
+            type="StatusOrder"
+            label="Status"
+            description="Status"
+            onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_PUBLISHED</option>
+        </field>
+
+        <field
+            name="access"
+            type="accesslevel"
+            label="JOPTION_FILTER_ACCESS"
+            description="JOPTION_FILTER_ACCESS_DESC"
+            onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_ACCESS</option>
+        </field>
+        <field
+            name="author_id"
+            type="author"
+            label="COM_STANDARD_FILTER_AUTHOR"
+            description="COM_STANDARD_FILTER_AUTHOR_DESC"
+            onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_AUTHOR</option>
+        </field>
+        <field
+            name="language"
+            type="contentlanguage"
+            label="JOPTION_FILTER_LANGUAGE"
+            description="JOPTION_FILTER_LANGUAGE_DESC"
+            onchange="this.form.submit();"
+        >
+            <option value="">JOPTION_SELECT_LANGUAGE</option>
+            <option value="*">JALL</option>
+        </field>
+    </fields>
+    <fields name="list">
+        <field
+            name="currency_id"
+            type="currency"
+            label="COM_STANDARD_CURRENCY"
+            description="COM_STANDARD_CURRENCY"
+            onchange="this.form.submit();"
+        >
+            <option value="">OPTION_CONVERT_CURRENCY</option>
+        </field>
+        <!--
+        <field
+            name="fullordering"
+            type="list"
+            label="COM_STANDARD_LIST_FULL_ORDERING"
+            description="COM_STANDARD_LIST_FULL_ORDERING_DESC"
+            onchange="this.form.submit();"
+            default="o.id DESC"
+        >
+            <option value="">JGLOBAL_SORT_BY</option>
+            <option value="o.ordering ASC">JGRID_HEADING_ORDERING_ASC</option>
+            <option value="o.ordering DESC">JGRID_HEADING_ORDERING_DESC</option>
+            <option value="o.state ASC">JSTATUS_ASC</option>
+            <option value="o.state DESC">JSTATUS_DESC</option>
+            <option value="vendor ASC">COM_STANDARD_VENDOR_ASC</option>
+            <option value="vendor DESC">COM_STANDARD_VENDOR_DESC</option>
+            <option value="o.number ASC">COM_STANDARD_ORDERNUMBER_ASC</option>
+            <option value="o.number DESC">COM_STANDARD_ORDERNUMBER_DESC</option>
+            <option value="paymentmethod ASC">COM_STANDARD_PAYMENTMETHOD_ASC</option>
+            <option value="paymentmethod DESC">COM_STANDARD_PAYMENTMETHOD_DESC</option>
+            <option value="shipmentmethod ASC">COM_STANDARD_SHIPMENTMETHOD_ASC</option>
+            <option value="shipmentmethod DESC">COM_STANDARD_SHIPMENTMETHOD_DESC</option>
+            <option value="category_title ASC">JCATEGORY_ASC</option>
+            <option value="category_title DESC">JCATEGORY_DESC</option>
+            <option value="o.access ASC">JGRID_HEADING_ACCESS_ASC</option>
+            <option value="o.access DESC">JGRID_HEADING_ACCESS_DESC</option>
+            <option value="o.created_by ASC">JAUTHOR_ASC</option>
+            <option value="o.created_by DESC">JAUTHOR_DESC</option>
+            <option value="language ASC">JGRID_HEADING_LANGUAGE_ASC</option>
+            <option value="language DESC">JGRID_HEADING_LANGUAGE_DESC</option>
+            <option value="o.created ASC">JDATE_ASC</option>
+            <option value="o.created DESC">JDATE_DESC</option>
+            <option value="o.modified ASC">COM_STANDARD_MODIFIED_ASC</option>
+            <option value="o.modified DESC">COM_STANDARD_MODIFIED_DESC</option>
+            
+            <option value="o.ip_address ASC">COM_STANDARD_IP_ADDRESS_ASC</option>
+            <option value="o.ip_address DESC">COM_STANDARD_IP_ADDRESS_DESC</option>
+            
+            <option value="o.device ASC">COM_STANDARD_DEVICES_ASC</option>
+            <option value="o.device DESC">COM_STANDARD_DEVICES_DESC</option>
+            
+            <option value="o.browser ASC">COM_STANDARD_BROWSER_ASC</option>
+            <option value="o.browser DESC">COM_STANDARD_BROWSER_DESC</option>
+            
+            <option value="o.id ASC">JGRID_HEADING_ID_ASC</option>
+            <option value="o.id DESC">JGRID_HEADING_ID_DESC</option>
+        </field>
+        -->
+        <field
+            name="limit"
+            type="limitbox"
+            class="input-mini"
+            default="25"
+            label="COM_STANDARD_LIST_LIMIT"
+            description="COM_STANDARD_LIST_LIMIT_DESC"
+            onchange="this.form.submit();"
+        />
+    </fields>
+</form>

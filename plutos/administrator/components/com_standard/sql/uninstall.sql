@@ -1,0 +1,1 @@
+-- DROP TABLE `#__standard_`;

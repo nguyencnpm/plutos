@@ -1,0 +1,14 @@
+/* 
+    Created on : Jun 3, 2018, 4:08:10 PM
+    Author     : Binh Nguyen
+*/
+.navbar {
+    display: block;
+    padding:0;
+    // Because flex properties aren't inherited, we need to redeclare these first
+    // few properities so that content nested within behave properly.
+    > .container,
+    > .container-fluid {
+        display: block;
+    }
+}

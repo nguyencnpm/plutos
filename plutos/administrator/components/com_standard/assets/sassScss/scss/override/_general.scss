@@ -1,0 +1,258 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 10, 2017, 1:52:41 PM
+    Author     : nbnguyen
+*/
+/*
+.input-medium{
+    display: inline-block!important;
+}*/
+/*
+.datepicker_date{
+    #jform_start_date, 
+    #jform_expiry_date{
+        display: inline-block!important;
+    }
+    #jform_start_date_img{
+        pointer-events: none; 
+        display: none;
+    }
+    #jform_expiry_date_img{
+        pointer-events: none; 
+        display: none;
+    }
+}
+.datepicker-days{
+    .disabled{
+        color:#d9d9d9!important;
+        opacity:1!important;
+    }
+}
+*/
+$color-white:#ffffff;
+$color-important:#942a25;
+$color-danger:#d9534f; 
+$color-danger-price:#7c2529;
+$bg-success:#dff0d8;
+$bg-info:#d9edf7;
+$bg-silver:#ddd;
+$btn-success:#5cb85c;
+$btn-hover-success:#2f6f2f;
+$border-success:#4cae4c;
+.star{
+    color: $color-danger;
+}
+.alert{
+    padding: 8px 14px 8px 14px!important;
+}
+/* --- com_jce --- */
+.mceBranding{
+    display: none!important;
+}
+/* --- com_jce --- */
+.sortable-cursor-move:hover {
+    cursor: move
+}
+/* --- calendar --- */
+.cal-month-day {
+    height: 50px!important;
+}
+.cal-year-box [class*="span"],
+.cal-month-box [class*="cal-cell"] {
+    min-height: 55px!important;
+}
+span[data-cal-date] {
+    margin-top: 5px!important;
+    margin-right: 5px!important;
+}
+.event {
+    width: auto!important;
+    height: auto!important;
+    padding-left: 5px;
+    padding-right: 5px;
+    border:0px solid $color-white!important;
+}
+a.event{
+    color: $color-white;
+}
+
+.text-badge-important{
+    color: $color-important!important;
+}
+.text-danger{
+    color: $color-danger!important;
+}
+.tex-red{
+    color:red!important;
+}
+.text-danger-price{
+    color:$color-danger-price!important;
+    font-weight: bold;
+}
+.gp-item-title-space{
+    white-space: nowrap;/* (dùng để ép chữ hiển thị chỉ trên 1 hàng, không xuống hàng) */
+    overflow:hidden;/* (để làm mất phần chữ bị tràn ra) */
+    text-overflow:ellipsis;/* (thêm dấu 3 chấm vào phần chữ bị mất) */
+}
+
+.remove-me{
+    /*margin-bottom: 25px!important;*/
+}
+
+/* table adminlist */
+table.table-striped{
+    thead {
+        tr {
+            th {
+                background: #f0f0f0 none repeat;
+                border: 1px solid #e3e3e3;
+                vertical-align: middle;
+            }
+        }
+    }
+    tbody{ 
+        tr{
+            &:hover{
+                background-color: #f3f3f3!important;
+            }
+            td{
+                border: 1px solid #f0f0f0;
+            }
+
+            &.row0{
+                background-color: #f9f9f9!important;
+                &:hover{
+                    background-color: #f3f3f3!important;
+                } 
+            }
+            &:nth-child(2n+1) > td{
+                background: none;
+                &:hover{
+                    background-color: #f7f7f7!important;
+                }
+            }
+            &:nth-child(2n+1) > th{
+                background: none;
+                &:hover{
+                    background-color: #f7f7f7!important;
+                }
+            }
+
+            &.row1{
+                &:hover{
+                    background-color: #f3f3f3!important;
+                }
+            }
+            &:nth-child(2n) > td{
+                &:hover{
+                    background-color: #f7f7f7!important;
+                }
+            }
+            &:nth-child(2n) > th{
+                &:hover{
+                    background-color: #f7f7f7!important;
+                }
+            }
+
+            .sub{
+                &-row0{
+                    background-color: #f4f5f5;
+                    padding: 1px 3px;
+                    &:hover{
+                        background-color: $bg-success;
+                    }
+                }
+                &-row1{
+                    padding: 1px 3px;
+                    &:hover{
+                        background-color: $bg-success;
+                    }
+                }
+            }
+        } 
+    }
+}
+
+div{
+    &.row0{
+        background-color: #f9f9f9!important;
+        &:hover{
+            background-color: #f3f3f3!important;
+        } 
+    }
+
+    &.row1{
+        &:hover{
+            background-color: #f3f3f3!important;
+        }
+    }
+}
+
+/* daterangepicker */
+.form-horizontal{
+    .daterangepicker-calendar{
+        input{
+            display: inline-block!important;
+        } 
+    } 
+}
+.daterangepicker{
+    td{
+        &.available{
+            &:hover{
+                background:gold;
+            }
+        }
+        &.in-range{
+            background: #c6e8f8!important;
+            &:hover{
+                background:gold!important;
+            }
+        }
+    }
+} 
+
+.well-room-block{
+    padding: 5px 19px 0 19px!important;
+    margin-bottom: 15px;
+}
+
+.contract{
+    &-rate{
+        .control-label{
+            width: auto!important;
+        }
+    }
+} 
+.button{
+    &-download{
+        color: $color-white!important;
+        background-color: $btn-success!important;
+        border-color:  $border-success!important;
+        &:hover{
+            background-color: $btn-hover-success!important;
+            color: $color-white!important;
+            text-decoration: none;
+        }
+        .icon{
+            &-download{
+                background-color: $btn-hover-success!important;
+                color: $color-white!important;
+                text-decoration: none;
+            }
+        }
+        @media (max-width: 480px) {
+            .icon{
+                &-download{
+                    background-color: inherit!important;
+                    color: $color-white!important;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

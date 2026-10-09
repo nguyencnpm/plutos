@@ -1,0 +1,364 @@
+/*
+    Created on : Jun 29, 2018, 11:03:48 PM
+    Author     : Binh Nguyen
+*/
+.module-header-font-size{
+    font-size:$module-header-font-size;
+}
+
+$blue:#0052a7;
+$yellowgreen:yellowgreen;
+$red:#ee1d23;
+$black:#383435;
+$black-think:#cccccc;
+$green:#4caf50;
+$darkblue:#16517f;
+$text-info:#31708f;
+
+
+.marquee{
+    /*font-size: $font-size-header;*/
+    p{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+}
+.render-module{
+    /*
+    padding: 15px 0 0 0;
+    .moduletable{
+        border: 1px solid $border-color-site;
+        -webkit-radius: 5px;
+        -moz-radius: 5px;
+        border-radius: 5px;
+
+        padding: 15px 15px 0 15px;
+        margin-bottom: 15px;
+        &.info{
+            border: 1px solid $info;
+        }
+        &.success{
+            border: 1px solid $success;
+        }
+    }
+    */
+}
+/*----------------------- default: line blue yellowgreen ---------------------*/
+.moduletable_line{
+    h3{
+        margin-bottom: 1rem;
+    }
+    .polaroid{
+        .title-line{
+            padding-top: 5px;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+    }
+
+    .title-line{
+        background:none;
+        /*font-size: 100%;*/
+        font-weight: normal;
+        padding-bottom: 10px;
+        text-transform: capitalize;
+        color: $module-title-color;
+    }
+    .line_start{
+        background: $primary-color-logo;
+        width: 25%;
+        height: 2px;
+    }
+    .line_end{
+        background: $primary-color-logo-sub;
+        width: 75%;
+        height: 2px;
+    }
+    ul{
+        li{
+            a{
+                &:hover{
+                    color: $danger;
+                }
+            }
+        }
+    }
+    /*--- line blue red ---*/
+    .blue{
+        .line_start{
+            background: $blue;
+        }
+        .line_end{
+            background: $blue-base;
+        }
+    }
+    /*--- line blue red ---*/
+    .red{
+        .line_start{
+            background: $blue;
+        }
+        .line_end{
+            background: $red;
+        }
+    }
+    /*--- line blue black ---*/
+    .black{
+        .line_start{
+            background: $blue;
+        }
+        .line_end{
+            background: $black;
+        }
+    }
+    /*--- line blue green ---*/
+    .green{
+        .line_start{
+            background: $blue;
+        }
+        .line_end{
+            background: $green;
+        }
+    }
+}
+
+/* --- --- */
+.moduletable_gpLineArrow{
+    margin: 15px 0;
+    /*    background: $white;*/
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+
+    font-weight: normal;
+    text-transform: capitalize;
+    margin-top: 0;
+
+    .title-glyphicon{
+        border-bottom: solid 2px #75bce8;
+        padding: 5px 15px; 
+        margin-bottom: -8px;
+        color: $darkblue;
+
+    }
+    span{
+        display:inline-block; 
+        padding:0px 10px 3px 10px;
+        color: #75bce8;
+    }
+    p.readmore{
+        /*        span{
+                    color: $white;
+                    padding:0;
+                }*/
+    }
+    .content{
+        padding: 5px 15px 15px 15px;
+        ul{
+            li{
+                padding-bottom: 10px;
+                a{
+                    color: $dark;
+                    &:hover{
+                        color: $danger;
+                    }
+                }
+
+            }
+        }
+    }
+    /* ---  border-bottom green --- */
+    .green{
+        .title-glyphicon{
+            border-bottom: solid 2px $green;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $green;
+        }
+    }
+    /* ---  border-bottom dark blue --- */
+    .darkblue{
+        .title-glyphicon{
+            border-bottom: solid 2px $darkblue;
+            color: $darkblue;
+        }
+        span{
+            display: block;
+            color: $darkblue;
+        }
+    }
+    /* ---  border-bottom red --- */
+    .red{
+        .title-glyphicon{
+            border-bottom: solid 2px $red;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $red;
+        }
+    }
+    /* ---  border-bottom black --- */
+    .black{
+        .title-glyphicon{
+            border-bottom: solid 2px $black;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $black;
+        }
+    }
+}
+/* --- default: background blue --- */
+.moduletable_background{
+    margin: 15px 0;
+    background: $white;
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-bottom-left-radius: 5px;
+    -moz-border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-weight: normal;
+    text-transform: capitalize;
+    margin-top: 0;
+
+    .title-glyphicon{
+        background: #75bce8;
+        padding: 5px 15px; 
+        margin-bottom: -8px;
+        color: $darkblue;
+
+    }
+    span{
+        /*display: block;*/
+        padding:0px 10px 3px 10px;
+        color: #75bce8;
+    }
+    .content{
+        padding: 5px 15px 15px 15px;
+        a{
+            color: $success; 
+            &:hover{
+                color: $light;
+            }
+        }
+    }
+    /* ---  background green --- */
+    .green{
+        .title-glyphicon{
+            background: $green;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $green;
+        }
+    }
+    /* ---  background dark blue --- */
+    .darkblue{
+        .title-glyphicon{
+            background: $darkblue;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $darkblue;
+        }
+    }
+    /* ---  background red --- */
+    .red{
+        .title-glyphicon{
+            background: $red;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $red;
+        }
+    }
+    /* ---  background black --- */
+    .black{
+        .title-glyphicon{
+            background: $black;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $black;
+        }
+    }
+    /* ------------ */
+    .primary{
+        .title-glyphicon{
+            background: $primary;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $primary;
+        }
+    }
+    .success{
+        .title-glyphicon{
+            background: $success;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $success;
+        }
+    }
+    .info{
+        .title-glyphicon{
+            background: $info;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $info;
+        }
+    }
+    .warning{
+        .title-glyphicon{
+            background: $warning;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $warning;
+        }
+    }
+    .danger{
+        .title-glyphicon{
+            background: $danger;
+            color: $white;
+        }
+        span{
+            display: block;
+            color: $danger;
+        }
+    }
+}
+
+.moduletable_gpLineBackground{
+    /*font-size: 16px;*/
+    .alert{
+        margin-top: 20px;
+        h3{
+            margin-top: 0;
+        }
+    }
+    .bg-title{
+
+    }
+
+    .panel-title{
+        /*font-size: 20px;*/
+    }
+}

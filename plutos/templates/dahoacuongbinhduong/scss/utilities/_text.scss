@@ -1,0 +1,28 @@
+/* 
+    Created on : Jul 21, 2019, 5:35:11 PM
+    Author     : BinhNguyen
+*/
+// Responsive alignment
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+    @include media-breakpoint-up($breakpoint) {
+        $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+        .text#{$infix}-justify-left   { 
+            text-align:justify!important; 
+            text-align-last: left !important; 
+        }
+        .text#{$infix}-justify-right  { 
+            text-align:justify!important; 
+            text-align-last: right !important; 
+        }
+        .text#{$infix}-justify-center { 
+            text-align:justify!important; 
+            text-align-last: center !important; 
+        }
+    }
+}
+
+@each $color, $value in $using-theme-colors {
+  @include text-emphasis-variant(".using-text-#{$color}", $value);
+}

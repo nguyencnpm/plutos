@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE install PUBLIC "-//Joomla! 2.5//DTD template 1.0//EN" "https://www.joomla.org/xml/dtd/1.6/template-install.dtd">
+<extension version="3.1" type="template" client="site">
+    <name>DAHOACUONGBINHDUONG</name>
+    <version>1.0</version>
+    <creationDate>20-Decenber-2018</creationDate>
+    <author>Binh Nguyen</author>
+    <authorEmail>nguyencnpm@gmail.com</authorEmail>
+    <copyright>Copyright (C) 2017 - 2019 Open Source Matters, Inc. All rights reserved.</copyright>
+    <description>TPL_DAHOACUONGBINHDUONG_XML_DESCRIPTION</description>
+    <files>
+        <filename>component.php</filename>
+        <filename>error.php</filename>
+        <filename>favicon.ico</filename>
+        <filename>index.php</filename>
+        <filename>offline.php</filename>
+        <filename>templateDetails.xml</filename>
+        <filename>template_prepocessor.php</filename>
+        <filename>template_preview.png</filename>
+        <filename>template_thumbnail.png</filename>
+        <folder>css</folder>
+        <folder>fonts</folder>
+        <folder>html</folder>
+        <folder>images</folder>
+        <folder>img</folder>
+        <folder>js</folder>
+        <folder>language</folder>
+        <folder>scss</folder>
+    </files>
+    <positions>
+        <position>banner</position>
+        <position>debug</position>
+        <position>header-1</position>
+        <position>header-2</position>
+        <position>header-3</position>
+        <position>header-4</position>
+        <position>header</position>
+        <position>marquee</position>
+        <position>share</position>
+        <position>cart</position>
+        <position>language</position>
+        <position>utilities-navbar</position>
+        <position>utilities</position>
+        <position>utilities-1</position>
+        <position>utilities-2</position>
+        <position>utilities-3</position>
+        <position>utilities-4</position>
+        <position>slideshow</position>
+        <position>assigned</position>
+        <position>agentlogin</position>
+        <position>find-it</position>
+        <position>condition</position>
+        <position>hotline</position>
+        <position>contact-info</position>
+        <position>differences-top</position>
+        <position>featured-top</position>
+                
+        <position>differences-middle-top</position>
+        <position>featured-middle-top</position>
+        
+        <position>differences-middle</position>
+        <position>featured-middle</position>
+        
+        <position>differences-middle-bottom</position>
+        <position>featured-middle-bottom</position>
+        
+        <position>differences-bottom</position>
+        <position>featured-bottom</position>
+        <position>component-top</position>
+        <position>component-bottom</position>
+        
+        <position>position-0</position>
+        <position>position-1</position>
+        <position>position-2</position>
+        
+        <position>position-3</position>
+        <position>position-4</position>
+        <position>position-5</position>
+        
+        <position>position-6</position>
+        <position>position-7</position>
+        <position>position-8</position>
+        <position>position-tabs</position>
+        
+        <position>position-9</position>
+        <position>position-10</position>
+        <position>position-11</position>
+        <position>position-12</position>
+        
+        <position>position-13</position>
+        <position>position-14</position>
+        <position>position-15</position>
+        <position>position-16</position>
+        
+        <position>position-17</position>
+        <position>position-18</position>
+        <position>position-19</position>
+        <position>position-20</position>
+        
+        <position>footer</position>
+        <position>menufooter</position>
+        <position>footer-1</position>
+        <position>footer-2</position>
+        <position>sharefooter</position>
+        <position>partnerfooter</position>
+        <position>partnerfooter</position>
+        
+        <position>support</position>
+        <position>confirm-box</position>
+    </positions>
+    <!--    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.tpl_dahoacuongbinhduong.ini</language>
+        <language tag="en-GB">en-GB/en-GB.tpl_dahoacuongbinhduong.sys.ini</language>
+    </languages>-->
+    <config>
+        <fields name="params">
+            <fieldset name="advanced">
+                
+                <field name="templateColor" class="" type="color" default="#08C"
+                       label="TPL_DAHOACUONGBINHDUONG_COLOR_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_COLOR_DESC" />
+
+                <field name="templateBackgroundColor" class="" type="color" default="#F4F6F7"
+                       label="TPL_DAHOACUONGBINHDUONG_BACKGROUND_COLOR_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_BACKGROUND_COLOR_DESC" />
+                
+                <field name="buttonColor" class="" type="color" default="#5bc0de"
+                       label="TPL_DAHOACUONGBINHDUONG_BUTTON_COLOR_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_BUTTON_COLOR_DESC" />
+                
+                <field name="loadmore"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="TPL_DAHOACUONGBINHDUONG_LOAD_MORE_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOAD_MORE_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="logo" class="" type="media" default=""
+                       label="TPL_DAHOACUONGBINHDUONG_LOGO_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOGO_DESC" />
+                <field name="logoLogin" class="" type="media" default=""
+                       label="TPL_DAHOACUONGBINHDUONG_LOGO_LOGIN_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOGO_LOGIN_DESC" />
+                
+                <field name="logoMobile" class="" type="media" default=""
+                       label="TPL_DAHOACUONGBINHDUONG_LOGO_MOBILE_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOGO_MOBILE_DESC" />
+                <field name="logoLoginMobile" class="" type="media" default=""
+                       label="TPL_DAHOACUONGBINHDUONG_LOGO_LOGIN_MOBILE_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOGO_LOGIN_MOBILE_DESC" />
+
+                <field name="sitetitle"  type="text" default=""
+                       label="JGLOBAL_TITLE"
+                       description="JFIELD_ALT_PAGE_TITLE_LABEL"
+                       filter="string" />
+
+                <field name="sitedescription"  type="textarea" default=""
+                       label="JGLOBAL_DESCRIPTION"
+                       description="JGLOBAL_SUBHEADING_DESC"
+                       filter="string" />
+                
+                <field name="logofooter" class="" type="media" default=""
+                       label="TPL_DAHOACUONGBINHDUONG_LOGO_FOOTER_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOGO_FOOTER_DESC" />
+                
+                <field name="logomobilefooter" class="" type="media" default=""
+                       label="TPL_DAHOACUONGBINHDUONG_LOGO_FOOTER_MOBILE_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_LOGO_FOOTER_MOBILE_DESC" />
+
+                <field name="sitetitlefooter"  type="text" default=""
+                       label="JGLOBAL_TITLE_FOOTER"
+                       description="JFIELD_ALT_PAGE_TITLE_FOOTER_LABEL"
+                       filter="string" />
+                
+                <field name="sitedescriptionfooter"  type="textarea" default=""
+                       label="JGLOBAL_DESCRIPTION_FOOTER"
+                       description="JGLOBAL_DESCRIPTION_FOOTER_DESC"
+                       filter="string" />
+
+                <field name="googleFont"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="TPL_DAHOACUONGBINHDUONG_FONT_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_FONT_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+
+                <field name="googleFontName" class="" type="text" default="Open+Sans"
+                       label="TPL_DAHOACUONGBINHDUONG_FONT_NAME_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_FONT_NAME_DESC" 
+                       showon="googleFont:1" />
+                
+                <field name="googleFontDisplay" class="" type="text" default="swap"
+                       label="TPL_DAHOACUONGBINHDUONG_FONT_DISPLAY_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_FONT_DISPLAY_DESC" 
+                       showon="googleFont:1" />
+
+                <field name="fluidContainer"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="TPL_DAHOACUONGBINHDUONG_FLUID_LABEL"
+                       description="TPL_DAHOACUONGBINHDUONG_FLUID_DESC"
+                >
+                    <option value="1">TPL_DAHOACUONGBINHDUONG_FLUID</option>
+                    <option value="0">TPL_DAHOACUONGBINHDUONG_STATIC</option>
+                </field>
+                
+                <field name="tooltip"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="BOOTSTAP_TOOLTIP_LABEL"
+                       description="TPL_BOOTSTAP_TOOLTIP_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="tooltip_viewport" type="list" default="hasTooltip"
+                       label="TPL_TOOLTIP_VIEWPORT_LABEL"
+                       description="TPL_TOOLTIP_VIEWPORT_DESC"
+                       showon="tooltip:1"
+                >
+                    <option value="hasTooltip">hasTooltip</option>
+                    <option value="hasPopover">hasPopover</option>
+                </field>
+                
+                <field name="addtocart_popup"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="ADDTOCART_POPUP_LABEL"
+                       description="TPL_ADDTOCART_POPUP_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="useMenus" 
+                       type="list" 
+                       default=""
+                       label="TPL_USE_MENUS_LABEL"
+                       description="TPL_USE_MENUS_DESC"
+                >
+                    <option value="">TPL_USE_DEFAULT_MENUS</option>
+                    <option value="smart-menus">TPL_USE_SMART_MENUS</option>
+                </field> 
+                
+                <field name="menuType" 
+                       type="list" 
+                       default=""
+                       label="TPL_MENU_TYPE_LABEL"
+                       description="TPL_MENU_TYPE_DESC"
+                >
+                    <option value="">TPL_MENU_TYPE_NAVIGATION_BAR</option>
+                    <option value="fixed-top">TPL_MENU_TYPE_FIXED_TOP</option>
+                    <option value="fixed-bottom">TPL_MENU_TYPE_FIXED_BOTTOM</option>
+                </field> 
+                
+                <field name="stickyMenu"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="TPL_STICKYMENU_LABEL"
+                       description="TPL_STICKYMENU_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="slider"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="TPL_SLIDER_LABEL"
+                       description="TPL_SLIDER_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="navmasthead"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="TPL_NAV_MASTHEAD_LABEL"
+                       description="TPL_NAV_MASTHEAD_DESC"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                
+                <field name="slidername" type="list" default="3"
+                       label="TPL_SLIDERNAME_LABEL"
+                       description="TPL_SLIDERNAME_DESC"
+                       showon="slider:1"
+                >
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </field>
+                
+                <field name="widthcolumn_leftright" type="list" default="center"
+                       label="Width column (left and right)"
+                       description="Layout: width column (left and right)"
+                >
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </field>
+                
+                <field name="widthcolumn" type="list" default="center"
+                       label="Width column (left or right)"
+                       description="Layout: width column (left or right)"
+                >
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </field>
+                
+                <field name="prefix_extrasmall" class="" type="text" default="col-" label="Prefix extra small devices "  description="Extra small devices Phones (&lt;576px)" />
+                <field name="prefix_small" class="" type="text" default="col-sm-" label="Prefix small devices " description="Small devices Tablets (≥576px)"/>
+                <field name="prefix_medium" class="" type="text" default="col-md-" label="Prefix medium devices " description="Medium devices Desktops (≥768px)"/>
+                <field name="prefix_large" class="" type="text" default="col-lg-" label="Prefix large devices" description="Large devices Desktops (≥992px)"/>
+                <field name="prefix_extralarge" class="" type="text" default="col-xl-" label="Prefix Extra large devices" description="Extra large devices Desktops (≥1200px)"/>
+                
+                <field name="animated"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="TPL_ANIMATED_SCROLL_EFFECTS_LABEL"
+                >
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="offset" 
+                       type="number" 
+                       label="TPL_OFFSET_LABEL" 
+                       description="TPL_OFFSET_DESC"
+                       default="100" 
+                       min="1"
+                       step="1" 
+                       showon="animated:1"
+                />
+                <field name="scroll_effect" type="list" default="center"
+                       label="TPL_SCROLL_EFFECTS_LABEL"
+                       description="TPL_SCROLL_EFFECTS_DESC"
+                       showon="animated:1"
+                >
+                    <option value="fadeIn">Fade In</option>
+                    <option value="bounceInLeft">Bounce In Left</option>
+                    <option value="bounceInUp">Bounce In Up</option>
+                    <option value="fadeInDown">Fade In Down</option>
+                    <option value="lightSpeedIn">Light Speed In</option>
+                    <option value="flipInX">Flip In X</option>
+                </field>
+            </fieldset>
+        </fields>
+    </config>
+</extension>

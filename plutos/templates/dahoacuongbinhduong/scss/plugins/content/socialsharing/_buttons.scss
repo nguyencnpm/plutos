@@ -1,0 +1,263 @@
+/* 
+    Created on : Dec 6, 2019, 11:22:58 AM
+    Author     : BinhNguyen
+*/
+
+// config settings
+$social-txt: #fff !default;
+$social-email: #0a88ff !default;
+$social-facebook: #306199 !default;
+$social-tumblr: #32506d !default;
+$social-linkedin: #007bb6 !default;
+$social-twitter: #26c4f1 !default;
+$social-googleplus: #e93f2e !default;
+$social-reddit: #8bbbe3 !default;
+$social-youtube: #df1c31 !default;
+$social-pinterest: #b81621 !default;
+$social-pocket: #ed4054 !default;
+$social-github: #444 !default;
+$social-instagram: #125688 !default;
+$social-hackernews: #ff6600 !default;
+$social-delicious: #0b79e5 !default;
+$social-vk: #4d71a9 !default;
+$social-print: #8d98a2 !default;
+$social-whatsapp: #43d854 !default;
+$social-xing: #005A5F !default;
+
+// Set the border radius for the buttons
+$social-border-radius: 2px !default;
+$social-main-font: "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+// Variable list for all social button colors to be iterated over.
+$social-list: (social-email $social-email, social-facebook $social-facebook, social-tumblr $social-tumblr, social-linkedin $social-linkedin, social-twitter $social-twitter, social-googleplus $social-googleplus, social-youtube $social-youtube, social-reddit $social-reddit, social-pinterest $social-pinterest, social-pocket $social-pocket, social-github $social-github, social-instagram $social-instagram, social-delicious $social-delicious, social-vk $social-vk, social-hackernews $social-hackernews,social-whatsapp $social-whatsapp, social-print $social-print, social-xing $social-xing);
+
+
+// fade-in animation so it doesnt blink
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1;}
+}
+
+// The meat and potatoes
+.social-buttons {
+  box-sizing: border-box;
+  font-family: $social-main-font;
+  font-size: 12px;
+  height: 36px;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  animation-duration: .3s;
+  animation-fill-mode: both;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+  animation-name: fade-in;
+  animation-delay: .2s;
+
+  // clearfix buttons for large-format
+  &:after {
+    clear: both;
+  }
+
+  &:before,
+  &:after {
+    content: ' ';
+    display: table;
+  }
+
+  li {
+    box-sizing: border-box;
+    float: left;
+    height: 100%;
+    line-height: 13px;
+    list-style: none;
+    margin: 0;
+    padding: 0 2px;
+
+    // This generates individual button classes for each item in social list on line 39.
+    @each $s-name in $social-list {
+      &.#{nth($s-name, 1)} {
+        a {
+          background-color: nth($s-name, 2);
+
+          &:hover {
+            background-color: darken(nth($s-name, 2), 10%);
+          }
+        }
+      }
+    }
+    // end @each directive
+
+    a {
+      background-color: #ccc;
+      border-radius: $social-border-radius;
+      box-sizing: border-box;
+      display: block;
+      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: antialiased;
+      font-weight: bold;
+      height: 100%;
+      padding: 11px 7px 12px 27px;
+      position: relative;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      transition: background-color 0.2s ease-in-out;
+      width: 100%;
+
+      .social-icon {
+        display: block;
+        left: 10px;
+        padding-top: 9px;
+        position: absolute;
+        top: 0;
+        width: 10%;
+
+        svg {
+          height: 17px;
+          width: 17px;
+
+          path, circle {
+            fill: $social-txt;
+          }
+        }
+      }
+
+      .social-text {
+        color: $social-txt;
+      }
+
+      &:active {
+        box-shadow: inset 1px 3px 15px 0 rgba(22, 0, 0, .25);
+      }
+    }
+
+    &.small {
+      a {
+        padding: 0;
+
+        .social-icon {
+          left: auto;
+          margin: 0 auto;
+          overflow: hidden;
+          position: relative;
+          top: auto;
+          width: 100%;
+        }
+
+        .social-text {
+          visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &.large-format {
+    height: auto;
+
+    li {
+      height: auto;
+
+      a {
+        backface-visibility: hidden;
+        border-radius: 0.2em;
+        padding: 8.5% 0 8.5% 12%;
+
+        .social-icon {
+          height: 100%;
+          left: 7%;
+          padding-top: 0;
+          width: 12%;
+
+          svg {
+            height: 100%;
+            position: absolute;
+            top: 0;
+            width: 100%;
+          }
+        }
+
+        .social-text {
+          backface-visibility: hidden;
+        }
+      }
+    }
+  }
+
+  &.small-format {
+    padding-top: 5px;
+
+    li {
+      height: 80%;
+      padding: 0 1px;
+
+      a {
+        .social-icon {
+          height: 100%;
+          padding-top: 0;
+
+          svg {
+            height: 48%;
+            position: relative;
+            top: 6px;
+            width: 80%;
+          }
+        }
+      }
+    }
+  }
+
+  &.tiny-format {
+    height: 22px;
+    position: relative;
+
+    li {
+      padding-right: 7px;
+
+      a {
+        background-color: transparent;
+        padding: 0;
+
+        .social-icon {
+          // Avoids a shifting effect in IE11, ref #144
+          height: 100%;
+          svg {
+            height: 70%;
+            width: 100%;
+          }
+        }
+
+        &:hover,
+        &:active {
+          background-color: transparent;
+        }
+      }
+
+      // This generates individual button classes for each item in social list on line 39.
+      @each $s-name in $social-list {
+        &.#{nth($s-name, 1)} {
+          a {
+            .social-icon {
+              svg {
+                path {
+                  fill: nth($s-name, 2);
+                }
+              }
+
+              &:hover {
+                .social-icon {
+                  svg {
+                    path {
+                      fill: darken(nth($s-name, 2), 20%);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      } // end @each directive
+    }
+  }
+}
+

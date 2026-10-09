@@ -1,0 +1,25 @@
+/* 
+    Created on : Oct 8, 2019, 10:15:18 AM
+    Author     : BinhNguyen
+*/
+
+//
+// Alternate buttons
+//
+
+@each $color, $value in $using-theme-colors{
+  .using-btn-#{$color} {
+    @include button-variant($value, $value);
+    -webkit-box-shadow: inset 0 0px 0 rgba(255,255,255,0.15), 0 0px 0px rgba(0,0,0,0.075);
+    box-shadow: inset 0 0px 0 rgba(255,255,255,0.15), 0 0px 0px rgba(0,0,0,0.075);
+    &.color-white{
+        color:#ffffff;
+    }
+  }
+}
+
+@each $color, $value in $using-theme-colors{
+  .using-btn-outline-#{$color} {
+    @include button-outline-variant($value);
+  }
+}

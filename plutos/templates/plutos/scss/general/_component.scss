@@ -1,0 +1,22 @@
+/*
+    Created on : Mar 26, 2021, 5:37:14 PM
+    Author     : BinhNguyen
+*/
+
+.component-title{
+    margin-bottom: 2rem;
+    font-size:$component-title-font-size; 
+    color: $component-title-color;
+    /*    font-weight: $component-title-font-weight;*/
+}
+.title{
+    color: $site-title-color;
+    font-size: $font-size-site-title;
+    font-family: $font-family-bold-site;
+    /*    font-weight: $component-title-font-weight;*/
+}
+@include media-breakpoint-down(sm) {
+    .component-title{
+        font-size:$mobile-component-title-font-size; 
+    }
+}

@@ -1,0 +1,14 @@
+/*
+    Created on : Nov 6, 2020, 1:50:24 PM
+    Author     : binhnguyen
+*/
+.nav-footer{
+    .navbar-nav>li{
+        .nav-link{
+            margin-bottom: -3px!important;
+        }
+        &.active>a{
+            border-bottom: 0.30rem solid $footer-masthead-line-color !important;
+        }
+    }
+} 

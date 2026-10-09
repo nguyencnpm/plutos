@@ -1,0 +1,8 @@
+<?php
+// No direct access to this file
+defined('_JEXEC') or die;
+?>
+<div style="padding: 5px;">
+    <?php echo JText::_('COM_FALANG_TAB_INFORMATION_TEXT'); ?>
+    <?php echo JText::_('COM_FALANG_TAB_INFORMATION_TEXT2'); ?>
+</div>

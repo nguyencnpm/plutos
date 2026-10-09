@@ -1,0 +1,50 @@
+/* 
+    Created on : Jul 2, 2018, 12:26:40 AM
+    Author     : Binh Nguyen
+*/
+.footer{
+    background-color: $feng-shui-white;
+    /*border-top: .6035rem solid $footer-border-top-color; */
+    /*
+    background-color: $footer-bg-color;
+    color: $footer-color;
+    a{
+        color: $footer-link-color;
+        @include hover-focus-active{
+            color: $footer-link-hover-color;
+        }
+    }
+    */
+    
+    font-size: $footer-font-size;
+    .footer-title{
+        font-size: 0.875rem;
+        font-family: $font-sfpro-bold!important;
+        .footer-sub-title{
+            font-weight: normal;
+        }
+    }
+    .facebook{
+        color: #4267b2;
+    }
+    .footer-icon-menu{
+        .nav-item{
+            margin-right: 1rem;
+            &:last-child{
+                margin-right: 0rem;
+            } 
+        }
+
+    }
+    .footer-link{
+        color:$footer-link-color;
+        @include hover-focus{
+            color: $footer-link-hover-color;
+            text-decoration: none;
+        }
+    }
+    
+    .footer-all-rights-reserved{
+        background-color: $footer-bg-all-rights-reserved;
+    }
+}

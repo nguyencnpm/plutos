@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset name="contactRequest" addrulepath="components/com_standard/models/rules" label="COM_STANDARD_CONTACT_REQUEST_DEFAULT_LABEL">
+        <field
+            name="spacer"
+            type="spacer"
+            label="COM_STANDARD_CONTACT_REQUIRED"
+            class="text"
+        />
+        
+        <field
+            name="shipmentmethod_id"
+            type="Shipment"
+            class="form-control shipment-method-change radius-0"
+            default="0" 
+            label="COM_STANDARD_SHIPMENT_LABEL"
+            description="COM_STANDARD_SHIPMENT_DESC"
+            hint="COM_STANDARD_SHIPMENT_PLACEHOLDER"
+        >
+            <option value="0">COM_STANDARD_SHIPMENT_SELECT</option>
+        </field>
+        
+        <field
+            name="contact_adult"
+            type="Adults"
+            default="1" 
+            class="form-control selectpicker dropupAuto radius-0"
+            label="COM_STANDARD_ADULT_LABEL"
+            description="COM_STANDARD_ADULT_DESC"
+            required="true"
+            hint="COM_STANDARD_ADULT"
+        >
+        </field>
+        
+        <field
+            name="contact_children"
+            type="Children"
+            default="0" 
+            class="form-control selectpicker dropupAuto radius-0"
+            label="COM_STANDARD_CHILDREN_LABEL"
+            description="COM_STANDARD_CHILDREN_DESC"
+            hint="COM_STANDARD_CHILDREN"
+        >
+        </field>
+        
+        <field
+            name="contact_infant"
+            type="Infant"
+            default="0" 
+            class="form-control selectpicker dropupAuto radius-0"
+            label="COM_STANDARD_INFANT_LABEL"
+            description="COM_STANDARD_INFANT_DESC"
+            hint="COM_STANDARD_ADULT"
+        >
+        </field>
+        
+        <field
+            name="contact_fullName"
+            type="text"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_FULL_NAME_LABEL"
+            description="COM_STANDARD_CONTACT_FULL_NAME_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_CONTACT_FULL_NAME"
+        />
+        <field
+            name="contact_lastName"
+            type="text"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_LAST_NAME_LABEL"
+            description="COM_STANDARD_CONTACT_LAST_NAME_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_CONTACT_LAST_NAME"
+        />
+        
+        <field name="contact_gender" 
+               type="list" 
+               class="custom-select d-block radius-0"
+               default="1" 
+               label="COM_STANDARD_CONTACT_GENDER" 
+               description="" 
+               required="true">
+            <option value="1">COM_STANDARD_CONTACT_MALE_LABEL</option>
+            <option value="2">COM_STANDARD_CONTACT_FEMALE_LABEL</option>
+            <option value="3">COM_STANDARD_CONTACT_OTHER_LABEL</option>
+        </field>
+        
+        <field
+            name="contact_phone"
+            type="text"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_PHONE_LABEL"
+            description="COM_STANDARD_CONTACT_PHONE_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_CONTACT_PHONE_LABEL"
+        />
+        
+        <field
+            name="contact_fax"
+            type="text"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_FAX_LABEL"
+            description="COM_STANDARD_CONTACT_FAX_DESC"
+            filter="string"
+            hint="COM_STANDARD_CONTACT_FAX_LABEL"
+        />
+        
+        <field
+            name="contact_birthday"
+            type="Birthday"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_BIRTHDAY_LABEL"
+            description="COM_STANDARD_CONTACT_BIRTHDAY_DESC"
+            filter="string"
+            hint="COM_STANDARD_CONTACT_BIRTHDAY_PLACEHOLDER"
+        />
+       
+        <field
+            name="contact_email"
+            type="email"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_EMAIL_LABEL"
+            description="COM_STANDARD_CONTACT_EMAIL_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_CONTACT_EMAIL_LABEL"
+        />
+       
+        <field
+            name="contact_country_id"
+            type="Country"
+            default="" 
+            class="form-control selectpicker show-tick dropupAuto radius-0"
+            label="COM_STANDARD_CONTACT_COUNTRY_OF_RESIDENCE_LABEL"
+            description="COM_STANDARD_CONTACT_COUNTRY_OF_RESIDENCE_DESC"
+            required="true"
+            hint="COM_STANDARD_CONTACT_COUNTRY_OF_RESIDENCE"
+        >
+            <option value="">COM_STANDARD_CONTACT_COUNTRY_OF_RESIDENCE</option>
+        </field>
+        
+        <field
+            name="contact_checkin"
+            type="Datetimepicker"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_CHECK_IN_DATE_LABEL"
+            description="COM_STANDARD_CONTACT_CHECK_IN_DATE_DESC"
+            filter="string"
+            required="true"
+            hint="COM_STANDARD_CONTACT_CHECK_IN_DATE_PLACEHOLDER"
+        />
+       
+        <field
+            name="contact_subject"
+            type="text"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_SUBJECT_LABEL"
+            description="COM_STANDARD_CONTACT_SUBJECT_DESC"
+            filter="string"
+            hint="COM_STANDARD_CONTACT_SUBJECT"
+        />
+       
+        <field
+            name="contact_message"
+            type="textarea"
+            class="form-control radius-0"
+            label="COM_STANDARD_CONTACT_ENTER_MESSAGE_LABEL"
+            description="COM_STANDARD_CONTACT_ENTER_MESSAGE_DESC"
+            cols="50"
+            rows="6"
+            filter="safehtml"
+            validate="contactemailmessage"
+        />
+        <field
+            name="contact_email_copy"
+            type="checkbox"
+            label="COM_STANDARD_CONTACT_EMAIL_A_COPY_LABEL"
+            description="COM_STANDARD_CONTACT_EMAIL_A_COPY_DESC"
+            default="0"
+        />
+    </fieldset>
+    <fieldset name="captcha">
+        <field
+            name="captcha"
+            type="captcha"
+            label="COM_STANDARD_CAPTCHA_LABEL"
+            description="COM_STANDARD_CAPTCHA_DESC"
+            validate="captcha"
+            namespace="contact"
+        />
+    </fieldset>
+</form>

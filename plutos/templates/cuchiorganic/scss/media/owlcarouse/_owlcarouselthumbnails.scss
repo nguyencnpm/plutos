@@ -1,0 +1,81 @@
+/* 
+    Created on : Oct 6, 2019, 9:15:45 AM
+    Author     : BinhNguyen
+*/
+.owl-carousel-thumbnails{
+    .synchronize1{
+        .item {
+            margin: 5px;
+        }
+        &.owl-theme {
+            position: relative;
+            .owl-next,
+            .owl-prev {
+                width: auto;
+                height: 40px;
+                margin-top: -20px;
+                position: absolute;
+                top: 50%;
+                // Hover/focus state
+                @include hover-focus {
+                    background:none;
+                    color: $carousel-thumbnail-control-color-hover;
+                    text-decoration: none;
+                    outline: 0;
+                }
+            }
+            .owl-prev {
+                left: 0;
+                margin-left: -15px;
+            }
+            .owl-next {
+                right: 0;
+                margin-right: -15px;
+            }
+        }
+    }
+
+    .synchronize2{
+        .item {
+            margin: 5px;
+            cursor: pointer;
+            .position-relative{
+                position:relative;
+            }
+            .shaded{
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.5);
+                position: absolute;
+                top:0px;
+                right: 0px;
+                bottom: 0px;
+                left:0px;
+                @include hover-focus {
+                    background: rgba(0,0,0,0);
+                }
+            }
+        }
+        .current{
+            .item {
+                background: none;
+                .shaded{
+                    background: rgba(0,0,0,0);
+                }
+            }
+        } 
+    } 
+    .owl-theme{
+        .owl-nav [class*='owl-']{
+            transition: all .3s ease;
+            @include hover-focus {
+                background:none;
+                text-decoration: none;
+                outline: 0;
+            }
+            &.disabled:hover {
+                background: none;
+            }
+        }
+    } 
+}

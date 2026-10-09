@@ -1,0 +1,55 @@
+/* 
+    Created on : Jul 28, 2018, 4:18:35 PM
+    Author     : Binh Nguyen
+*/
+.bg-info-booking{
+    background-color: $booking-bg-color;
+    color: $booking-color;
+    .support{
+        background-color: $support-background-color;
+    }
+    a{
+        color: $booking-link-color;
+        &:link{
+            color: $booking-link-color;
+        }
+        &:hover, &:active{
+            color: $booking-link-color-hover;
+        }
+    }
+    .info-order{
+        .row0{
+
+        }
+        .row1{
+
+        }
+        .divider{
+            background: $nav-brand; /* For browsers that do not support gradients */
+            background: -webkit-linear-gradient(right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            background: -o-linear-gradient(right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            background: -moz-linear-gradient(right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            background: linear-gradient(to right, rgba(0, 0, 0, 0), $nav-brand, rgba(0, 0, 0, 0));
+            border: 0 none;
+            height: 1px;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+
+.bg-info-form{
+    background-color: $site-bg-form;
+    padding: 1rem 1rem 0 1rem;
+}
+
+.bg-info-contact{
+    background-color: $site-bg-info-contact;
+    padding: 1rem 1rem 0 1rem;
+}
+.currency-price{
+    color: $color-currency-price;
+    font-weight: $price-font-weight;
+    font-size: $price-font-size;
+    text-transform: $price-text-transform;
+}

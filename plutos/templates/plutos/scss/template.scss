@@ -1,0 +1,108 @@
+/* 
+    Created on : May 23, 2018, 4:19:07 PM
+    Author     : Binh Nguyen
+*/
+
+/* --- import Core bootstrap --- */
+@import "bootstrap/bootstrap";
+/*
+@import "bootstrap/bootstrap-grid";
+@import "bootstrap/bootstrap-reboot";
+*/
+/* --- /.import Core bootstrap --- */
+/* --- addons --- */
+@import "bootstrapselect/bootstrap-select";
+/* --- /.addons --- */
+
+/* --- import template variables --- */
+@import "variables/system";
+@import "variables/template-variables";
+/* --- /.import template variables --- */
+/* ==== animate ==== */
+@import "effect/effect";
+/* ==== /.animate ==== */
+
+/* --- fonts --- */
+@import "fonts/fonts";
+/* --- /.fonts --- */
+/* --- chart ---*/
+@import "chart/chart";
+/* --- /.chart ---*/
+/* --- import general --- */
+@import "general/general";
+@import "general/border";
+@import "general/load-more";
+@import "general/modules";
+@import "general/zoom";
+@import "general/scrolltop";
+@import "general/video";
+@import "general/popup";
+@import "general/modal";
+@import "general/loading";
+@import "general/hr";
+@import "general/width";
+@import "general/selectpicker";
+@import "general/app_plutos";
+@import "general/search-results";
+@import "general/search-box";
+
+/* ======================================== Constant Code ========================================*/
+@import "general/component";
+/* ======================================== /.Constant Code ========================================*/
+/* --- /.import general --- */
+/* --- import google --- */
+@import "google/google-map";
+/* --- /.import google --- */
+/* --- .import utilities --- */
+@import "utilities/utilities";
+/* --- /.import utilities --- */
+
+@import "translate/language";
+/* ---- header inner ---- */
+@import "header/inner";
+@import "header/logo";
+
+/* --- import menu --- */
+@import "menu/navbar";
+@import "menu/slider/offcanvas";
+/* --- /.import general --- */
+@import "media/carousel";
+/* --- datepicker --- */
+/* --- import bootstrap datetimepicker --- */
+@import "datepicker/datetimepicker/bootstrap-datetimepicker";
+/* --- /.import bootstrap datetimepicker --- */
+@import "datepicker/daterangepicker/daterangepicker";
+/* --- /.datepicker --- */
+/* --- import form Steps --- */
+@import "formSteps/form-steps";
+/* --- /.import form Steps --- */
+
+/* --- import override --- */
+@import "override/custom-forms";
+@import "override/button-group";
+@import "override/bootstrap-validator";
+@import "override/navbar";
+@import "override/tooltip";
+@import "override/input-group";
+@import "override/daterangepicker";
+@import "override/check_availability";
+@import "override/transitions";
+/* --- /.import override --- */
+@import "booking/info";
+@import "booking/cart";
+@import "captcha/re-captcha";
+@import "pagination/pagination";
+@import "pagination/pagenav";
+
+/* ======================================== Constant Code ========================================*/
+/* --- import tab --- */
+@import "tab/tabs";
+/* --- component --- */
+@import "component/component";
+@import "general/contact";
+/* ======================================== /.Constant Code ========================================*/
+/* --- import footer --- */
+@import "footer/breadcrumbs";
+@import "footer/footer";
+/* --- import plugins --- */
+@import "plugins/content/plugins-content";

@@ -1,0 +1,64 @@
+/* 
+    Created on : Jun 6, 2019, 10:03:38 PM
+    Author     : BinhNguyen
+*/
+// override: Navbar brand
+// Used for brand, project, or site names.
+
+.navbar-brand {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+ul{
+    &.navbar-nav{
+        font-size: $nav-main-font-size;
+    }
+    
+    &.justify-content-end{
+        &>li{
+            a{
+                &.nav-link{
+                    /*                    
+                        margin-right: 0rem!important;
+                        margin-left: 1rem!important;
+                    */
+                }
+            }
+        }
+
+        .dropdown-item{
+            text-align: right;
+        }
+        .nav-item{
+            margin-left: 1rem!important;
+            margin-right: 0rem!important;
+        }
+        .dropdown-menu{
+            right: 0;
+            left: auto;
+        }
+    }
+    &.dropdown-menu{
+        padding: 0;
+        background-clip:unset;
+        /*
+        .dropdown-submenu{
+            &.show{
+                color: $nav-hover-color;
+                background-color: $nav-dropdown-menu-bg-hover-color;
+            }
+
+        }
+        */
+    }
+    /*
+    .dropdown{
+        @include hover-focus-active{
+            .dropdown-menu{
+                display: block;
+            }
+        }
+    }
+    */
+}

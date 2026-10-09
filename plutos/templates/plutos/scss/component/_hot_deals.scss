@@ -1,0 +1,32 @@
+
+/*
+    Created on : Mar 29, 2021, 6:30:11 PM
+    Author     : BinhNguyen
+*/
+.hot-deals{
+    background-color: #ecf0f5;
+    .title{
+        font-size: $font-size-hot-deals-title;
+        font-family: $font-family-bold-site;
+    }
+    .hot-content, .rate-title{
+        font-size: $font-size-hot-deals-content;
+    }
+    .rate{
+        color: #ed1c24;
+        font-weight: bold;
+        font-size: 1.125rem;
+    }
+    .sell-now{
+        padding-top: 0.5875rem;
+        padding-bottom: 0.5875rem;
+    }
+    .content-item{
+        background-color: #fff;
+        box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    }
+    .location{
+        font-size: 1.0.8125rem;
+        color: #3f3b3b;
+    }
+}

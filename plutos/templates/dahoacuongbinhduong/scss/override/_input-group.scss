@@ -1,0 +1,13 @@
+/* 
+    Created on : Jan 16, 2019, 3:47:00 PM
+    Author     : BinhNguyen
+*/
+.input-group-text{
+    $input-border-radius: 0;
+    background-color:$input-group-text-bg-color;
+    border:$input-group-text-border-color;
+    color: $input-group-text-color;
+    &--override{
+        @include border-radius($input-border-radius);
+    }
+}

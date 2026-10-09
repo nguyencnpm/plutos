@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form>
+    <fieldset>
+        <field
+            name="route_id"
+            type="Route"
+            default="" 
+            class="custom-select d-block"
+            label="COM_STANDARD_ROUTE_LABEL"
+            description="COM_STANDARD_ROUTE_DESC"          
+        >
+        </field>
+        <field
+            name="departure_day"
+            type="Daterangepicker"
+            class="form-control"
+            label="COM_STANDARD_DEPARTURE_DAY_LABEL"
+            description="COM_STANDARD_DEPARTURE_DAY_DESC"
+            filter="user_utc" 
+            hint="COM_STANDARD_DEPARTURE_DAY_PLACEHOLDER"
+            readonly="true"
+        />
+    </fieldset>
+</form>
+

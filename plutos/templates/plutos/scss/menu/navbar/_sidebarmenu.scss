@@ -1,0 +1,97 @@
+/*
+    Created on : Aug 23, 2021, 10:55:40 PM
+    Author     : BinhNguyen
+*/
+
+/*----------------------sidebar-menu-------------------------*/
+
+ul.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 0.45rem;
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    a{
+        color: $nav-sidebar-color;
+        font-weight: $nav-sidebar-font-weight;
+
+    }
+
+    .nav-item{
+        border-top: solid 1px #e8ebed;
+        padding-top: 0.45rem;
+        padding-bottom: 0.45rem;
+        &:first-child{
+            border-top: solid 0px #e8ebed;
+        }
+    }
+
+}
+
+ul.sidebar-menu li a {
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+    position: relative;
+    padding: 0.3rem 1rem;
+}
+
+ul.sidebar-menu li a i {
+    margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 4px;
+}
+
+ul.sidebar-menu li a:hover > i::before {
+    display: inline-block;
+    animation: swing ease-in-out 0.5s 1 alternate;
+}
+
+ul.sidebar-menu .sidebar-dropdown > a:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f105";
+    font-style: normal;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    background: 0 0;
+    position: absolute;
+    right: 15px;
+    top: 6px;
+    font-size: 1.175rem;
+}
+
+ul.sidebar-menu .sidebar-dropdown .sidebar-submenu ul {
+    padding: 5px 0;
+}
+
+ul.sidebar-menu .sidebar-dropdown .sidebar-submenu li {
+    padding-left: 2rem;
+}
+
+ul.sidebar-menu .sidebar-submenu {
+    display: none;
+}
+
+ul.sidebar-menu .active.parent .sidebar-submenu {
+    display: block;
+}
+
+ul.sidebar-menu .sidebar-dropdown.active > a:after {
+    transform: rotate(90deg);
+    right: 17px;
+}
+

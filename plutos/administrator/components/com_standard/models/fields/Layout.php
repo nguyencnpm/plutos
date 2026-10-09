@@ -1,0 +1,45 @@
+<?php
+
+/**
+ * @package     Giaiphapcongnghethongtin.Site
+ * @subpackage  Layout
+ *
+ * @copyright   Copyright (C) 2005 - 2018 Open Source Matters, Inc. All rights reserved.
+ * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ */
+
+namespace Joomla\CMS\Form\Field;
+
+defined('JPATH_PLATFORM') or die;
+
+use Joomla\CMS\Form\FormHelper;
+
+FormHelper::loadFieldClass('predefinedlist');
+
+/**
+ * Form Field to load a list of states
+ *
+ * @since  3.2
+ */
+class LayoutField extends \JFormFieldPredefinedList {
+
+    /**
+     * The form field type.
+     *
+     * @var    string
+     * @since  3.2
+     */
+    public $type = 'Layout';
+
+    /**
+     * Available statuses
+     *
+     * @var  array
+     * @since  3.2
+     */
+    protected $predefinedOptions = array(
+        'container' => 'COM_STANDARD_CONTAINER',
+        'container-fluid' => 'COM_STANDARD_CONTAINER_FLUID'
+    );
+
+}
